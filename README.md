@@ -54,6 +54,7 @@ leetcode(c++, python)，机器学习、 深度学习、强化学习、图神经�
 
 ## 3. 大模型专题
 
+代码路径：10_实践应用/03_文本处理/03_大模型
 
 ## 关注我
 - [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
