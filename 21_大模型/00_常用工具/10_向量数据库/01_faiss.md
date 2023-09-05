@@ -9,14 +9,7 @@ pip install faiss
 No module named '_swigfaiss'
 ```
 
-解决方法1 （实测有效）：
-```shell
-sudo apt-get install libopenblas-dev
-sudo apt-get install libomp-dev
-pip install faiss-gpu
-```
 
-解决方法2 （未测试）：
 ```shell
 sudo apt-get install libopenblas-dev
 sudo apt-get install libomp-dev
