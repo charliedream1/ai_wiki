@@ -1,5 +1,7 @@
 # 1. 安装
 
+python version <= 3.10
+
 ## 1.1 Linux 安装
 
 ```shell
