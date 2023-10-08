@@ -1,5 +1,10 @@
 # 1. 安装依赖
 
+nginx常用命令
+
+- 输入以下命令以停止 Nginx 服务： sudo systemctl stop nginx
+- 输入以下命令以重新启动 Nginx 服务： sudo systemctl start nginx
+
 ## 1.1. Nginx安装
 
 Nginx 发音 “engine x” ,是一个开源软件，高性能 HTTP 和反向代理服务器，
@@ -233,7 +238,8 @@ server {
 1. werkzeug 对ws匹配有限制，手改了一下werkzeug
 2. 端口被占用：
    可能反复启停，导致没有正常被停止，可以重启服务或者机器
-
+3. 页面403  
+   因为无权限，查看nginx的配置文件中的html文件和路径是否正确，以及路径访问是否又权限
 
 # 参考
 
