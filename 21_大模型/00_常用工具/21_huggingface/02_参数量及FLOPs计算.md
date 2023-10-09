@@ -1,0 +1,3 @@
+- 项目地址：https://huggingface.co/spaces/MrYXJ/calculate-model-flops
+- 实现了可以很方便计算开源在huggingface平台上的模型的FLOPs和Params数量
+- Python Package calflops进行本地的计算模型FLOPs, 地址：https://github.com/MrYxJ/calculate-flops.pytorch

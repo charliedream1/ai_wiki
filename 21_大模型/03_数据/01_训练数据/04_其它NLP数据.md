@@ -1,7 +1,5 @@
-# 1. 综合数据
-
-# 2. 专项数据
-## 2.1. 总结类任务
+# 1. 专项数据
+## 1.1. 总结类任务
 
 1. ADGEN
 
@@ -18,3 +16,11 @@
     
     从 [Google Drive](https://drive.google.com/file/d/13_vf0xRTQsyneRKdD1bZIr93vBGOczrk/view?usp=sharing) 或者 
     [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/b3f119a008264b1cabd1/?dl=1) 下载处理好的 ADGEN 数据集，将解压后的 `AdvertiseGen` 目录放到本目录下。
+
+
+# 2. NLP类任务
+
+1. CLUEDatasetSearch
+    - https://github.com/CLUEbenchmark/CLUEDatasetSearch
+    - 3.5k stars
+
