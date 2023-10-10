@@ -118,6 +118,9 @@
 - http://www.hostbuf.com/t/988.html
 
 
+## 3.2 PuTTY
+
+- 下载路径：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
  
 # 参考
