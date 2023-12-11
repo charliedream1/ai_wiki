@@ -28,8 +28,12 @@
    
    ![](.02_对话数据_images/LCCC数据集.png)
 
+# 3. 问答数据
 
-# 3. 专有领域
+1. 百度问答100w
+   - https://github.com/CyberCommy/baidu-qa-100w
+
+# 4. 专有领域
 
 1. 医疗类数据
    - https://huggingface.co/datasets/shibing624/medical
@@ -44,3 +48,4 @@
 # 参考
 
 [1] 动手做个DialoGPT：生成式多轮对话模型, https://blog.csdn.net/xixiaoyaoww/article/details/108656532
+[2] 百度QA100万数据集, https://mp.weixin.qq.com/s/SJQX2tNJ5kz3--ReWAbZDg
