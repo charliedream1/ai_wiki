@@ -28,12 +28,32 @@
    
    ![](.02_对话数据_images/LCCC数据集.png)
 
+2. ShareGPT
+   - https://sharegpt.com/
+   - 使用多轮对话历史记录,包括约9w条来自人类的提问和来自ChatGPT和其他聊天机器人的回复。
+     我们通用能力的评测指标为MT-Bench。
+
 # 3. 问答数据
 
 1. 百度问答100w
    - https://github.com/CyberCommy/baidu-qa-100w
 
-# 4. 专有领域
+# 4. 特定类别
+## 4.1 代码
+1. Code Alpaca
+   - https://github.com/sahil280114/codealpaca
+   - 旨在构建一个遵循指令，生成代码的LLaMA模型，构建方式完全基于Stanford Alpaca，
+      包含20K对的代码数据，我们代码生成的评测指标为HumanEval。
+
+## 4.2 数学
+1. GSM8K RFT 
+   - https://huggingface.co/datasets/gsm8k
+   - https://arxiv.org/pdf/2110.14168v1.pdf
+   - 是一个增强的数学推理数据集，它基于GSM8K数据集[4]并结合RFT策略整合了多条推理路径。
+     训练集中包含7.5K个问题和110K个回答，我们所有实验数学的评测指标为GSM8k测试集分数。
+
+
+# 5. 专有领域
 
 1. 医疗类数据
    - https://huggingface.co/datasets/shibing624/medical
@@ -43,7 +63,7 @@
      ![](.01_预训练数据_images/医疗微调中文数据.png)
    - 奖励模型4k条
      ![](.01_预训练数据_images/奖励模型.png)
-
+     
 
 # 参考
 
