@@ -19,6 +19,16 @@
    - 论文：Instruction Tuning with GPT-4
    - ![](.02_SFT数据_images/alpaca-gpt4-cn数据样例.png)
 
+4. FlagInstruct
+   - 智源开源数据
+   - Github: https://github.com/FlagOpen/FlagInstruct
+   - Data: https://huggingface.co/datasets/BAAI/COIG/tree/main
+   - 翻译指令：67,798
+   - 考试指令：63,532, CoT数据
+   - Human Value Alignment Instructions (34,471)
+   - Counterfactural Correction Multi-round Chat (13,653)：平均5轮对话
+   - Leetcode Instructions (11,737)
+
 # 2. 对话数据
 
 1. 中文闲聊语料库LCCC
