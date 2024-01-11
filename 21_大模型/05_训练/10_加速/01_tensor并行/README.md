@@ -1,0 +1,1 @@
+pretraining_tp部分为tensor并行
