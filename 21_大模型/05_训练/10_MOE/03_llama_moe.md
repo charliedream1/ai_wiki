@@ -4,6 +4,7 @@ LLaMA-MoE
    - 原有模型拆解为小的专家模型
    - LLaMA-MoE: Building Mixture-of-Experts from LLaMA with Continual Pre-training
    - https://github.com/pjlab-sys4nlp/llama-moe
+   - 论文：在Github仓里
 
 ## 1.1 摘要
 

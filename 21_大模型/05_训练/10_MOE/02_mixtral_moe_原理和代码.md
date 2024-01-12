@@ -4,8 +4,13 @@
 - 官网：https://mistral.ai/news/mixtral-of-experts/
 - 官方对应Github: https://github.com/mistralai/mistral-src
 - 论文：https://arxiv.org/pdf/2401.04088.pdf
-
+- base模型：Mixtral-8x7B-v0.1模型：https://www.modelscope.cn/models/AI-ModelScope/Mixtral-8x7B-v0.1/summary
+- chat模型：Mixtral-8x7B-Instruct-v0.1，https://www.modelscope.cn/models/AI-ModelScope/Mixtral-8x7B-Instruct-v0.1/summary
 # 1. 简介
+
+Mixtral 拥有46.7B的总参数量，但每个token只使用 12.9B参数，也就是说，
+Mixtral的实际执行速度和所需的成本和一个12.9B的模型相当。下图展示了官方公布的模型生成质量与推理消耗成本的关系，
+与Llama 2相比，Mistral 7B和Mixtral 8x7B表现出自己高能效的优势。
 
 ![](.02_mixtral_moe_原理和代码_images/moe结构.png)
 
