@@ -29,6 +29,9 @@
    - Counterfactural Correction Multi-round Chat (13,653)：平均5轮对话
    - Leetcode Instructions (11,737)
 
+5. Alplca_zn_51k
+   - https://github.com/enze5088/Chatterbox/tree/main/docs/datasets
+
 # 2. 对话数据
 
 1. 中文闲聊语料库LCCC

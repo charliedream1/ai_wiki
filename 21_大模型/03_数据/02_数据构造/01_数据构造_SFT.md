@@ -147,6 +147,10 @@ FlagData
 
 ![](.01_数据构造_SFT_images/augmentoolkit流程.png)
 
+## 1.5 Chinese-LLaMA-Alpaca Self Insturct
+
+https://github.com/ymcui/Chinese-LLaMA-Alpaca/wiki/%E8%AE%AD%E7%BB%83%E7%BB%86%E8%8A%82
+
 # 参考
 
 [1] 也看大模型幻觉的脑图总结：详解RefGPT事实性数据集、

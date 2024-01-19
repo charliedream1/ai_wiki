@@ -1,3 +1,5 @@
+Github: https://github.com/THUDM/ChatGLM3
+
 ChatGLM不属于严格意义上的Causal Language Model(因果语言模型)，因为它存在prefix attention mask
 的设计。对于prefix而言，它的attention是双向的，而预测部分的attention是单向的，存在一定的适配成本。
 但ChatGLM2做出了改变，它的注意力是单向的。
