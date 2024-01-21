@@ -5,6 +5,7 @@
 
 <img src="https://github.blog/wp-content/uploads/2020/09/github-stars-logo_Color.png" alt="drawing" width="25"/>**如果喜欢本项目，或希望随时关注动态，请给我点个赞吧 (页面右上角的小星星)，欢迎分享到社区!**
 
+<div align="center"> <img src=".README_images/LOGO.png" width = 320 height = 300 /> </div>
 
 ## 1. 简介
 &emsp;&emsp;这里汇总了各种量化相关的平台、开源资源和知识。这里是一个丰富的知识仓库和导航地图。 
