@@ -9,6 +9,11 @@ tar -xzvf xxx.tar.gz -C path (tar -xzvf xxx.tar.gz -C 目标路径)          #�
 
 如果不压缩，仅打包解包，则去掉z(即czvf, xzvf中的z)
 
+```shell
+tar -cvf xxx.tar  source_file (tar -cvf 包名.tar  源文件)        #以tar方式打包
+tar -xvf xxx.tar -C path (tar -xvf xxx.tar -C 目标路径)          #解压缩包
+```
+
 tar命令常用格式
 
 ```shell
