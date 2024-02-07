@@ -12,6 +12,7 @@
 - 2-bit, 3-bit, 4-bit, 5-bit, 6-bit and 8-bit integer quantization support
 - CUDA, Metal, OpenCL, SYCL GPU backend support
 
+
 # 2. 安装
 
 以下仅以Ubuntu和nvidia GPU为例
