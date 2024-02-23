@@ -3,3 +3,6 @@
 - 掘金签约作者
 - Github: https://github.com/liguodongiot/llm-action
 - 2.9k Stars
+
+awesome-generative-ai-guide：生成式AI相关资源大列表，包括相关研究、面试材料、笔记等
+- https://github.com/aishwaryanr/awesome-generative-ai-guide
