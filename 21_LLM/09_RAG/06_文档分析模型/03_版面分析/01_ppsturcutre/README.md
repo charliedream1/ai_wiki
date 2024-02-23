@@ -22,3 +22,8 @@ pip3 install paddleclas>=2.4.3
    'paddleocr' (most likely due to a circular import) #4780
    - 来源：https://github.com/PaddlePaddle/PaddleOCR/issues/4780
    - 解决方法：可能文件名可库里的名字冲突，重命名文件名(比如，不要有ppstructure.py文件)
+
+2. ppstructure输出的版面图比原始的图片多出来一些无关的东西
+   - https://github.com/PaddlePaddle/PaddleOCR/issues/11617
+   - 解决方法：右侧是检测模型的可视化输出效果哈，如果不需要可以只输出draw_layout （注释ocr部分）:
+     https://github.com/PaddlePaddle/PaddleOCR/blob/0525f6bb01bfed401f767894619f6a25ee750892/ppstructure/utility.py#L131C5-L131C16
