@@ -46,15 +46,24 @@ WikiChat的工作流程涉及多个阶段，包括检索、摘要、生成、事
    WikiChat不仅在事实准确性上表现更好，而且在提供信息量和吸引用户参与方面也表现得更加出色。
    这意味着WikiChat能够提供更丰富、更有趣的对话体验。
 
-在线页面体验如下：
+在线页面体验如下 （该方案不支持流式推理）：
 
-![](.08_wiki_chat_images/在线体验1.png)
+1. 正常分析回答步骤 (需要2步)
+   ![](.08_wiki_chat_images/在线体验1.png)
+   
+   ![](.08_wiki_chat_images/在线体验2.png)
+   
+   ![](.08_wiki_chat_images/在线体验3.png)
+   
+   ![](.08_wiki_chat_images/在线体验4.png)
 
-![](.08_wiki_chat_images/在线体验2.png)
+2. 判断不需要参考 （0步）
 
-![](.08_wiki_chat_images/在线体验3.png)
+   ![](.08_wiki_chat_images/0step.png)
 
-![](.08_wiki_chat_images/在线体验4.png)
+3. 搜索不到参考 （2步）
+
+   ![](.08_wiki_chat_images/搜不到参考.png)
 
 # 参考
 

@@ -81,6 +81,20 @@
    - https://huggingface.co/datasets/YeungNLP/school_math_0.25M
    - 25w, Belle开源
 
+### 1.4.3 字词错误检测、纠正和文本润色
+
+1. 序列猴子
+   - 出自出门问问
+   - 各5000条
+   - 下载：http://share.mobvoi.com:5000/sharing/HXB6QPLAi
+
+### 1.4.4 古诗
+
+1. 序列猴子
+   - 古诗今译
+   - 出自出门问问
+   - 共计逾680,000首
+   - 下载：http://share.mobvoi.com:5000/sharing/WNpEqItCg
 
 ## 1.5 专有领域
 
@@ -92,7 +106,13 @@
      ![](.01_预训练数据_images/医疗微调中文数据.png)
    - 奖励模型4k条
      ![](.01_预训练数据_images/奖励模型.png)
-     
+
+## 1.6 其它数据
+
+1. 对话重写：
+   - 1.64M 个数据
+   - https://huggingface.co/datasets/infgrad/dialogue_rewrite_llm
+   
 ***
 
 # 2. 英文
