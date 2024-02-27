@@ -16,6 +16,8 @@ merge是并没有出现冲突的文件
 
 在pycharm的git可视化里undo commit，然后pull，再redo commit
 
+![](.03_meger会覆盖本地修改_images/pycharm_git操作.png)
+
 # 参考
 
 [1] git使用学习七、解决报错error: Your local changes to the following files would be overwritten by merge，
