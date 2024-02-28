@@ -1,0 +1,28 @@
+# 错误
+
+运行代码时，报如下错误：
+
+spacy的问题：　Can‘t find model ‘en_core_web_sm‘. 
+It doesn‘t seem to be a shortcut link,
+
+执行如下安装，无法联网：
+
+```bash
+pip install spacy
+python -m spacy download en_core_web_md
+```
+
+# 解决方案
+
+在官方下载对应安装包
+https://github.com/explosion/spacy-models/releases
+
+```bash
+pip install en_core_web_sm-3.7.1.tar
+pip install en_core_web_sm-3.7.1-py3-none-any.whl
+```
+
+# 参考
+
+[1] 解决NLP任务中安装spacy的问题：　Can‘t find model ‘en_core_web_sm‘. It doesn‘t seem to be a shortcut link, 
+    https://blog.csdn.net/m0_45478865/article/details/109334177
