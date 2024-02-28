@@ -3,11 +3,6 @@
 - 文档：https://www.bookstack.cn/read/milvus-0.8/guides-get_started-install_milvus-gpu_milvus_docker.md
 - Github (25.6k Stars): https://github.com/milvus-io/milvus
 
-```bash
-# 实际使用的启动脚本
-sudo docker run -d --name milvus_gpu --gpus all -p 19530:19530 -p 19121:19121 -p 9091:9091 -v /home/cestc/ly_wrksp/milvus/db:/var/lib/milvus/db -v /home/cestc/ly_wrksp/milvus/conf:/var/lib/milvus/conf -v /home/cestc/ly_wrksp/milvus/logs:/var/lib/milvus/logs -v /home/cestc/ly_wrksp/milvus/wal:/var/lib/milvus/wal milvusdb/milvus:0.8.0-gpu-d041520-464400
-```
-
 # 2. GPU版安装
 
 ![](.12_milvus_images/安装要求.png)
