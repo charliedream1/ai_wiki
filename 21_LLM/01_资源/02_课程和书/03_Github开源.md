@@ -14,6 +14,20 @@
     - 吴恩达大模型课程的中文翻译版本
     - PDF书：https://github.com/datawhalechina/prompt-engineering-for-developers/releases
 
+4. llm-course-cn
+
+    - github原始版本（24.5k stars）：https://github.com/mlabonne/llm-course
+    - github中文版: https://github.com/yuanzhongqiao/llm-course-cn
+    - 国内镜像：http://www.gitpp.com/llm/llm-course-cn
+
+    LLM课程分为三个部分：
+
+    - 🧩 LLM 基础知识涵盖有关数学、Python 和神经网络的基本知识。
+    
+    - 🧑‍🔬LLM科学家专注于使用最新技术构建最好的LLM。
+    
+    - 👷 LLM 工程师专注于创建基于 LLM 的应用程序并部署它们。
+   
 # 参考
 
 [1] 刷屏了，吴恩达又一AI大模型力作！（附PDF），https://mp.weixin.qq.com/s/ScpunNCFWfM3-hidv_8huw
