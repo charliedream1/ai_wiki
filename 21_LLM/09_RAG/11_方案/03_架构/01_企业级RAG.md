@@ -172,7 +172,30 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
 - 安全和访问控制
 - 监控和维护：比如监控索引失败、资源瓶颈或者过期的索引，需要鲁棒的监控和维护流程
 
+# 8. 向量数据库
 
+向量数据库对比：https://superlinked.com/vector-db-comparison/
+
+如下截图部分列展示不全
+
+![](.01_企业级RAG_images/向量数据库对比1.png)
+
+![](.01_企业级RAG_images/向量数据库2.png)
+
+![](.01_企业级RAG_images/向量数据库3.png)
+
+![](.01_企业级RAG_images/向量数据库4.png)
+
+- 召回 vs. 时延
+  - Different indexes like Flat, HNSW (Hierarchical Navigable Small World), 
+    PQ (Product quantization), ANNOY, and DiskANN make varying trade-offs between speed and recall. 
+- 费用：权衡本地或云存储
+- 插入 vs. 查询速度
+  - 查询速度相对更重要
+  - 要考虑插入的峰值和时延
+- 索引在内存 vs. 在磁盘存储
+  - 需权衡速度和成本
+  - 
 # 参考
 
 [1] mastering-rag-how-to-architect-an-enterprise-rag-system， https://www.rungalileo.io/blog/mastering-rag-how-to-architect-an-enterprise-rag-system?utm_medium=email&_hsmi=295778713&_hsenc=p2ANqtz-85wuBy2znSxOZGLNZu0n1UrH7Dwv32mKo8aChlTaZLJ-1LxzhZdx9QoRbar3nICeS82IoUbL8ogLGFcQN5EVYByozrmA&utm_content=295779191&utm_source=hs_email
