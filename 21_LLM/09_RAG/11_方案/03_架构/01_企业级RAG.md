@@ -172,6 +172,13 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
 - 安全和访问控制
 - 监控和维护：比如监控索引失败、资源瓶颈或者过期的索引，需要鲁棒的监控和维护流程
 
+# 7. 数据存储
+
+- embedding数据库：SQL/NOSQL, embedding存储作为备份，避免系统故障
+- 原始文件：NOSQL，按原格式存储，便于以后的加工和使用
+- 对话历史：NOSQL，便于分析用户行为
+- 用户反馈：SQL/NOSQL, 通过thumbs-up/thumbs-down, star ratings and text 等反馈
+
 # 8. 向量数据库
 
 向量数据库对比：https://superlinked.com/vector-db-comparison/
@@ -195,7 +202,96 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
   - 要考虑插入的峰值和时延
 - 索引在内存 vs. 在磁盘存储
   - 需权衡速度和成本
-  - 
+  - 新的索引，Vamana in DiskANN在内存外也很快
+- 全文本搜索 vs. 向量混合搜索
+  - ![](.01_企业级RAG_images/混合检索.png)
+  - 混合检索参考：https://www.pinecone.io/learn/hybrid-search-intro/
+  - 稠密和稀疏检索可以通过参数配置：Pinecone, Weaviate & Elasticsearch.
+    - https://www.pinecone.io/learn/hybrid-search-intro/
+    - https://weaviate.io/blog/hybrid-search-fusion-algorithms
+    - https://www.elastic.co/cn/blog/improving-information-retrieval-elastic-stack-hybrid
+  - 过滤
+    - 真实的问题往往需要进行信息过滤
+    - 预过滤：可能忽略了源信息而导致错误
+    - 后过滤：可能导致信息缺失
+    - 自定义过滤：如Weaviate，混合预过滤使用倒排索引，在HNSW索引
+      - https://weaviate.io/developers/weaviate/concepts/prefiltering
+
+# 9. 检索性能提升
+
+参考论文：
+- Large Language Models Can Be Easily Distracted by Irrelevant Context
+  - https://arxiv.org/abs/2302.00093
+- Lost in the Middle: How Language Models Use Long Contexts
+  - https://arxiv.org/abs/2307.03172
+
+问题：
+
+- 无关信息会对大模型产生干扰
+- 过多的检索到的topK文档会导致错过重要的片段
+- 处理短的和匹配错的问题，可能比较困难
+
+解决方法：
+
+- HyDE：混合向量
+  - 论文：Precise Zero-Shot Dense Retrieval without Relevance Labels
+    - https://arxiv.org/abs/2212.10496
+  - 通过大模型生成文本总结作为待检索向量，对性能提升有明显帮助
+- 问题路由
+  - 文档包括技术文档、产品文档、任务和代码仓。比如询问产品特性，则导向产品文档
+- 重排：降低幻觉，提升检索性能，但可能导致推理速度增加
+  - cross-encoder
+  - 基于大模型的：RankVicuna, RankGPT, and RankZephyr
+- Maximal Marginal Relevance (MMR)
+  - 用于让检索多样化，避免冗余信息
+  - 平衡相关性和多样性
+- 自动分割（Auto-cat）
+  - 根据检索到的得分，判断相关和弱相关，找到变化的拐点
+  - 样例：https://weaviate.io/developers/weaviate/api/graphql/additional-operators#autocut
+  - ```text
+    For example, consider a search that returns objects with these distance values:
+
+    [0.1899, 0.1901, 0.191, 0.21, 0.215, 0.23].
+    
+    Autocut returns the following:
+    
+    autocut: 1: [0.1899, 0.1901, 0.191]
+    autocut: 2: [0.1899, 0.1901, 0.191, 0.21, 0.215]
+    autocut: 3: [0.1899, 0.1901, 0.191, 0.21, 0.215, 0.23]
+    ```
+- 递归检索
+  - ![](.01_企业级RAG_images/递归检索.png)
+  - https://youtu.be/TRjq7t2Ms5I?si=D0z5sHKW4SMqMgSG&t=742
+  - small-to-big 检索策略，使用小的chunk检索，性能更好，使用大的chunk给大模型做合成，
+    有更多的上下文便于合成更好的性能
+- 句窗口检索
+  - 以单句检索，返回单句的上下问。保证检索的精确性，以及语义的完整性。
+
+# 10. 生成
+
+考虑使用本地还是在线大模型服务。
+
+- API考虑：考虑安全、稳定性和幻觉检测
+  - 性能：
+    - tensor并行，加快处理速度
+    - continuous batching，提升吞吐量
+    - 量化：bitsandbytes and GPT-Q
+    - 生成质量提升：用户可以根据需要调整 temperature scaling, top-p, top-k, and repetition penalty
+    - Log probabilities：对于幻觉检测很重要，作为一个额外的优化手段
+  - 安全
+    - safetensor加载很重要
+    - 水印增加额外一层
+  - 用户体验
+    - 流式推理对体验很重要
+    - 使用Server-Sent Events (SSE)作为接口流式推理
+  - 自由推理引擎
+    - 考虑推理的效率、易用性和兼容性，如TGI, Ray, or FastAPI
+    - 推理性能评估：https://github.com/ray-project/llmperf-leaderboard
+      - 测试指标：time to first token (TTFT), inter-token latency (ITL), and success rate.
+      - 正确性测试：https://www.rungalileo.io/blog/mastering-rag-8-scenarios-to-test-before-going-to-production
+      - 负载测试
+      - lorax: 多用户共享基础模型，使用不同的微调模型，单卡支持上前个用户的方案
+        - https://predibase.com/blog/lorax-the-open-source-framework-for-serving-100s-of-fine-tuned-llms-in
 # 参考
 
 [1] mastering-rag-how-to-architect-an-enterprise-rag-system， https://www.rungalileo.io/blog/mastering-rag-how-to-architect-an-enterprise-rag-system?utm_medium=email&_hsmi=295778713&_hsenc=p2ANqtz-85wuBy2znSxOZGLNZu0n1UrH7Dwv32mKo8aChlTaZLJ-1LxzhZdx9QoRbar3nICeS82IoUbL8ogLGFcQN5EVYByozrmA&utm_content=295779191&utm_source=hs_email
