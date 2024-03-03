@@ -284,7 +284,7 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
   - 用户体验
     - 流式推理对体验很重要
     - 使用Server-Sent Events (SSE)作为接口流式推理
-  - 自由推理引擎
+  - 自有推理引擎
     - 考虑推理的效率、易用性和兼容性，如TGI, Ray, or FastAPI
     - 推理性能评估：https://github.com/ray-project/llmperf-leaderboard
       - 测试指标：time to first token (TTFT), inter-token latency (ITL), and success rate.
@@ -292,6 +292,16 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
       - 负载测试
       - lorax: 多用户共享基础模型，使用不同的微调模型，单卡支持上前个用户的方案
         - https://predibase.com/blog/lorax-the-open-source-framework-for-serving-100s-of-fine-tuned-llms-in
+    - 私有API服务
+      - 不同公司提供接口不同，需要考虑输入token和输出token导致的价格差异
+      - 考虑利用率、扩展性，和私有部署系统进行对比
+      - comparing the cost: https://www.rungalileo.io/blog/metrics-first-approach-to-llm-evaluation
+      - LLM performance metrics：https://www.rungalileo.io/blog/mastering-rag-improve-performance-with-4-powerful-metrics
+
+# 11. 提示工程提升RAG性能
+
+
+
 # 参考
 
 [1] mastering-rag-how-to-architect-an-enterprise-rag-system， https://www.rungalileo.io/blog/mastering-rag-how-to-architect-an-enterprise-rag-system?utm_medium=email&_hsmi=295778713&_hsenc=p2ANqtz-85wuBy2znSxOZGLNZu0n1UrH7Dwv32mKo8aChlTaZLJ-1LxzhZdx9QoRbar3nICeS82IoUbL8ogLGFcQN5EVYByozrmA&utm_content=295779191&utm_source=hs_email
