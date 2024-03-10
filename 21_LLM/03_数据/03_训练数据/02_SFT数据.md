@@ -63,6 +63,9 @@
 1. 百度问答100w
    - https://github.com/CyberCommy/baidu-qa-100w
 
+2. 知乎问答
+   - https://huggingface.co/datasets/wangrui6/Zhihu-KOL
+   
 ## 1.4 特定类别
 ### 1.4.1 代码
 1. Code Alpaca

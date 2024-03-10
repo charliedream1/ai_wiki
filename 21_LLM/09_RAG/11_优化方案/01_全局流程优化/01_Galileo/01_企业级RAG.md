@@ -299,6 +299,26 @@ AWS Cognito or Firebase Authentication可以用于验证和授权
       - LLM performance metrics：https://www.rungalileo.io/blog/mastering-rag-improve-performance-with-4-powerful-metrics
 
 # 11. 提示工程提升RAG性能
+  - 参考：提示工程降低幻觉：https://www.rungalileo.io/blog/mastering-rag-llm-prompting-techniques-for-reducing-hallucinations
+  - ![](.01_企业级RAG_images/提示工程优化方案.png)
+  - 输出安全检查：幻觉检查、品牌损害和竞争对手提及等（同时也是评估流程的一部分）
+    - RAG 8个场景评估：https://www.rungalileo.io/blog/mastering-rag-8-scenarios-to-test-before-going-to-production
+    - 损害品牌影响的输出 ![](.01_企业级RAG_images/损害品牌影响的输出.png)
+  - 用户反馈：
+    - 收集：使用👍/ 👎，或者星标排分
+    - 问题分析
+    - 数据质量提示，如果发现主要问题，是由于数据引起的，可以设计相关的策略
+  - 性能评估
+
+# 12. 跟踪观察
+
+即便有鲁棒的保护和高质量的数据微调，模型任然可能存在问题。需要持续跟踪，解决模型幻觉、
+开放问题及流程失败。
+
+- prompt观察和优化：观察prompt引起的问题，并持续使用生产中的数据排查
+- 使用langchain或llama index跟踪prompts和步骤
+- 信息检索提示：调试超参
+- 预警：当时延过高、幻觉和错误增加
 
 
 
