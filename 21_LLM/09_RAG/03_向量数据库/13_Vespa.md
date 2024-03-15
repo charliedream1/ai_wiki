@@ -1,0 +1,2 @@
+- https://vespa.ai/
+- bge-m3种混合检索的向量库：目前vespa支持比较好：https://github.com/vespa-engine/pyvespa/blob/master/docs/sphinx/source/examples/mother-of-all-embedding-models-cloud.ipynb
