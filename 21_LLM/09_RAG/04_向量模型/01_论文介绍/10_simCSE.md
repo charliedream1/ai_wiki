@@ -10,6 +10,17 @@
 
 SimCSE模型主要分为两大块，一个是无监督的部分，一个是有监督的部分。
 
+![](.10_simCSE_images/模型架构.png)
+
+对于无监督的部分, 最巧妙的是采用Dropout做数据增强, 来构建正例, 从而构建一个正样本对, 而负样本对则是在同一个batch中的其他句子.
+
+那么有人会问了, 为何一个句子, 输入到模型两次, 会得到两个不同的向量呢?
+
+这是因为: 模型中存在dropout层, 神经元随机失活会导致同一个句子在训练阶段输入到模型中得到的输出会不一样.
+
+与Bert相比, Simcse只改变了drop_out, 利用Bert做数据增强, 但在计算Loss时, Simcse引入了对比Loss
+
+
 # 参考
 
 [1] 句向量模型之SimCSE, https://mp.weixin.qq.com/s/aDjsuSoz4r0uS3em4LJNuA
