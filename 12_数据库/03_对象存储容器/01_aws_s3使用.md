@@ -24,6 +24,10 @@
     aws s3 ls --endpoint-url=https://9fa58365a1a3d032127970d0bd9a1290.r2.cloudflarestorage.com/ s3://contrastive
     aws s3 ls --endpoint-url=https://9fa58365a1a3d032127970d0bd9a1290.r2.cloudflarestorage.com/ s3://contrastive-index-filtered
     ```
+- 查看文件大小
+  - ```bash
+    aws s3 ls --summarize --human-readable --recursive s3://bucket/folder/*
+    ```
 - 下载数据
   - 单个数据文件夹 （如果不加--recursive，会报错）
     - ```bash

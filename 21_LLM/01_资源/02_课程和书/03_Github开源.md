@@ -27,7 +27,14 @@
     - 🧑‍🔬LLM科学家专注于使用最新技术构建最好的LLM。
     
     - 👷 LLM 工程师专注于创建基于 LLM 的应用程序并部署它们。
-   
+
+5. Build a Large Language Model (From Scratch)
+
+   - 该书有对应的配套书籍
+   - 在线阅读：livebook.manning.com/book/build-a-large-language-model-from-scratch/welcome/v-3/
+   - 涉及源码：github.com/rasbt/LLMs-from-scratch
+   - 注：这本书作者还没写完，只有在线阅读链接，没有pdf版本
+
 # 参考
 
 [1] 刷屏了，吴恩达又一AI大模型力作！（附PDF），https://mp.weixin.qq.com/s/ScpunNCFWfM3-hidv_8huw
