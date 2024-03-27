@@ -58,7 +58,7 @@ There are two main solutions to the key information extraction task based on VI-
 (2) Text detection + text recognition + semantic entity recognition (SER) + relationship extraction (RE)
 
 
-The following images are demo results of the SER and RE models. For more detailed introduction to the above solutions, please refer to [KIE Guide](./how_to_do_kie.md).
+The following images are demo results of the SER and RE models. For more detailed introduction to the above solutions, please refer to [KIE Guide](how_to_do_kie.md).
 
 ### 3.1 SER
 
@@ -273,7 +273,7 @@ For training, evaluation and inference tutorial for text detection models, pleas
 
 For training, evaluation and inference tutorial for text recognition models, please refer to [text recognition doc](../../doc/doc_en/recognition_en.md).
 
-To complete the key information extraction task in your own scenario from data preparation to model selection, please refer to: [Guide to End-to-end KIE](./how_to_do_kie_en.md)。
+To complete the key information extraction task in your own scenario from data preparation to model selection, please refer to: [Guide to End-to-end KIE](how_to_do_kie_en.md)。
 
 
 ## 5. Reference
