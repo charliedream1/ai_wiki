@@ -16,7 +16,7 @@
 - DiT文档图像Transformer所有相关模型和介绍：https://github.com/microsoft/unilm/tree/master/dit
 - Huggingface Demo：https://huggingface.co/spaces/nielsr/dit-document-layout-analysis
 
-![](../.05_layoutlmv3_images/文档分析.png)
+![](.05_layoutlmv3_images/文档分析.png)
 
 图1：文档智能任务示例：表单理解、文档布局分析
 
@@ -33,7 +33,7 @@
 以统一的文本和图像掩码建模目标来预训练多模态模型，即 LayoutLMv3 学习重建语言模态的遮盖词 ID，
 并对称地重建图像模态的遮盖图像块 ID。
 
-![](../.05_layoutlmv3_images/关于图像表示方式和预训练目标的比较.png)
+![](.05_layoutlmv3_images/关于图像表示方式和预训练目标的比较.png)
 
 图2：关于图像表示方式和预训练目标的比较
 
@@ -44,7 +44,7 @@
 从而大大节省了参数并避免了复杂的文档预处理（如人工标注目标区域框和文档目标检测）。简单的统一架构和训练目标使 
 LayoutLMv3 成为通用的预训练模型，可适用于以文本为中心和以图像为中心的文档 AI 任务。
 
-![](../.05_layoutlmv3_images/LayoutLMv3架构.png)
+![](.05_layoutlmv3_images/LayoutLMv3架构.png)
 
 图3：LayoutLMv3 的架构和预训练目标
 
@@ -94,7 +94,7 @@ LayoutLMv3 共享了邻接词的二维位置向量，而 LayoutLM 和 LayoutLMv2
 在这些任务上，LayoutLMv3 取得了比以前的工作更好或相当的结果。例如，对于LARGE模型规模，
 LayoutLMv3 在 FUNSD 数据集上取得了92.08的 F1 分数，大大超过了此前 LARGE 规模的 SOTA 结果（85.14）。
 
-![](../.05_layoutlmv3_images/性能.png)
+![](.05_layoutlmv3_images/性能.png)
 
 表1：LayoutLMv3 和已有工作在 CORD、FUNSD、RVL-CDIP、DocVQA 数据集上的实验结果对比
 
@@ -106,7 +106,7 @@ LayoutLMv3 在 FUNSD 数据集上取得了92.08的 F1 分数，大大超过了�
 PubLayNet 数据集上进行了实验。该数据集包含三十多万张研究论文图像，每张图像都有布局边界框的位置和类别标注，类别涵盖文本、
 标题、列表、图和表。与卷积神经网络模型和同期的视觉 Transformer 预训练模型相比，LayoutLMv3 在所有指标上都优于其他模型。
 
-![](../.05_layoutlmv3_images/文档布局任务.png)
+![](.05_layoutlmv3_images/文档布局任务.png)
 
 表2：LayoutLMv3 和已有工作在 PubLayNet 数据集关于文档布局分析任务的实验结果对比
 
@@ -121,7 +121,7 @@ PubLayNet 数据集上进行了实验。该数据集包含三十多万张研究�
 证实了 WPA 在跨模态表示学习和图像表示学习中的有效性，强调了视觉和语言跨模态对齐学习的重要性。此外，研究员们还发现 MIM 
 可以帮助规范化训练，对于 PubLayNet 上的文档布局分析等视觉任务的模型收敛至关重要。
 
-![](../.05_layoutlmv3_images/关于图像表征和预训练目标的消融实验结果对比.png)
+![](.05_layoutlmv3_images/关于图像表征和预训练目标的消融实验结果对比.png)
 
 ## 3.4 LayoutLMv3 用于中文文档理解也有出色表现
 
