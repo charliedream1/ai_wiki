@@ -8,7 +8,7 @@
     ```text
     --maxdownspeed=           max download speed,the unit is:KB/s,default value is 0(unlimited)
     --maxupspeed=             max upload speed,the unit is:KB/s,default value is 0(unlimited)
-    -u 断点续传
+    -u 断点续传   （注意：该方法初步测试存在问题，传完文件变成原始的2倍）
     ```
     
     注意：
