@@ -15,6 +15,10 @@
        - 私有数据库
        - 离线部署
 
+2. Qwen-Agent
+   - Github (1.4k stars): https://github.com/QwenLM/Qwen-Agent
+   - built upon Qwen1.5, featuring Function Calling, Code Interpreter, RAG, and Chrome extension.
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
