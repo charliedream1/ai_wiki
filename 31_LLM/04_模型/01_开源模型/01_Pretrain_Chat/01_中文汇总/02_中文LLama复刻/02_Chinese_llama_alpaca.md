@@ -6,7 +6,7 @@
 - 16.1k Stars
 - 7B, 13B, 33B
 
-![](../.08_Chinese_llama_alpaca_images/训练流程.png)
+![](../../.08_Chinese_llama_alpaca_images/训练流程.png)
 
 ![](.02_Chinese_llama_alpaca_images/指令精调数据.png)
 
