@@ -24,7 +24,7 @@ RLHF 主要分为三个步骤：
 2. 聚合问答偏好数据，并基于此训练一个奖励模型 (Reward Model，RM)。
 3. 使用强化学习 (RL) 对 LM 进行微调。
 
-![](../.09_Atom7B_images/训练全流程.png)
+![](.09_Atom7B_images/训练全流程.png)
 
 虽然 RLHF 生成的模型效果提升显著，但 RLHF 管道比监督学习复杂得多，
 涉及训练多个 LM 并在训练循环中从 LM 策略中采样，从而产生大量计算成本。
@@ -37,7 +37,7 @@ Direct Preference Optimization 直接偏好优化
 
 通过在RLHF中使用新的奖励模型参数来简化微调过程，直接提取最优策略，使用简单的分类损失任务解决RLHF问题，从而避免了传统RLHF方法的复杂。
 
-![](../.09_Atom7B_images/DPO流程.png)
+![](.09_Atom7B_images/DPO流程.png)
 
 DPO的优点也比较明显，减少了RLHF的复杂度以及不稳定性，但同时泛化能力有限，
 难以满足我们本次7B模型调优对于多种评判准则的要求，因此选择下面的PPO。
@@ -49,7 +49,7 @@ Proximal Policy Optimization Algorithms 近端策略优化
 PPO是一种强化学习的策略梯度方法，与环境进行交替的交互采样数据，并使用随机梯度上升优化一个“替代”目标函数。
 与执行每个数据样本一个梯度更新的标准策略梯度方法不同，PPO允许多个批次的小批量更新，也是ChatGPT选择的经典方法。
 
-![](../.09_Atom7B_images/训练全流程.png)
+![](.09_Atom7B_images/训练全流程.png)
 
 总结
 
