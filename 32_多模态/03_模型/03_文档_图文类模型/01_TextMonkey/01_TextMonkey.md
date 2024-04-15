@@ -18,6 +18,11 @@
 - 测试图像：https://pan.baidu.com/share/init?surl=svSjXTxWpI-3boALgSeLlw
   - Extraction code: 5h71
 
+问题：
+
+- 当前不支持多轮对话
+- 实际测试，复杂的指令，会导致重复输出，停不下来
+
 TextMonkey 是一个专注于文本相关任务（包括文档问答和场景文本问答）的多模态大模型（LMM）。相比于 Monkey，TextMonkey 在多个方面进行改进：通过采用零初始化的 Shifted Window Attention，TextMonkey 实现了更高输入分辨率下的窗口间信息交互；通过使用相似性来过滤出重要的图像特征，TextMonkey 不仅能够简化输入，还可以提高模型的性能。
 
 此外，通过扩展多个文本相关任务并将位置信息纳入回答，TextMonkey 增强了可解释性并减少了幻觉。与此同时，TextMonkey 在微调之后还可以具备 APP Agent 中理解用户指令并点击相应位置的能力，展现了其下游应用的巨大潜力。
