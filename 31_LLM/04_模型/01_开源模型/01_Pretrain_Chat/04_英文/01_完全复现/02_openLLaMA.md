@@ -12,13 +12,13 @@ OpenLLaMA: An Open Reproduction of LLaMA
 
 https://github.com/openlm-research/open_llama
 
-![](../.01_openLLaMA_images/loss.png)
+![](.01_openLLaMA_images/loss.png)
 
 最初的LLaMA模型接受了1万亿个代币的训练，GPT-J接受了5000亿个代币的训练，
 而OpenLLaMA接受了2000亿个代币的训练。我们在下表中列出了结果。OpenLLaMA在大多数任务中表现出与原始LLaMA
 和GPT-J相当的性能，并且在某些任务中表现优于它们。我们预计，在完成1万亿代币的培训后，OpenLLaMA的性能将进一步提高。
 
-![](../.01_openLLaMA_images/性能对比.png)
+![](.01_openLLaMA_images/性能对比.png)
 
 其中GPT-J  6B是EleutherAI研究小组创建的开源自回归语言模型。它是OpenAI的GPT-3的最先进替代品之一，
 在各种自然语言任务（如聊天、摘要和问答等）方面表现良好。"GPT-J"指的是模型类别，而"6B"表示可训练参数的数量为60亿。
