@@ -1,0 +1,3 @@
+- 01_single_pass_text_cluster: https://github.com/liuhuanyong/SinglepassTextCluster.git
+- 02_Text-Clustering: https://github.com/preetikumari18/Text-Clustering.git
+- 03_Spectral_Text-Clustering (10 stars): https://github.com/fushengzhijushi/Text-Clustering.git
