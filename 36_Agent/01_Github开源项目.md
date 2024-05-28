@@ -105,7 +105,20 @@ SuperAGI，一个比AutoGPT更灵活和用户友好的开源AI代理平台，被
 
 SuperAGI不仅仅带来AI技术的革新，它为手头的项目加速，为特定的挑战找到解决的途径，最终为用户打开进入高效、智能化工作流程的大门。
 
+# 8. Transformers 智能体 2.0
+
+https://huggingface.co/docs/transformers/v4.41.2/pipeline_tutorial
+
+⇒ 🎁 在现有智能体类型的基础上，我们新增了两种能够 根据历史观察解决复杂任务的智能体。
+
+⇒ 💡 我们致力于让代码 清晰、模块化，并确保最终提示和工具等通用属性透明化。
+
+⇒ 🤝 我们加入了 分享功能，以促进社区智能体的发展。
+
+⇒ 💪 全新的智能体框架性能卓越，使得 Llama-3-70B-Instruct 智能体在 GAIA 排行榜上超越了基于 GPT-4 的智能体！
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
 [2] 5个顶级开源Agent框架，你必须知道！，https://mp.weixin.qq.com/s/zf_BSlcmTgNKLbVu8Tq8Qg
+[3] 授权调用: 介绍 Transformers 智能体 2.0, https://mp.weixin.qq.com/s/C2Yd3tBUTdSPEOcdhcr0TQ
