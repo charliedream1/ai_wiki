@@ -5,7 +5,11 @@
 ![](.04_Think_on_Graph_images/论文.png)
 
 论文：
+- [ICLR 2024] Think-on-Graph: Deep and Responsible Reasoning of Large Language Model on Knowledge Graph
 - https://arxiv.org/pdf/2307.07697.pdf
+
+代码：
+- Github (112 stars): https://github.com/GasolSun36/ToG
 
 # 2. 太长不看-简介
 
