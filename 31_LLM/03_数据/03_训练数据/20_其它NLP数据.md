@@ -20,11 +20,15 @@
 
 # 2. NLP类任务
 
+## 2.1 全品类
 1. CLUEDatasetSearch
     - https://github.com/CLUEbenchmark/CLUEDatasetSearch
     - 3.5k stars
+    - ![](.20_其它NLP数据_images/数据类别.png)
 
-2. 雅意信息抽取数据集
+## 2.2 信息抽取
+
+1. 雅意信息抽取数据集
     - 论文 2023.12.24
        - YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction
        - https://arxiv.org/abs/2312.15548
@@ -37,3 +41,14 @@
       - EE：中文覆盖84种事件类型,包括中标，高管变动，产品行为-发布，公司上市等，和203种论元，英文覆盖45种事件类型，包括Born, Demonstrate, Meet, End Organization, Divorce等，和62种论元。
     - ![](.20_其它NLP数据_images/数据分布.png)
     - ![](.20_其它NLP数据_images/数据样例.png)
+
+2. IEPILE:大规模基于Schema的信息抽取语料库
+   - 论文题目：IEPile: Unearthing Large-Scale Schema-Based Information Extraction Corpus
+   - 本文作者：桂鸿浩（浙江大学、蚂蚁集团）、袁琳（蚂蚁集团）、叶宏彬（浙江大学）、张宁豫（浙江大学、浙江大学-蚂蚁集团联合实验室）、孙梦姝（蚂蚁集团、浙江大学-蚂蚁集团联合实验室）、梁磊（蚂蚁集团、浙江大学-蚂蚁集团联合实验室）、陈华钧（浙江大学、浙江大学-蚂蚁集团联合实验室）
+   - 发表会议：ACL2024
+   - 论文链接：https://arxiv.org/abs/2402.14710
+   - 代码链接：https://github.com/zjunlp/IEPile
+   - 一个全面的双语（英语和汉语）IE指令语料库——IEPile，它包含大约0.32B个字符
+   - 实验表明，IEPile提高了LLMs的信息提取性能，特别是在零样本泛化方面有显著提升
+   - 本语料库主要涉及中英双语的材料，并集中于命名实体识别（NER）、关系抽取（RE）和事件抽取（EE）三大类信息抽取任务。我们总共收集了15个英文NER数据集，3个中文NER数据集，8个英文RE数据集，2个中文RE数据集，以及3个英文EE数据集和2个中文EE数据集。为保证数据质量和格式的统一，我们对数据进行了规范化处理，包括格式统一、实例去重、筛除低质量数据。
+   - 三条启发式规则以排除质量较低且无意义的数据：1）非字母字符占比超过80%；2）文本长度小于5个字符且不含任何标签；3）停用词如'the'、'to'、'of'等占比超过80%。我们认为以上所述的清洗措施将对模型的训练产生积极影响，并提高其性能
