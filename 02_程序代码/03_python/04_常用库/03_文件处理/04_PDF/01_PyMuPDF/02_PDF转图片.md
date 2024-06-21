@@ -1,4 +1,4 @@
-# 1. 资源
+~~# 1. 资源
 
 - Github (4.4k stars): https://github.com/pymupdf/PyMuPDF
 - 文档：https://pymupdf.readthedocs.io/en/latest/rag.html
@@ -9,6 +9,9 @@ pip install PyMuPDF
 ```
 
 # 3. PDF转图片
+
+方法1： 使用pix.tobytes (测试有效)
+
 ```python
 import fitz
 from tqdm import tqdm
@@ -42,3 +45,36 @@ for pg in range(pdf_doc.page_count):
     pix._writeIMG(out_path, format_='png', jpg_quality=94)
 ```
 
+方法2：（未测试）
+```python
+# Render the page as a PNG image with a resolution of 150 DPI
+    pix = page.get_pixmap(dpi=150)
+    image = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+```
+
+方法3:（未测试）
+```python
+def pixmap2array(pix):
+    '''pixmap数据转数组对象'''
+    # 获取颜色空间
+    cspace = pix.colorspace
+    if cspace is None:
+        mode = "L"
+    elif cspace.n == 1:
+        mode = "L" if pix.alpha == 0 else "LA"
+    elif cspace.n == 3:
+        mode = "RGB" if pix.alpha == 0 else "RGBA"
+    else:
+        mode = "CMYK"
+
+    # 将byte数据转化为PIL格式
+    img = Image.frombytes(mode, (pix.width, pix.height), pix.samples)
+    # 将PIL转化为numpy格式，并将RGB颜色空间转化为BGR
+    img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+
+    return img
+```
+
+# 参考
+
+[1] python 将PDF 转成 图片的几种方法，https://blog.csdn.net/weixin_42081389/article/details/103712181~~
