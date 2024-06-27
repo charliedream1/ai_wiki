@@ -110,6 +110,9 @@
    - 奖励模型4k条
      ![](.01_预训练数据_images/奖励模型.png)
 
+2. 保险行业语料
+   - Github (1k): https://github.com/chatopera/insuranceqa-corpus-zh
+   
 ## 1.6 其它数据
 
 1. 对话重写：
