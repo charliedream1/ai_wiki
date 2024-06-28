@@ -1,3 +1,5 @@
+# OCR对比
+
 Comparison of Paddle OCR, EasyOCR, KerasOCR, and Tesseract OCR
 
 一句话总结：PaddleOCR在性能和速度最好，EasyOCR支持语种最多。
@@ -53,6 +55,14 @@ Accuracy: All three OCR systems achieved high accuracy on various OCR benchmarks
 Speed: Paddle OCR, EasyOCR, and KerasOCR are optimized for speed and can process large volumes of images in real-time, making them suitable for applications that require high throughput.
 
 Language support: Paddle OCR supports numerous languages, including Chinese, English, Japanese, and Korean, while EasyOCR supports over 70 languages and KerasOCR currently supports only
+
+# 详细对比
+
+https://rapidai.github.io/RapidOCRDocs/blog/2022/04/16/%E5%BC%80%E6%BA%90ocr%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94/
+
+![](.02_各类OCR总体对比_images/ocr对比.png)
+
+![](.02_各类OCR总体对比_images/不同框架推理速度.png)
 
 # 参考
 
