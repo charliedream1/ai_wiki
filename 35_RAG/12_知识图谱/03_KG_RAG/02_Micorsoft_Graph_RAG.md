@@ -5,7 +5,10 @@
 - https://arxiv.org/pdf/2404.16130
 
 项目主页：https://aka.ms/graphrag
-Github: 即将开源
+Github: https://github.com/microsoft/graphrag
+博客： https://microsoft.github.io/graphrag/
+入门指南：https://microsoft.github.io/graphrag/posts/get_started
+预印本：https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/
 
 # 2. 简介
 
@@ -31,6 +34,27 @@ Graph RAG处理流程：
 
 ![](.02_Graph_RAG_images/图连接关系.png)
 
+流程
+
+![](.02_Micorsoft_Graph_RAG_images/流程.png)
+
+- 将输入语料库切分为一系列TextUnits，这些TextUnits作为整个过程中可分析的单元，并在我们的输出中提供细粒度的引用。
+- 使用LLM从TextUnits中提取所有实体、关系和关键主张。
+- 使用Leiden技术对图进行分层聚类。要查看可视化结果，请参见下图。每个圆表示一个实体（例如，人、地点或组织），其大小表示实体的程度，颜色表示其社区。
+- 从底层向上生成每个社区及其成员的摘要。这有助于全面理解数据集。
+
+在查询时，这些结构用于为LLM上下文窗口提供材料，用于回答问题。主要查询模式包括：
+
+全局搜索，用于推理关于语料库的整体问题，利用社区摘要。
+
+![](.02_Micorsoft_Graph_RAG_images/全局搜索.png)
+
+本地搜索，用于推理关于特定实体的问题，展开到它们的邻居和相关概念。
+
+![](.02_Micorsoft_Graph_RAG_images/本地搜索.png)
+
+提示词微调：直接使用GraphRAG可能不会产生最佳结果。我们强烈建议根据我们文档中的提示词微调指南对提示进行微调。
+
 # 4. 结果
 
 Graph RAG效果评估：使用两个真实世界的数据集（播客文稿和新闻文章）来评估Graph RAG方法，并与naïve RAG和全局文本摘要方法进行比较。评估指标包括全面性、多样性和授权性（Empowerment）。Graph RAG在全面性和多样性方面显著优于naïve RAG基线，并且在较低的令牌成本下与源文本地全局摘要方法相比表现出有利的性能。
@@ -43,7 +67,18 @@ Graph RAG效果评估：使用两个真实世界的数据集（播客文稿和�
 
 ![](.02_Graph_RAG_images/识别结果.png)
 
+# 5. 评估
+
+GraphRAG 已以多种方式进行评估。主要关注点包括：1）数据集的准确表示，2）提供响应的透明度和扎实基础，3）对提示和数据语料库注入攻击的抗性，4）低幻觉率。下面按数字概述了对每个方面的评估方式。
+
+1. 数据集的准确表示经过手动检查和针对从测试语料库的随机选择子集创建的“金标准答案”的自动测试来测试。
+2. 透明度和响应的扎实基础通过自动化答案覆盖评估和对返回的基础上下文的人工检查来测试。
+3. 我们使用手动和半自动技术测试用户提示注入攻击（“越狱”）和跨提示注入攻击（“数据攻击”）。
+4. 通过索赔覆盖度指标、答案和来源的手动检查，以及对试图通过恶意和异常具有挑战性的数据集进行强制妄想的对抗性攻击来评估幻觉率。
+
+
 
 # 参考
 
 [1] 微软多部门联合推出GraphRAG项目：全面性和多样性方面显著优于原生大模型RAG，https://mp.weixin.qq.com/s/c--xUR7Q_O7yAMsaAJRiKQ
+[2] 重磅 - 微软官宣正式在GitHub开源GraphRAG，https://mp.weixin.qq.com/s/h3Q0QYdF9q3E5PD_ge-k5A
