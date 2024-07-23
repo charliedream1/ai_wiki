@@ -8,11 +8,10 @@
 <div align="center"> <img src=".README_images/LOGO.png" width = 320 height = 300 /> </div>
 
 ## 1. 简介
-&emsp;&emsp;这里汇总了各种量化相关的平台、开源资源和知识。这里是一个丰富的知识仓库和导航地图。 
- 
-&emsp;&emsp;这里将汇总包括量化投资，windows, linux, shell, vim, markdown，python, c++,机器学习数学基础， 
 
-leetcode(c++, python)，机器学习、 深度学习、强化学习、图神经网络，语音识别、NLP和图像识别等基础知识
+&emsp;&emsp;记载工程实践问题的解决策略与关键要点，分享各种实用案例，追踪前沿技术发展，囊括 AI 全栈知识，涵盖大模型、编程技术、机器学习、深度学习、强化学习、图神经网络、语音识别、NLP 及图像识别等领域。 
+ 
+
 
 
 1. 代码结构和内容简介
