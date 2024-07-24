@@ -130,3 +130,81 @@ As with nodes, relationships can also have properties. These can refer to a cost
 
 In our graph, we can place a property on the MARRIED_TO relationship to hold the date in which Michael and Sarah were married. This WORKS_AT relationship has a roles property to signify any roles that the employee has filled at the company. If Michael also worked at another company, his WORKS_AT relationship to the other company would have a different value for the roles property.
 
+## 2.4 Native Graph优点
+
+Index-free adjacency (IFA) RDBMS querys
+
+![](.01_neo4j基础_images/示例表.png)
+
+execute this SQL query to find the third-degree parents of the group with the ID of 3:
+
+```sql
+SELECT PARENT_ID
+FROM GROUPS
+WHERE ID = (SELECT PARENT_ID
+    FROM GROUPS
+    WHERE ID = (SELECT PARENT_ID
+        FROM GROUPS
+        WHERE ID = 3))
+```
+
+The result of this query is 1, but in order to determine this result, the SQL Server needed to:
+
+- Locate the innermost clause.
+- Build the query plan for the subclause.
+- Execute the query plan for the subclause.
+- Locate the next innermost clause.
+- Repeat Steps 2-4.
+
+Resulting in:
+- 3 planning cycles
+- 3 index lookups
+- 3 DB reads
+
+Neo4j storage
+
+With index-free adjacency, Neo4j stores nodes and relationships as objects that are linked to each other via pointers. Conceptually, the graph looks like:
+
+![](.01_neo4j基础_images/neo4j的存储.png)
+
+These nodes and relationships are stored as:
+
+![](.01_neo4j基础_images/neo4j存储结构.png)
+
+Neo4j Cypher statement
+
+Suppose we had this query in Cypher:
+
+```cypher
+MATCH (n) <-- (:Group) <-- (:Group) <-- (:Group {id: 3})
+RETURN n.id
+```
+
+Using IFA, the Neo4j graph engine starts with the anchor of the query which is the Group node with the id of 3. Then it uses the links stored in the relationship and node objects to traverse the graph pattern.
+
+![](.01_neo4j基础_images/neo4j搜索过程.png)
+
+To perform this query, the Neo4j graph engine needed to:
+
+1. Plan the query based upon the anchor specified.
+2. Use an index to retrieve the anchor node.
+3. Follow pointers to retrieve the desired result node.
+4. The benefits of IFA compared to relational DBMS access are:
+
+Fewer index lookups.
+
+1. No table scans.
+2. Reduced duplication of data.
+
+## 2.5 从通用数据库转为图数据库
+
+Let’s look at the Northwind RDBMS data model.
+
+![](.01_neo4j基础_images/northwind model.png)
+
+In this example, an order can contain one or more products and a product can appear in one or more orders. In a relational database, the Order Details table is required to handle the many-to-many relationships. The more orders added, and subsequently the larger the Order Details table grows, the slower order queries will become.
+
+![](.01_neo4j基础_images/图数据库.png)
+
+In a graph, we can simply model a CONTAINS relationship from the Order node to each Product node. The Product node has a unit price property and the CONTAINS relationship which has properties to represent the quantity and discount.
+
