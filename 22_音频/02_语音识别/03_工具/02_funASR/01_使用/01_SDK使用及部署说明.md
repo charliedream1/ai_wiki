@@ -109,6 +109,18 @@ python3 funasr_wss_client.py --host "127.0.0.1" --port 10096 --mode 2pass
 python3 funasr_wss_client.py --host "127.0.0.1" --port 10096 --mode 2pass --audio_in /root/ly_wrksp/prj/asr/samples/audio/asr_example.wav
 ```
 
-# 3. 问题和调试
+# 3. 网页端连接
+
+html客户端直连，手动下载客户端（[点击此处](https://github.com/modelscope/FunASR/tree/main/runtime/html5/static)）至本地，打开`index.html`网页，输入wss地址与端口号
+
+即代码仓funAsr\runtime\html5\static\index.html，双击打卡，在浏览器中的输入框”asr服务器地址(必填)“填入：
+
+```text
+wss://0.0.0.0:10096
+```
+
+然后，连接并同意麦克风使用权限即可。
+
+# 4. 问题和调试
 
 /workspace/FunASR/runtime/log.txt文件中记录了服务端的日志信息，可以通过查看日志文件来排查问题。
