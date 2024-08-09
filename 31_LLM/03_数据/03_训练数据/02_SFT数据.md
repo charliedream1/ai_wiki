@@ -43,6 +43,12 @@
    - 训练数据集的token长度分布如下图所示，绝大部分数据的长度都小于600：
    - ![](.02_SFT数据_images/长度分布.png)
 
+7. 千万级指令微调数据集 InfinityInstruct
+   - 数据集开源地址：
+      - http://open.flopsera.com/flopsera-open/details/InfinityInstruct
+      - https://huggingface.co/datasets/BAAI/Infinity-Instruct
+   - 300 万条经过模型验证的高质量中英文指令数据
+
 ## 1.2 对话数据
 
 1. 中文闲聊语料库LCCC
@@ -113,7 +119,9 @@
 2. 保险行业语料
    - Github (1k): https://github.com/chatopera/insuranceqa-corpus-zh
    
-## 1.6 其它数据
+## 1.6 长上下文数据
+
+## 1.7 其它数据
 
 1. 对话重写：
    - 1.64M 个数据
@@ -135,6 +143,13 @@
 1. WizardLM_evol_instruct_V2_143k 
    - https://huggingface.co/datasets/YeungNLP/WizardLM_evol_instruct_V2_143k
    - 复杂指令143k
+
+## 2.3 长上下文数据
+
+1. Yukang/LongAlpaca-12k
+   - 12k数据量， shortQA 3k, LongQA 9k
+   - context length from 8k to 100k
+   - https://huggingface.co/datasets/Yukang/LongAlpaca-12k/viewer
 
 # 参考
 

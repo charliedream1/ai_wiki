@@ -48,6 +48,8 @@
    - 发表会议：ACL2024
    - 论文链接：https://arxiv.org/abs/2402.14710
    - 代码链接：https://github.com/zjunlp/IEPile
+   - Modelscope下载路径：https://modelscope.cn/datasets/ZJUNLP/IEPile
+   - 模型下载：https://modelscope.cn/models/ZJUNLP/OneKE
    - 一个全面的双语（英语和汉语）IE指令语料库——IEPile，它包含大约0.32B个字符
    - 实验表明，IEPile提高了LLMs的信息提取性能，特别是在零样本泛化方面有显著提升
    - 本语料库主要涉及中英双语的材料，并集中于命名实体识别（NER）、关系抽取（RE）和事件抽取（EE）三大类信息抽取任务。我们总共收集了15个英文NER数据集，3个中文NER数据集，8个英文RE数据集，2个中文RE数据集，以及3个英文EE数据集和2个中文EE数据集。为保证数据质量和格式的统一，我们对数据进行了规范化处理，包括格式统一、实例去重、筛除低质量数据。
