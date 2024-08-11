@@ -159,6 +159,28 @@ if __name__ == "__main__":
     main()
 ```
 
+另一个Thread样例
+
+```python
+from tqdm import tqdm
+import concurrent.futures
+from concurrent.futures import ThreadPoolExecutor
+
+graph_document_list=[]
+futures=[]
+start_time = datetime.now()
+with ThreadPoolExecutor(max_workers=8) as executor:
+    
+    for i,chunk in tqdm(enumerate(documents), total=len(documents)):
+        futures.append(executor.submit(extract_and_store_graph,chunk))
+    
+    for future in concurrent.futures.as_completed(futures):
+        graph_document_list.append(future.result())
+    
+end_time = datetime.now()  
+print("Processing_time = ", end_time-start_time) 
+```
+
 ### 总结
 
 - **对于 I/O 密集型任务**：`asyncio` 通常更高效。
