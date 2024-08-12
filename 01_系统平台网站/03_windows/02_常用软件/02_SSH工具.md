@@ -122,9 +122,46 @@
 
 - 下载路径：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
- 
+## 3.3 WindTerm
+
+项目地址：https://github.com/kingToolbox/WindTerm
+
+在github中提供了mac、linux、windows不同环境的终端包，可以直接去releases中下载
+
+![](.02_SSH工具_images/界面.png)
+
+功能：一个是账户密码自动填充，一个是彩虹括号
+
+1. SSH、Telnet、Tcp、Shell、串行
+
+   实现了 SSH v2、Telnet、Raw Tcp、Serial、Shell 协议，支持在会话身份验证时 SSH 自动执行
+
+   如果你用的是jump server之类的堡垒机，也可以直接配置，支持二次验证
+
+   当然也支持代理跳板机登录。
+
+2. 自动填充
+
+   这个点或许是开发最喜欢的，它可以自动完成历史命令填充
+
+3. 常用命令快速触发
+   
+   这个也是日常用到比较多的，有些工具虽然有这个功能，但是很多有限制
+
+   这款就很随意了，可以选择一组服务器，可以配置大量的预制命令
+
+4. 搜索
+   如果你打开了多个终端，可以快速搜索跳转
+
+5. 关于性能
+
+   性能测试其实作者提供了很多的数据，包括文件的传输、随机数据的生成、延迟、终端性能等，确实很强，尤其是与一些其它常用工具相比。
+
+   具体数据，这里不在罗列，更多可以到github上去看。
+
 # 参考
 
 [1] XShell免费版的安装配置教程以及使用教程（超级详细、保姆级），
     https://blog.csdn.net/m0_67400972/article/details/125346023
 [2] MobaXterm连接SFTP教程，https://www.cnblogs.com/jhno1/p/15556916.html
+[3] 再见了putty、Xshell、FinalShell、Mobaxterm、iTerm2，这款开源的终端工具真香，https://mp.weixin.qq.com/s/3RQZhK6QH4OPTHj760W0Ew
