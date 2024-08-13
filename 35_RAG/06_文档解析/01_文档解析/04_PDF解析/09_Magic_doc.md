@@ -1,0 +1,3 @@
+- Github (21 stars): https://github.com/magicpdf/Magic-Doc
+- About conversion doc（pdf/html/doc/docx/ppt/pptx）to markdown
+- InternLM开源
