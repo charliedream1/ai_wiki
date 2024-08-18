@@ -1,0 +1,2 @@
+- Github (3.5k stars): https://github.com/open-compass/opencompass
+- InternLM开源

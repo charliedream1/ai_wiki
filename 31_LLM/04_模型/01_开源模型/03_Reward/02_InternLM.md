@@ -1,0 +1,2 @@
+- Github (6k stars): https://github.com/InternLM/InternLM
+- 1.8B, 7B, 20B
