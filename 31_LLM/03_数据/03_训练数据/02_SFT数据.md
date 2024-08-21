@@ -45,9 +45,11 @@
 
 7. 千万级指令微调数据集 InfinityInstruct
    - 数据集开源地址：
-      - http://open.flopsera.com/flopsera-open/details/InfinityInstruct
-      - https://huggingface.co/datasets/BAAI/Infinity-Instruct
+      - Flopsera: http://open.flopsera.com/flopsera-open/details/InfinityInstruct
+      - DataHub: https://data.baai.ac.cn/details/InfinityInstruct
+      - Huggingface: https://huggingface.co/datasets/BAAI/Infinity-Instruct
    - 300 万条经过模型验证的高质量中英文指令数据
+   - 包括 Infinity-Instruct-7M 基础指令数据集和 Infinity-Instruct-Gen 对话指令数据集
 
 ## 1.2 对话数据
 
