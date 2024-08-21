@@ -46,11 +46,20 @@ https://hf-mirror.com
     huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
     ```
 
-可以添加 --local-dir-use-symlinks False 参数禁用文件软链接，这样下载路径下所见即所得，详细解释请见上面提到的教程。
+   可以添加 --local-dir-use-symlinks False 参数禁用文件软链接，这样下载路径下所见即所得，详细解释请见上面提到的教程。
+   
+   ```bash
+   huggingface-cli download --resume-download --local-dir-use-symlinks False bigscience/bloom-560m --local-dir bloom-560m
+   ```
 
-```bash
-huggingface-cli download --resume-download --local-dir-use-symlinks False bigscience/bloom-560m --local-dir bloom-560m
-```
+5. 使用Python
+
+   在import huggingface库相关语句之前执行环境设置
+   ```python
+   import os
+   os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
+   from huggingface_hub import hf_hub_download
+   ```
 
 # 参考
 
