@@ -1,2 +1,3 @@
 - Github (6k stars): https://github.com/InternLM/InternLM
 - 1.8B, 7B, 20B
+- https://modelscope.cn/models/Shanghai_AI_Laboratory/internlm2-20b-reward
