@@ -1,0 +1,4 @@
+- 网站：https://open.bigmodel.cn/
+- 优惠：
+  - GLM4 Flash API免费
+  - 有限量微调免费资源
