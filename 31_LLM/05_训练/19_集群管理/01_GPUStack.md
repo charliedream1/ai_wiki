@@ -1,5 +1,5 @@
 # 1. 简介
-1https://docs.gpustack.ai/overview/
+1. https://docs.gpustack.ai/overview/
 2. https://github.com/gpustack/gpustack
 
 GPUStack，一个用于运行大型语言模型（LLMs）的开源GPU集群管理器。尽管LLMs作为公共云服务广泛可用，但组织机构难以轻松地托管自己的LLM部署以供私有使用。它们需要安装和管理复杂的集群软件，如Kubernetes，然后弄清楚如何在其上安装和管理AI工具栈。流行的本地运行LLMs的方式，如LMStudio和LocalAI，仅在单机上工作。
