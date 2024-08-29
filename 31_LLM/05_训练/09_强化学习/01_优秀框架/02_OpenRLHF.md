@@ -1,0 +1,5 @@
+OpenRLHF：大规模分布式RLHF训练系统介绍
+
+项目：https://github.com/OpenRLHF/OpenRLHF
+
+与现有的将四个模型切分后放在相同GPU上的TRLX/TRL/LMF等框架不同，OpenRLHF重新设计了模型调度方案，利用Ray、vLLM和DeepSpeed优化资源利用率和训练性能。和基于Megatron-LM的RLHF方案相比，OpenRLHF可以无缝集成Hugging Face models和datasets，确保了用户友好性和代码的简洁性和易修改性，提供了开箱即用的解决方案。
