@@ -153,6 +153,11 @@
    - context length from 8k to 100k
    - https://huggingface.co/datasets/Yukang/LongAlpaca-12k/viewer
 
+2. THUDM/LongWriter-6k
+   - 6k数据量
+   - https://huggingface.co/datasets/THUDM/LongWriter-6k
+   - 论文：LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs
+   
 # 参考
 
 [1] 动手做个DialoGPT：生成式多轮对话模型, https://blog.csdn.net/xixiaoyaoww/article/details/108656532
