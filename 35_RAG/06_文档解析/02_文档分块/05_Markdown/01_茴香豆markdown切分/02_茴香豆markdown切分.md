@@ -1,0 +1,1 @@
+- huixiandou_evaluation: 来源 https://github.com/InternLM/HuixiangDou.git
