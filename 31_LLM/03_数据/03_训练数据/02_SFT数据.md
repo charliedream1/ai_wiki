@@ -123,12 +123,24 @@
    
 ## 1.6 长上下文数据
 
-## 1.7 其它数据
+## 1.8 语义消歧
 
 1. 对话重写：
    - 1.64M 个数据
    - https://huggingface.co/datasets/infgrad/dialogue_rewrite_llm
-   
+
+2. 【utterance-rewriter 多轮会话改写数据】 
+   - 2w个实例 微信人工智能模式识别中心（腾讯） 多轮对话中的共指关系和信息缺失问题的数据集和传统重写模型 
+   - https://github.com/liu-nlper/dialogue-utterance-rewriter/tree/master
+   - 数据格式: 
+   - ```text
+     question1 answer1 question2 question2_rewrited
+     能给我签名吗 出专辑再议 我现在就要 我现在就要签名
+     iphonex好不好 iphone不好用 为什么不好用 iphonex为什么不好用
+     西安天气 西安今天的天气是多云转小雨25度到35度东北风3级 明天有雨吗 西安明天有雨吗
+     秦始皇活了多久 50岁我确定 为什么 为什么确定秦始皇活了50岁
+     ```
+
 ***
 
 # 2. 英文
