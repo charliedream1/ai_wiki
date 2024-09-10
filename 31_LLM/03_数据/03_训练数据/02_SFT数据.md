@@ -157,7 +157,10 @@
    - 6k数据量
    - https://huggingface.co/datasets/THUDM/LongWriter-6k
    - 论文：LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs
-   
+
+3. long-llm 
+   - https://huggingface.co/datasets/namespace-Pt/projects/resolve/main/long-llm.tar.gz
+
 # 参考
 
 [1] 动手做个DialoGPT：生成式多轮对话模型, https://blog.csdn.net/xixiaoyaoww/article/details/108656532
