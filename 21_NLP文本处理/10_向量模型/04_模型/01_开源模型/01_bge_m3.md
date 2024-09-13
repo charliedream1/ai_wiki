@@ -102,7 +102,56 @@ InfoNCE损失函数
 ![](.01_bge_m3_images/内存优化策略.png)
 
 为了能再短的和长的文本上都有好的表现，使用了多尺度训练。
-- 对长度进行预分组
+- 对长度进行预分组，每个batch从同一个分组抽取，大大降低padding，使用固定random seed，保证GPU负载均衡
+- 将长文本再分成子batch，以平衡GPU负载
+- 使用gradient checkpointing
+
+如果资源很紧张，对于长文，可以插入多个[CLS],之后取平均
+
+# 3. 实验
+
+![](.01_bge_m3_images/MIRACL验证集性能.png)
+
+使用recall@100作为验证指标，对比了不同的检索方式
+
+- dense检索使用faiss的top-1000
+- multi-vector优于计算量大，采用top-200
+- dense+spare，使用w1=1,w2=0.3,w3=0, 使用top-1000
+- dense+spare+multi-vector，使用w1=1,w2=0.3,w3=1, 使用top-200
+
+![](.01_bge_m3_images/不同集子上不同语种的性能.png)
+
+使用recall@100作为验证指标，recall@20作为辅助指标，对比了不同的检索方式
+
+![](.01_bge_m3_images/5cd4921f.png)
+
+长文档检索性能如上。使用的文章来源：Wikipedia, Wudao and mC4 (see Table 7), and NarrativeQA (Kocisk ˇ y´
+et al., 2018; Gunther et al. ¨ , 2023),
+
+- Dense+Sparse： w1=0.2, w2=0.8, w3=0
+- All method: w1=0.15, w2=0.5, w3=0.35
+
+可见在长文档种，sparse效果更为突出，另外，multi-vector想过也很有效
+
+验证在训练种去掉长文数据，性能任然很好
+
+在没有GPU或者没有长文数据时，采用多[CLS]方案MCLS，性能可以从41.2提升到45
+
+![](.01_bge_m3_images/narrowQA性能对比.png)
+
+![](.01_bge_m3_images/自蒸馏的影响.png)
+
+对稀疏向量性能影响更大
+
+![](.01_bge_m3_images/多阶段训练的影响.png)
+
+- 直接在XLM-RoBERTA微调
+- 在预训练的RetroMAE上微调
+- 在RetroMAE继续预训练，在微调
+
+可见，继续预训练在微调有较大提升
+
+
 
 # 参考
 
