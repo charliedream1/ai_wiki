@@ -151,6 +151,9 @@
    - https://huggingface.co/datasets/YeungNLP/ultrachat
    - 清华大学140w+对话数据
 
+2. 200K-ChineseMagpie-Qwen2-Pro-200K-English：
+   - https://modelscope.cn/datasets/AI-ModelScope/Magpie-Qwen2-Pro-200K-English
+
 ## 2.2 特定类别
 ### 2.2.1 复杂指令
 
@@ -169,8 +172,13 @@
    - 6k数据量
    - https://huggingface.co/datasets/THUDM/LongWriter-6k
    - 论文：LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs
+   - LongWriter-GLM-9B是智谱基于GLM4-9B(https://www.modelscope.cn/models/ZhipuAI/glm-4-9b)模型，通过构建长输出的训练数据而得到的模型
+   - 从中选出了10%左右（666条）的高质量数据并基于这些数据做微调训练。在Qwen2-7b-instruct和GLM4-9B-Chat两个模型上，只需要3.7%训练计算消耗，就能获取了和原论文中，LongWriter-GLM-9B类似的性能提升
 
-3. long-llm 
+3. 精筛后的666条数据集构成的LongWriter-6K-Filtered数据集：（对上面的筛选）
+   - https://www.modelscope.cn/datasets/swift/longwriter-6k-filtered
+
+4. long-llm 
    - https://huggingface.co/datasets/namespace-Pt/projects/resolve/main/long-llm.tar.gz
 
 # 参考
