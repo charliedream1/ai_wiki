@@ -159,9 +159,18 @@
 
    具体数据，这里不在罗列，更多可以到github上去看。
 
+## 3.4 IShell
+
+官网下载地址：https://www.ishell.cc/
+
+IShell 还集成了 AI 大模型辅助（基础免费版 AI 有次数限制），帮助用户在日常管理中更加便捷、快速。
+
+
+
 # 参考
 
 [1] XShell免费版的安装配置教程以及使用教程（超级详细、保姆级），
     https://blog.csdn.net/m0_67400972/article/details/125346023
 [2] MobaXterm连接SFTP教程，https://www.cnblogs.com/jhno1/p/15556916.html
 [3] 再见了putty、Xshell、FinalShell、Mobaxterm、iTerm2，这款开源的终端工具真香，https://mp.weixin.qq.com/s/3RQZhK6QH4OPTHj760W0Ew
+[4] 再见XShell：轻量又高性能的SSH终端，AI加持快人一步，https://mp.weixin.qq.com/s/HweBxKzlAMmpqpvy2itEdw

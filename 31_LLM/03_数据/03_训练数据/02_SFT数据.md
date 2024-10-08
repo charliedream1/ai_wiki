@@ -51,6 +51,14 @@
    - 300 万条经过模型验证的高质量中英文指令数据
    - 包括 Infinity-Instruct-7M 基础指令数据集和 Infinity-Instruct-Gen 对话指令数据集
 
+8. IndustryInstruction1.0
+   - 通过先进的数据合成技术，完成了包含汽车、航空航天、人工智能、交通运输、科技与研究、旅游与地理、住宿与餐饮、法律与司法、金融与经济、文学与情感、医学医药、教育与数学在内的10个新增行业领域的指令数据集通过先进的数据合成技术，完成了包含汽车、航空航天、人工智能、交通运输、科技与研究、旅游与地理、住宿与餐饮、法律与司法、金融与经济、文学与情感、医学医药、教育与数学在内的10个新增行业领域的指令数据集IndustryInstruction1.0
+   - IndustryInstruction1.0: Flopsera：http://open.flopsera.com/flopsera-open/data-details/IndustryInstruction
+   - Huggingface：https://huggingface.co/datasets/BAAI/IndustryInstruction
+   - Datahub：https://data.baai.ac.cn/details/BAAI-IndustryInstruction
+   - 采用较一般文本转QA对的方式更加先进的合成方式，提出了使用<预训练语料>合成，使用<行业名称>合成，使用<行业人物描述>+<行业名称>生成三种模式混合的方法，构建出指令种类分布更加广泛，更适合行业工作场景的高效指令数据集。
+   - 通过使用Deita方法和RW模型分别对指令复杂性和回复质量，以及回复偏好性对生成的行业指令数据进行质量筛选，保证了本次指令数据集的高质量。
+
 ## 1.2 对话数据
 
 1. 中文闲聊语料库LCCC
@@ -65,6 +73,8 @@
    - 使用多轮对话历史记录,包括约9w条来自人类的提问和来自ChatGPT和其他聊天机器人的回复。
      我们通用能力的评测指标为MT-Bench。
 
+3. Magpie-Qwen2-Pro-200K-Chinese：
+   - https://modelscope.cn/datasets/AI-ModelScope/Magpie-Qwen2-Pro-
 
 ## 1.3 问答数据
 
@@ -154,6 +164,9 @@
 2. 200K-ChineseMagpie-Qwen2-Pro-200K-English：
    - https://modelscope.cn/datasets/AI-ModelScope/Magpie-Qwen2-Pro-200K-English
 
+3. WildChat：
+   - https://www.modelscope.cn/datasets/thomas/WildChat
+
 ## 2.2 特定类别
 ### 2.2.1 复杂指令
 
@@ -185,3 +198,4 @@
 
 [1] 动手做个DialoGPT：生成式多轮对话模型, https://blog.csdn.net/xixiaoyaoww/article/details/108656532
 [2] 百度QA100万数据集, https://mp.weixin.qq.com/s/SJQX2tNJ5kz3--ReWAbZDg
+[3] 智源研究院行业数据集2.0升级发布，新增10类行业指令数据, https://mp.weixin.qq.com/s/EvW96o7hc4FBhjz2kY76HQ
