@@ -117,6 +117,14 @@ https://huggingface.co/docs/transformers/v4.41.2/pipeline_tutorial
 
 ⇒ 💪 全新的智能体框架性能卓越，使得 Llama-3-70B-Instruct 智能体在 GAIA 排行榜上超越了基于 GPT-4 的智能体！
 
+# 9. OpenAI Swarm
+
+https://github.com/openai/swarm
+
+Swarm：用于构建、协调和部署多智能体（multi-agent）系统的框架，由OpenAI Solutions团队管理。Swarm是一个符合工效（ergonomic）、轻量级的多智能体协调框架。
+
+
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
