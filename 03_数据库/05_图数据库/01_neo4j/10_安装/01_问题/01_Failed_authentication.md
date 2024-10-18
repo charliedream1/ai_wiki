@@ -3,7 +3,7 @@
 启动后查看日志
 
 ```bash
-vim ./bin/conf/neo4j.conf
+vim ./conf/neo4j.conf
 ```
 
 报错
