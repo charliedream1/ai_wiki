@@ -31,7 +31,7 @@ CL version 2.21.5
 
 he traceback error you're encountering is a NCCL system error during the distributed training process. This error often happens in multi-GPU environments due to issues with inter-GPU communication, particularly with NCCL (NVIDIA Collective Communications Library). Here are some possible solutions to try:
 
-实测方法4有用
+实测如下方法暂未解决
 
 1. 打印日志
 
