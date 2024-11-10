@@ -5,6 +5,26 @@ from langchain_openai import ChatOpenAI
 ChatOpenAI(max_retries=0)
 ```
 
+```python
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
+openai_api_key = "##"
+
+openai_llm_model = llm = ChatOpenAI(
+    api_key = openai_api_key,
+    model="gpt-4o",
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+)
+
+openai_embeddings_model = OpenAIEmbeddings(
+    api_key = openai_api_key ,
+    model="text-embedding-3-large",
+)
+```
+
 # 2. 并发
 
 ```python
