@@ -313,7 +313,7 @@ async def statistic_benchmark_metric_worker(benchmark_data_queue: asyncio.Queue,
     utc_dt = datetime.now(timezone.utc)
     current_time = utc_dt.astimezone().strftime("%Y_%m_%d_%H_%M_%S_%f")
     if args.name:
-        result_db_path = os.path.join('./', args.name)
+        result_db_path = os.path.join('/', args.name)
     else:
         result_db_path = "./%s_benchmark_%s.db" % (args.model, current_time)
     print('Save the result to : %s'%result_db_path)
