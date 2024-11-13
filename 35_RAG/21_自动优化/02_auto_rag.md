@@ -1,0 +1,3 @@
+- Github (2.7k stars): https://github.com/Marker-Inc-Korea/AutoRAG
+- 官网：auto-rag.com/
+- AutoML tool for RAG
