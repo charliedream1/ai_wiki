@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-29 16:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../../install.md:2
+msgid "环境安装"
+msgstr "Environment Installation"
+
+#: ../../../install.md:3
+msgid "环境准备"
+msgstr "Environment Preparation"
+
+#: ../../../install.md:4
+msgid "Python == 3.10"
+msgstr ""
+
+#: ../../../install.md:5
+msgid "Ampere或者Hopper架构的GPU (例如H100, A100)"
+msgstr "GPU with Ampere or Hopper architecture (such as H100, A100)"
+
+#: ../../../install.md:6 ../../../install.md:142
+msgid "Linux OS"
+msgstr ""
+
+#: ../../../install.md:8
+msgid "pip方式安装"
+msgstr "Installation through pip"
+
+#: ../../../install.md:9
+msgid "推荐使用 conda 构建一个 Python-3.10 的虚拟环境，命令如下："
+msgstr ""
+"It is recommended to build a Python-3.10 virtual environment using conda,"
+" command is as follows: "
+
+#: ../../../install.md:15
+msgid "首先，安装指定版本的torch, torchvision, torchaudio以及torch-scatter:"
+msgstr ""
+"Firstly, install the specified versions of torch, torchvision, "
+"torchaudio, and torch-scatter:"
+
+#: ../../../install.md:21
+msgid "安装InternEvo:"
+msgstr "Install InternEvo:"
+
+#: ../../../install.md:26 ../../../install.md:79
+msgid "安装 flash-attention (version v2.2.1)："
+msgstr "Install flash-attention (version v2.2.1):"
+
+#: ../../../install.md:28
+msgid "如果需要使用flash-attention加速训练，且环境中支持，安装方式如下："
+msgstr "If you need to use flash-attention to accelerate training, and it is supported in your environment, install as follows:"
+
+#: ../../../install.md:33 ../../../install.md:89
+msgid "安装 Apex (version 23.05)："
+msgstr "Install Apex (version 23.05):"
+
+#: ../../../install.md:35
+msgid "apex为非必须安装包，如果安装，参考下述源码方式安装。"
+msgstr ""
+"apex is an optional installation package; "
+"if you choose to install it, refer to the following source code method "
+"for installation."
+
+#: ../../../install.md:37 ../../../install.md:99
+msgid "安装megablocks（version 0.3.2）:"
+msgstr "Install megablocks（version 0.3.2）"
+
+#: ../../../install.md:39
+msgid "如果是MoE相关模型，需要安装。"
+msgstr "If the model you are training is MoE releated, install as follows:"
+
+#: ../../../install.md:44
+msgid "源码方式安装"
+msgstr "Installation through Source Code"
+
+#: ../../../install.md:45
+msgid "依赖包"
+msgstr "Dependent Package"
+
+#: ../../../install.md:46
+msgid "首先，需要安装的依赖包及对应版本列表如下："
+msgstr "The required packages and corresponding version are shown as follows:"
+
+#: ../../../install.md:47
+msgid "GCC == 10.2.0"
+msgstr ""
+
+#: ../../../install.md:48
+msgid "MPFR == 4.1.0"
+msgstr ""
+
+#: ../../../install.md:49
+msgid "CUDA >= 11.8"
+msgstr ""
+
+#: ../../../install.md:50
+msgid "Pytorch >= 2.1.0"
+msgstr ""
+
+#: ../../../install.md:51
+msgid "Transformers >= 4.28.0"
+msgstr ""
+
+#: ../../../install.md:53
+msgid "以上依赖包安装完成后，需要更新配置系统环境变量："
+msgstr ""
+"After installing the above dependencies, some system environment "
+"variables need to be updated:"
+
+#: ../../../install.md:64
+msgid "安装过程"
+msgstr "Installation Procedure"
+
+#: ../../../install.md:65
+msgid "将项目`InternEvo`及其依赖子模块，从 github 仓库中 clone 下来，命令如下："
+msgstr ""
+"Clone the project `InternEvo` and its dependent submodules from the "
+"github repository, as follows:"
+
+#: ../../../install.md:70
+msgid "推荐使用 conda 构建一个 Python-3.10 的虚拟环境， 并基于`requirements/`文件安装项目所需的依赖包："
+msgstr ""
+"It is recommended to build a Python-3.10 virtual environment using conda "
+"and install the required dependencies based on the `requirements/` files:"
+
+#: ../../../install.md:104
+msgid "环境镜像"
+msgstr "Environment Image"
+
+#: ../../../install.md:105
+msgid ""
+"用户可以使用提供的 dockerfile 结合 docker.Makefile 来构建自己的镜像，或者也可以从 "
+"https://hub.docker.com/r/internlm/internevo/tags 获取安装了 InternEvo 运行环境的镜像。"
+msgstr ""
+"Users can use the provided dockerfile combined with docker.Makefile to "
+"build their own images, or obtain images with InternEvo runtime "
+"environment installed from "
+"https://hub.docker.com/r/internlm/internevo/tags."
+
+#: ../../../install.md:107
+msgid "镜像配置及构造"
+msgstr "Image Configuration and Build"
+
+#: ../../../install.md:108
+msgid ""
+"dockerfile 的配置以及构造均通过 docker.Makefile 文件实现，在 InternEvo 根目录下执行如下命令即可 build"
+" 镜像："
+msgstr ""
+"The configuration and build of the Dockerfile are implemented through the"
+" docker.Makefile. To build the image, execute the following command in "
+"the root directory of InternEvo:"
+
+#: ../../../install.md:112
+msgid ""
+"在 docker.Makefile 中可自定义基础镜像，环境版本等内容，对应参数可直接通过命令行传递，默认为推荐的环境版本。对于 BASE_OS "
+"分别支持 ubuntu20.04 和 centos7。"
+msgstr ""
+"In docker.Makefile, you can customize the basic image, environment "
+"version, etc., and the corresponding parameters can be passed directly "
+"through the command line. For BASE_OS, ubuntu20.04 and centos7 are "
+"respectively supported."
+
+#: ../../../install.md:114
+msgid "镜像拉取"
+msgstr "Pull Standard Image"
+
+#: ../../../install.md:115
+msgid "基于 ubuntu 和 centos 的标准镜像已经 build 完成也可直接拉取使用："
+msgstr ""
+"The standard image based on ubuntu and centos has been built and can be "
+"directly pulled:"
+
+#: ../../../install.md:124
+msgid "容器启动"
+msgstr "Run Container"
+
+#: ../../../install.md:125
+msgid "对于使用 dockerfile 构建或拉取的本地标准镜像，使用如下命令启动并进入容器："
+msgstr ""
+"For the local standard image built with dockerfile or pulled, use the "
+"following command to run and enter the container:"
+
+#: ../../../install.md:130
+msgid "训练启动"
+msgstr "Training start"
+
+#: ../../../install.md:131
+msgid "容器内默认目录即 `/InternEvo`，参考[使用文档](./usage.md)可获取具体使用方法。默认7B模型启动单机8卡训练命令样例："
+msgstr ""
+"The default directory in the container is `/InternEvo`, please start "
+"training according to the [Usage](./usage.md). Default command example to"
+" launch the training of a 7B model on a single machine with 8 GPUs:"
+
+#: ../../../install.md:136
+msgid "NPU环境安装"
+msgstr "NPU Environment Installation"
+
+#: ../../../install.md:137
+msgid ""
+"在搭载NPU的机器上安装环境的版本可参考GPU，在NPU上使用昇腾torch_npu代替torch，同时Flash-"
+"Attention和Apex不再支持安装，相应功能已由InternEvo代码内部实现。以下教程仅为torch_npu安装。"
+msgstr ""
+"The version for environment installation on machines with NPUs can refer "
+"to that of GPUs, using Ascend's torch_npu instead of torch on the NPU. "
+"Flash-Attention and Apex are no longer supported for installation, as the"
+" corresponding functionalities have been implemented internally by the "
+"InternEvo code. The following tutorial is only for the installation of "
+"torch_npu."
+
+#: ../../../install.md:139
+msgid "torch_npu官方文档：https://gitee.com/ascend/pytorch"
+msgstr "torch_npu offical documentation：https://gitee.com/ascend/pytorch"
+
+#: ../../../install.md:141
+msgid "NPU环境准备"
+msgstr "NPU Environment Preparation"
+
+#: ../../../install.md:143
+msgid "torch_npu: v2.1.0-6.0.rc1"
+msgstr ""
+
+#: ../../../install.md:144
+msgid "NPU显卡：910B"
+msgstr "NPU: 910B"
+
+#: ../../../install.md:147
+msgid "安装torch_run"
+msgstr "Install torch_run"
+
+#: ../../../install.md:149
+msgid "参考文档：https://gitee.com/ascend/pytorch/tree/v2.1.0-6.0.rc1/"
+msgstr ""
+"Reference documentation: "
+"https://gitee.com/ascend/pytorch/tree/v2.1.0-6.0.rc1/"
+
+#: ../../../install.md:151
+msgid ""
+"安装时可尝试根据文档内方式安装，或者从 https://gitee.com/ascend/pytorch/releases "
+"下载指定版本torch_npu进行安装，如下所示："
+msgstr ""
+"When installing, you may try to install according to the method described"
+" in the documentation, or download a specific version of torch_npu for "
+"installation from Ascend's PyTorch Releases on Gitee "
+"https://gitee.com/ascend/pytorch/releases, as follows:"
+
+#~ msgid "CUDA >= 11.7"
+#~ msgstr ""
+
+#~ msgid "Pytorch >= 1.13.1"
+#~ msgstr ""
+
+#~ msgid "Flash-Attention >= v1.0.5"
+#~ msgstr ""
+
+#~ msgid "Apex == 23.05"
+#~ msgstr ""
+
+#~ msgid "额外安装"
+#~ msgstr "Additional Install"
+
+#~ msgid "环境安装（NPU）"
+#~ msgstr "Installation (NPU)"
+
+#~ msgid "环境安装样例"
+#~ msgstr "Installation Example"
+

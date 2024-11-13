@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-10 11:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../source/example/20B_demo.rst:2
+msgid "20B Demo"
+msgstr ""
+
+#: ../../source/example/20B_demo.rst:5
+msgid "训练配置"
+msgstr "Training Config"
+
+#: ../../source/example/20B_demo.rst:7
+msgid "20B demo 训练配置文件样例如下:"
+msgstr "20B demo config file example:"
+
+#: ../../source/example/20B_demo.rst:164
+msgid "启动训练"
+msgstr "Start Training"
+
+#: ../../source/example/20B_demo.rst:166
+msgid "完成以上训练配置后，可启动模型训练，以在 ``slurm`` 平台上为例，启动两节点 16GPU 的训练命令如下所示："
+msgstr "After completing the data preparation and relevant training configurations, you can start the demo training. "
+"The following example shows how to start distributed training in ``slurm`` environments with 16 GPUs."
+
+#: ../../source/example/20B_demo.rst:173
+msgid "训练结果"
+msgstr "Training Results"
+
+#: ../../source/example/20B_demo.rst:175
+msgid "基于以上训练配置和启动命令，两节点 16GPU 下的模型训练部分日志展示如下："
+msgstr "Taking the configuration of the demo training on two nodes with 16 GPUs on slurm as an example, the training result log is shown below:"

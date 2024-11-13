@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-08 17:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../source/training.rst:2
+msgid "启动训练脚本"
+msgstr "Script of Starting Training"
+
+#: ../../source/training.rst:4
+msgid ""
+"用户在安装了InternEvo之后，需要自行编写训练启动脚本，请参考： `train.py "
+"<https://github.com/InternLM/InternEvo/blob/develop/train.py>`_"
+msgstr ""
+"After installing InternEvo, users need to write their own training "
+"startup scripts. Please refer to: `train.py "
+"<https://github.com/InternLM/InternEvo/blob/develop/train.py>`_ "
+
+#: ../../source/training.rst:6
+msgid ""
+"脚本中的流程可以分为三步：参数解析、初始化、启动训练。其中参数解析和初始化过程的具体原理参见： `训练初始化 "
+"<https://internevo.readthedocs.io/zh-cn/latest/initialize.html>`_"
+msgstr ""
+"The process in the script can be divided into three steps: parameter "
+"parsing, initialization, and starting training. For the specific "
+"principles of parameter parsing and initialization, please refer to: "
+"`Training Initialization "
+"<https://internevo.readthedocs.io/en/latest/initialize.html>`_"
+
+#: ../../source/training.rst:9
+msgid "配置参数解析"
+msgstr "Configuration Parameter Parsing"
+
+#: ../../source/training.rst:14
+msgid ""
+"调用 ``parse_args`` 函数，解析在启动训练传入的配置文件中设置的参数。详见： `命令行参数解析 "
+"<https://internevo.readthedocs.io/zh-cn/latest/initialize.html#internlm-"
+"args>`_"
+msgstr ""
+"Call the parse_args function to parse the parameters set in the "
+"configuration file when starting the training. For more details, see: "
+"`Argument Parsing "
+"<https://internevo.readthedocs.io/en/latest/initialize.html#internlm-"
+"args>`_"
+
+#: ../../source/training.rst:17
+msgid "初始化过程"
+msgstr "Initialization process"
+
+#: ../../source/training.rst:18
+msgid "初始化分布式训练环境"
+msgstr "Initialize Distributed Training Environment"
+
+#: ../../source/training.rst:23
+msgid ""
+"调用 ``initialize_distributed_env`` 函数，支持通过 slurm 或 torch "
+"方式启动训练脚本，并传入配置文件、端口号、进程随机种子等信息。函数详细说明如下："
+msgstr ""
+"Call the initialize_distributed_env function, which supports launching "
+"the training script through Slurm or Torch, and pass in information such "
+"as the configuration file, port number, and process random seed. Detailed"
+" description of the function is as follows:"
+
+#: ../../source/training.rst:27
+msgid "初始化模型"
+msgstr "Initialize Model"
+
+#: ../../source/training.rst:32
+msgid ""
+"详细介绍请参考： `模型初始化 <https://internevo.readthedocs.io/zh-"
+"cn/latest/initialize.html#internlm-model-init>`_"
+msgstr ""
+"Detailed introduction refer to: `Model Initialization "
+"<https://internevo.readthedocs.io/en/latest/initialize.html#internlm-"
+"model-init>`_"
+
+#: ../../source/training.rst:34
+msgid "初始化训练数据加载器"
+msgstr "Initialize Training Dataloader"
+
+#: ../../source/training.rst:39
+msgid ""
+"详细介绍请参考： `数据加载器初始化 <https://internevo.readthedocs.io/zh-"
+"cn/latest/initialize.html#internlm-dl-init>`_"
+msgstr ""
+"Detailed introduction refer to: `Dataloader Initialization "
+"<https://internevo.readthedocs.io/en/latest/initialize.html#internlm-dl-"
+"init>`_"
+
+#: ../../source/training.rst:41
+msgid "初始化验证数据加载器"
+msgstr "Initialize Validation Dataloader"
+
+#: ../../source/training.rst:46
+msgid "初始化验证数据加载器，加载过程与训练数据加载类似，通过配置文件中的 ``VALID_FOLDER `` 字段设置验证数据集路径。"
+msgstr ""
+"Initialize the validation data loader, which has a loading process "
+"similar to that of the training data. The path to the validation dataset "
+"is set through the VALID_FOLDER field in the configuration file."
+
+#: ../../source/training.rst:48
+msgid "初始化Trainer"
+msgstr "Initialize Trainer"
+
+#: ../../source/training.rst:53
+msgid ""
+"这里 ``TrainerBuilder`` 接口继承自 ``Trainer`` 类，InternEvo 的训练 API 由 "
+"``internlm.core.trainer.Trainer`` 管理。在定义了训练引擎和调度器之后，我们可以调用 Trainer API "
+"来执行模型训练、评估、梯度清零和参数更新等。"
+msgstr ""
+"The TrainerBuilder interface inherits from the Trainer class, and the "
+"training API of InternEvo is managed by internlm.core.trainer.Trainer. "
+"After defining the training engine and scheduler, we can call the Trainer"
+" API to perform model training, evaluation, gradient clearing, and "
+"parameter updating, etc."
+
+#: ../../source/training.rst:55
+msgid "有关详细用法，请参阅 Trainer API 文档和示例。"
+msgstr ""
+"For detailed usage, please refer to Trainer API documentation and "
+"examples."
+
+#: internlm.core.trainer.Trainer:1 of
+msgid ""
+"This is a class tending for easy deployments of users' training and "
+"evaluation instead of writing their own scripts."
+msgstr ""
+
+#: internlm.core.trainer.Trainer internlm.core.trainer.Trainer.execute_schedule
+#: of
+msgid "参数"
+msgstr ""
+
+#: internlm.core.trainer.Trainer:4 of
+msgid "Engine responsible for the process function."
+msgstr ""
+
+#: internlm.core.trainer.Trainer:6 of
+msgid "Runtime schedule. Defaults to None."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.engine:1 of
+msgid ""
+"Returns the engine that responsible for managing the training and "
+"evaluation process."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.schedule:1 of
+msgid "Returns the runtime scheduler."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.uses_pipeline:1 of
+msgid "Returns whether the pipeline parallel is used or not."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.train:1 of
+msgid "Sets the model to training mode."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.eval:1 of
+msgid "Sets the model to evaluation mode."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.zero_grad:1 of
+msgid "Sets the gradient of all parameters in the model to zero."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.step:1 of
+msgid "Executes the parameter update step."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule:1 of
+msgid ""
+"Runs the forward, loss computation, and backward for the model. Returns a"
+" tuple of (output, label, loss)."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule:4 of
+msgid "The data iterator."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule:6 of
+msgid "Additional keyword arguments."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule of
+msgid "返回"
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule:8 of
+msgid "A tuple of (output, label, loss, moe_loss)."
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule of
+msgid "返回类型"
+msgstr ""
+
+#: internlm.core.trainer.Trainer.execute_schedule:9 of
+msgid "Tuple[:class:`torch.Tensor`]"
+msgstr ""
+
+#: ../../source/training.rst:61
+msgid "启动训练过程"
+msgstr "Start Training Process"
+
+#: ../../source/training.rst:66
+msgid "首先，通过 ``self.train()`` 方法，将模型设置为training状态。"
+msgstr ""
+"Firstly, by using the self.train() method, the model is set to training "
+"mode."
+
+#: ../../source/training.rst:68
+msgid ""
+"在每一步训练的过程中，通过 ``load_new_batch`` 加载数据集。 然后通过 ``execute_schedule`` "
+"调度器启动训练，调用 ``forward_backward_step`` 开始forward及backward训练过程。 之后，通过 "
+"``self.step()`` 更新参数，并返回梯度值。 如果达到了需要验证的step数，则通过 ``evaluate_on_val_dls`` "
+"对模型训练结果进行评估。 最后，如果开启了保存ckpt功能，通过 ``try_save_checkpoint`` "
+"函数保留训练中间状态以及最终训练结果。"
+msgstr ""
+"During each step of the training process, the load_new_batch function is "
+"used to load the dataset. Then, the execute_schedule scheduler is used to"
+" initiate training, and the forward_backward_step begins the forward and "
+"backward training process. Afterwards, the self.step() updates the "
+"parameters and returns the gradient values. If the step count reaches the"
+" number required for validation, the model's training results are "
+"evaluated using evaluate_on_val_dls. Finally, if the checkpoint saving "
+"function is enabled, the intermediate training state and the final "
+"training results are saved using the try_save_checkpoint function."
+
+#~ msgid "InternLM 的训练流程可以归纳为两个步骤："
+#~ msgstr "The training process of InternLM can be summarized into two steps: "
+
+#~ msgid "初始化"
+#~ msgstr "Initialization"
+
+#~ msgid "初始化模型、优化器、数据加载器、Trainer，生成不同种类的进程组，为混合并行的迭代训练做准备。"
+#~ msgstr ""
+#~ "Initialize model, optimizer, dataloader, "
+#~ "trainer, and create different types of"
+#~ " process groups to prepare for "
+#~ "iterative steps of hybrid parallel "
+#~ "training. "
+
+#~ msgid "初始化Logger、Checkpoint管理器、Monitor管理器、Profiler，对迭代训练的过程观察、预警、记录。"
+#~ msgstr ""
+#~ "Initialize logger, checkpoint manager, monitor"
+#~ " manager, and profiler to watch, "
+#~ "alert, and record the iterative training"
+#~ " steps. "
+
+#~ msgid "迭代训练"
+#~ msgstr "Iterative training steps"
+
+#~ msgid "根据配置文件定义的张量并行、流水线并行、数据并行的大小，加载训练引擎和调度器进行混合并行训练。"
+#~ msgstr ""
+#~ "Load the training engine and scheduler"
+#~ " for hybrid parallel training according "
+#~ "to the configuration such as tensor "
+#~ "parallel size, pipeline parallel size, "
+#~ "and data parallel size. "
+
+#~ msgid "在迭代训练中，调用 Trainer API 进行梯度置零，前向传播计算损失并反向传播，参数更新。"
+#~ msgstr ""
+#~ "In iterative training steps, the Trainer"
+#~ " API is called to perform zero "
+#~ "gradients, forward-loss-backward, and "
+#~ "parameter update."
+
+#~ msgid "InternLM训练流程图"
+#~ msgstr "InternLM training process"
+
+#~ msgid "A tuple of (output, label, loss)."
+#~ msgstr ""
+
+#~ msgid "训练 API"
+#~ msgstr "Training API"
+
+#~ msgid ""
+#~ "This is a class tending for easy"
+#~ " deployments of users' training and "
+#~ "evaluation instead of writing their own"
+#~ " scripts."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "Engine responsible for the process function."
+#~ msgstr ""
+
+#~ msgid "Runtime schedule. Defaults to None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the engine that responsible for"
+#~ " managing the training and evaluation "
+#~ "process."
+#~ msgstr ""
+
+#~ msgid "Returns the runtime scheduler."
+#~ msgstr ""
+
+#~ msgid "Returns whether the pipeline parallel is used or not."
+#~ msgstr ""
+
+#~ msgid "Sets the model to training mode."
+#~ msgstr ""
+
+#~ msgid "Sets the model to evaluation mode."
+#~ msgstr ""
+
+#~ msgid "Sets the gradient of all parameters in the model to zero."
+#~ msgstr ""
+
+#~ msgid "Executes the parameter update step."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Runs the forward, loss computation, and"
+#~ " backward for the model. Returns a"
+#~ " tuple of (output, label, loss)."
+#~ msgstr ""
+
+#~ msgid "The data iterator."
+#~ msgstr ""
+
+#~ msgid "Additional keyword arguments."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid "A tuple of (output, label, loss, moe_loss)."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Tuple[:class:`torch.Tensor`]"
+#~ msgstr ""
+
