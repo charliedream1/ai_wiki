@@ -15,3 +15,4 @@ An LLM-based Multi-agent Framework of Web Search Engine (like Perplexity.ai Pro 
 - Web Planner 负责任务的拆解和动态规划
 - Web Searcher 负责对子问题进行搜索和信息整合
 
+![](.05_MindSearch_images/流程.png)
