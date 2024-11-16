@@ -7,6 +7,18 @@
 
 <div align="center"> <img src=".README_images/LOGO.png" width = 320 height = 300 /> </div>
 
+
+**知识星球**
+
+欢迎加入我的知识星球，获取更多知识和服务！新开张，欢迎关注！内容会持续更新！
+
+<img src=".README_images/知识星球链接.png" width = "350" height = "180" alt="知识星球" align=center />
+
+**本仓库关联项目**
+
+- 《AI股票量化交易》：https://github.com/charliedream1/ai_quant_trade
+  - 所有你要的AI量化交易知识都在这里
+
 ## 1. 简介
 
 &emsp;&emsp;记载工程实践问题的解决策略与关键要点，分享各种实用案例，追踪前沿技术发展，囊括 AI 全栈知识，涵盖大模型、编程技术、机器学习、深度学习、强化学习、图神经网络、语音识别、NLP 及图像识别等领域。 
@@ -43,18 +55,12 @@
 
     ```
 
-## 2. 量化炒股专题
+## 打赏我 
 
-1. 量化相关资源
+您的支持是我前进的动力，即便“1毛钱”我也很开心啊，感谢您的打赏和支持 \(^o^)/
 
-   | **序号**    | **工具**  | **路径** |  
-    |:-------- |:-------- |:-------| 
-    | 1 | [**全网量化资源汇总**](https://github.com/charliedream1/ai_quant_trade/tree/master/ai_wiki/12_量化交易与投资/01_资源) | ai_wiki/12_量化交易与投资/01_资源 |
-
-
-## 3. 大模型专题
-
-代码路径：21_大模型
+<img src=".README_images/支付宝收款码_alma_new.jpg" width = "300" height = "390" alt="图片名称1" align=center />
+<img src=".README_images/微信收款码_alma_new.jpg" width = "300" height = "390" alt="图片名称2" align=center />
 
 ## 关注我
 - [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
