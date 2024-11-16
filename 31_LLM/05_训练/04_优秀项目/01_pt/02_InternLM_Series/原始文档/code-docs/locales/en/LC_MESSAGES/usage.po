@@ -1,0 +1,636 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-02 11:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../../usage.md:2
+msgid "使用教程"
+msgstr "Quickstart Guide"
+
+#: ../../../usage.md:4
+msgid ""
+"启动一个 Demo "
+"模型训练，需要进行三项准备，**安装**，**数据集准备**和**模型训练配置**。接下来，首先会介绍数据准备相关的操作，再简要描述模型训练配置相关的内容。"
+msgstr ""
+"To start a demo model training, you need to prepare three things: "
+"**installation**, **dataset preparation**, and **model training "
+"configuration**. In this guide, we will first cover the steps for dataset"
+" preparation and then briefly describe the model training configuration."
+
+#: ../../../usage.md:6
+msgid "安装"
+msgstr "Installation"
+
+#: ../../../usage.md:7
+msgid "请参考[安装文档](./install.md)进行安装。"
+msgstr ""
+"Please refer to the [installation guide](./install.md) for instructions "
+"on how to install the necessary dependencies."
+
+#: ../../../usage.md:9
+msgid "数据准备"
+msgstr "Data Preparation"
+
+#: ../../../usage.md:11
+msgid "预训练"
+msgstr "Pre-training"
+
+#: ../../../usage.md:13
+msgid "使用huggingface格式数据集"
+msgstr "Using Hugging Face format dataset"
+
+#: ../../../usage.md:15
+msgid "如果使用huggingface数据集，需要先将数据集和需要使用的tokenizer下载到本地。"
+msgstr ""
+"If you use a Hugging Face dataset, you need to first download the dataset"
+" and the required tokenizer to your local machine."
+
+#: ../../../usage.md:17
+msgid "以`roneneldan/TinyStories`这个数据为例，数据准备阶段需要通过如下命令将数据集下载到本地："
+msgstr ""
+"Using the roneneldan/TinyStories dataset as an example, the data "
+"preparation phase requires downloading the dataset to your local system "
+"with the following command:"
+
+#: ../../../usage.md:21
+msgid "其中，\"/mnt/petrelfs/hf-TinyStories\" 为需要将数据集保存的本地路径。"
+msgstr ""
+"In this case, \"/mnt/petrelfs/hf-TinyStories\" is the local path where "
+"the dataset needs to be saved."
+
+#: ../../../usage.md:23
+msgid ""
+"然后将tokenizer下载到本地，例如，使用internlm2的tokenizer，则将`https://huggingface.co/internlm/internlm2-7b/tree/main`中的`special_tokens_map.json`、`tokenizer.model`、`tokenizer_config.json`、`tokenization_internlm2.py`和`tokenization_internlm2_fast.py`文件下载到本地路径，如\"/mnt/petrelfs"
+"/hf-internlm2-tokenizer\"中。"
+msgstr ""
+"Next, download the tokenizer to your local system. For instance, if you "
+"are using the internlm2 tokenizer, download the files "
+"special_tokens_map.json, tokenizer.model, tokenizer_config.json, "
+"tokenization_internlm2.py, and tokenization_internlm2_fast.py from the "
+"repository at \"https://huggingface.co/internlm/internlm2-7b/tree/main\" "
+"to a local directory, such as \"/mnt/petrelfs/hf-internlm2-tokenizer\"."
+
+#: ../../../usage.md:25
+msgid "将配置文件做如下改动："
+msgstr "Make the following changes to the configuration file:"
+
+#: ../../../usage.md:33
+msgid ""
+"type默认为\"tokenized\"，这里需要改为\"streaming\"类型。同时需要指定`tokenizer_path`, "
+"如果使用下述tokenized之后的数据集，则不需要设置该字段。`TRAIN_FOLDER`指定本地数据集路径。"
+msgstr ""
+"The type is set to \"tokenized\" by default, but here it needs to be "
+"changed to the \"streaming\" type. Also, you need to specify the "
+"tokenizer_path. If you are using the dataset that has been tokenized as "
+"described below, you do not need to set this field. The TRAIN_FOLDER "
+"specifies the path to the local dataset."
+
+#: ../../../usage.md:35
+msgid "使用tokenized之后数据集"
+msgstr "Use the dataset after tokenization"
+
+#: ../../../usage.md:37
+msgid "InternEvo训练任务的数据集包括一系列的`bin`和`meta`文件。使用`tokenizer`从原始文本文件生成训练用数据集。通过在`tools/tokenizer.py`中指定模型参数路径的方式来导入tokenizer模型。目前提供`V7_sft.model`来生成tokens。若想使用不同的模型，可直接修改`tokernizer.py`中的模型参数路径。"
+msgstr ""
+"The dataset for the InternEvo training task includes a series of `bin` "
+"and `meta` files. A `tokenizer` is used to generate the training dataset "
+"from the original text files. The tokenizer model is imported by "
+"specifying the model parameter path in `tools/tokenizer.py`. Currently, "
+"`tokenizer_internlm.model` is provided to generate tokens. If you want to"
+" use a different model, you can directly modify the model parameter path "
+"in `tokenizer.py`."
+
+#: ../../../usage.md:40
+msgid "可以运行以下命令生成原始数据对应的`bin`和`meta`文件，其中参数`text_input_path`表示原始文本数据路径，目前支持`txt`、`json`和`jsonl`三种输入格式，`bin_output_path`表示生成的`bin`文件的保存路径。"
+msgstr ""
+"You can run the following command to generate `bin` and `meta` files "
+"corresponding to the original data. The parameter `text_input_path` "
+"represents the path of the original text data, currently supporting "
+"`txt`, `json`, and `jsonl` formats, while `bin_output_path` represents "
+"the save path of the generated `bin` files."
+
+#: ../../../usage.md:45
+msgid "下面是一个数据处理的例子："
+msgstr "Here is an example of data processing:"
+
+#: ../../../usage.md:47
+msgid "给定一个包含原始数据集的文件`raw_data.txt`，原始数据集如下所示："
+msgstr ""
+"Given a file `raw_data.txt` containing the raw dataset, the raw dataset "
+"is shown below:"
+
+#: ../../../usage.md:54
+msgid "可以通过运行以下命令来生成`bin`和`meta`文件："
+msgstr ""
+"You can generate the `bin` and `meta` files by running the following "
+"command:"
+
+#: ../../../usage.md:59
+msgid "需要注意的是，生成的`bin`文件需要保存在`cn`或者`en`或者`code`或者`ja`或者`ar`或者`kaoshi`这六个目录下，以区分数据集的类型。"
+msgstr ""
+"It should be noted that the generated `bin` files need to be saved in one"
+" of the following directories: `cn`, `en`, `code`, `ja`, `ar`, or "
+"`kaoshi`, depending on the type of dataset."
+
+#: ../../../usage.md:61
+msgid "其中，`cn`表示中文数据集；`en`表示英文数据集；`code`表示代码数据集；`ja`表示日语数据集；`ar`表示阿拉伯语数据集；`kaoshi`表示考试数据集。"
+msgstr ""
+"Here, `cn` represents the Chinese dataset, `en` represents the English "
+"dataset, `code` represents the code dataset, `ja` represents the Japanese"
+" dataset, `ar` represents the Arabic dataset, and `kaoshi` represents the"
+" exam dataset."
+
+#: ../../../usage.md:63
+msgid "生成的bin文件的格式如下："
+msgstr "The format of the generated `bin` files is as follows:"
+
+#: ../../../usage.md:69
+msgid "`bin`文件中的每一行均对应原始数据集中的每一个句子，表示每个句子的`token`（下文将用sequence指定）。"
+msgstr ""
+"Each line in the `bin` file corresponds to each sentence in the original "
+"dataset, representing the tokens of each sentence (referred to as "
+"sequence below)."
+
+#: ../../../usage.md:71
+msgid "生成的`meta`文件的格式如下："
+msgstr "The format of the generated `meta` file is as follows:"
+
+#: ../../../usage.md:75
+msgid ""
+"在`meta`文件中，每个元组对应着`bin`文件中每一个`sequence`的元信息。其中，元组的第一个元素表示每个`sequence`在所有`sequence`中的`starting"
+" index`，第二个元素表示每个`sequence`中有多少个`tokens`。"
+msgstr ""
+"Each tuple in the `meta` file represents the meta information of each "
+"`sequence`, where the first element in the tuple indicates the `starting "
+"index` of each `sequence` among all `sequences`, and the second element "
+"indicates the number of `tokens` for each `sequence`."
+
+#: ../../../usage.md:77
+msgid ""
+"例如，对于第一个`sequence`，`starting index`为 0，有 11 "
+"个`tokens`；对于第二个`sequence`，由于第一个`sequence`转换为`string`后的长度为`89`，因此它的`starting"
+" index`为 90，有 15 个`tokens`。"
+msgstr ""
+"For example, the first `sequence` starts at index 0 and has 16 `tokens`. "
+"The second `sequence` starts at index 110 and has 24 `tokens`."
+
+#: ../../../usage.md:79
+msgid "`json`和`jsonl`类型的文件的`bin`和`meta`文件格式和`txt`一致，此处不再赘叙。"
+msgstr ""
+"The `bin` and `meta` file formats for `json` and `jsonl` type files are "
+"the same as for `txt`, so we won't go over them here."
+
+#: ../../../usage.md:81
+msgid "微调"
+msgstr "Fine-tuning"
+
+#: ../../../usage.md:83
+msgid ""
+"微调任务的数据集格式与预训练任务保持一致，生成的数据格式为一系列的`bin`和`meta`文件。以下以 Alpaca "
+"数据集为例，介绍微调的数据准备流程。"
+msgstr ""
+"The data format for fine-tuning tasks is the same as for pre-training "
+"tasks, which consists of a series of `bin` and `meta` files. Let's take "
+"the Alpaca dataset as an example to explain the data preparation process "
+"for fine-tuning."
+
+#: ../../../usage.md:85
+msgid ""
+"下载 [Alpaca 数据集](https://github.com/tatsu-"
+"lab/stanford_alpaca/blob/main/alpaca_data.json)"
+msgstr ""
+"Download the [Alpaca dataset](https://github.com/tatsu-"
+"lab/stanford_alpaca/blob/main/alpaca_data.json)."
+
+#: ../../../usage.md:87
+msgid "对 Alpaca 数据进行 tokenize，使用以下命令"
+msgstr "Tokenize the Alpaca dataset using the following command:"
+
+#: ../../../usage.md:93
+msgid "建议用户参考 alpaca_tokenizer.py 编写新的脚本对自己的数据集进行 tokenize。"
+msgstr ""
+"It is recommended that users refer to alpaca_tokenizer.py to write new "
+"scripts to tokenize their own datasets."
+
+#: ../../../usage.md:95
+msgid "微调任务中，也同样可以使用huggingface格式数据集，与预训练中的准备过程一致。"
+msgstr "In fine-tuning tasks, Hugging Face formatted datasets can also be used, consistent with the preparation process in pre-training."
+
+#: ../../../usage.md:97
+msgid "训练配置"
+msgstr "Training Configuration"
+
+#: ../../../usage.md:99
+msgid "以 7B Demo 的配置文件`configs/7B_sft.py`为例："
+msgstr ""
+"Taking the configuration file `configs/7B_sft.py` for the 7B demo as an "
+"example,"
+
+#: ../../../usage.md:312
+msgid "接下来将详细介绍启动一个模型训练所需要进行的数据、模型、并行和监控等相关的配置。"
+msgstr ""
+"let's discuss the data, model, parallel and monitoring configurations "
+"required to start a model training."
+
+#: ../../../usage.md:314
+msgid "数据配置"
+msgstr "Data Configuration"
+
+#: ../../../usage.md:315
+msgid "数据相关的关键参数配置及释义如下所示："
+msgstr "Here are the key parameters and their explanations for data configuration:"
+
+#: ../../../usage.md:330
+msgid "![pack_into_one](./imgs/pack_into_one.png)"
+msgstr ""
+
+#: ../../../usage.md:330
+msgid "pack_into_one"
+msgstr ""
+
+#: ../../../usage.md:333
+msgid "目前支持传入数据集文件路径`train_folder`，且要求文件格式如下："
+msgstr ""
+"Currently, it supports passing the dataset file path `train_folder`, and "
+"the file format is required to be as follows:"
+
+#: ../../../usage.md:340
+msgid "数据集的详细内容可参考``数据准备``模块相关的介绍。"
+msgstr ""
+"For detailed information about the dataset, please refer to the \"Data "
+"Preparation\" section."
+
+#: ../../../usage.md:342
+msgid "同时，也支持huggingface格式的数据集处理。"
+msgstr ""
+"Additionally, it supports processing of datasets in the Hugging Face "
+"format."
+
+#: ../../../usage.md:344
+msgid "train_folder设置为从huggingface上下载的本地数据集路径，如：\"/mnt/petrelfs/hf-TinyStories\""
+msgstr ""
+"Set the train_folder to the local path of the dataset downloaded from "
+"Hugging Face, for example: \"/mnt/petrelfs/hf-TinyStories\"."
+
+#: ../../../usage.md:346
+msgid "在data中，需要新增type及tokenizer_path字段，标示数据集是huggingface格式，并指定tokenizer路径，如："
+msgstr ""
+"In the data section, you need to add new fields for type and "
+"tokenizer_path to indicate that the dataset is in Hugging Face format and"
+" to specify the path of the tokenizer, for example:"
+
+#: ../../../usage.md:364
+msgid "模型配置"
+msgstr "Model Configuration"
+
+#: ../../../usage.md:366
+msgid "如果在启动训练时要加载模型 `checkpoint`，可进行如下相关配置："
+msgstr ""
+"If you want to load a model checkpoint when starting the training, you "
+"can configure it as follows:"
+
+#: ../../../usage.md:390
+msgid "注意："
+msgstr "Note:"
+
+#: ../../../usage.md:391
+msgid ""
+"路径若以 `local:` 为前缀，则存储在本地文件系统；若以 `boto3:` 为前缀，则存储在远程 oss "
+"上；若无前缀，为huggingface上可以直接下载的模型路径。"
+msgstr ""
+"If the path starts with `local:`, it means the file is stored in the "
+"local file system. If it starts with `boto3:`, it means the file is "
+"stored in the remote OSS."
+
+#: ../../../usage.md:393
+msgid "模型相关关键参数配置如下所示："
+msgstr "The configuration for the model is as follows:"
+
+#: ../../../usage.md:417
+msgid "注意：用户可自定义模型类型名和模型结构，并配置相对应的模型参数。通过`internlm/model/registry.py`下的`model_initializer`对象进行模型初始化函数接口注册，在训练主函数`train.py`中初始化模型时，可通过`model_type`配置获取指定的模型初始化接口函数。"
+msgstr ""
+"Note: Users can customize the model type name and model structure, and "
+"configure the corresponding model parameters. The model initialization "
+"function interface can be registered through the `MODEL_INITIALIZER` "
+"object in `utils/registry.py`. When initializing the model in the "
+"training main function `train.py`, the specified model initialization "
+"interface function can be obtained through the `model_type` "
+"configuration."
+
+#: ../../../usage.md:419
+msgid ""
+"*如果基于 InternLM 7B继续训练，可以参考 "
+"[ModelZoo](https://github.com/InternLM/InternLM/tree/main#model-zoo) 中 "
+"OpenXLab 链接下载权重*"
+msgstr ""
+"*If you want to start training based on InternLM 7B, you can refer to "
+"OpenXLab [ModelZoo](https://github.com/InternLM/InternLM/tree/main#model-"
+"zoo) to download weights*."
+
+#: ../../../usage.md:421
+msgid "并行配置"
+msgstr "Parallel Configuration"
+
+#: ../../../usage.md:423
+msgid "训练并行配置样例如下："
+msgstr "Training parallel configuration example:"
+
+#: ../../../usage.md:432
+msgid "zero1（字典）："
+msgstr "zero1 (dict): "
+
+#: ../../../usage.md:433
+msgid "size: 整数"
+msgstr "size: int "
+
+#: ../../../usage.md:434
+msgid "当`zero1 <= 0`，则 zero1 进程组的大小等于数据并行进程组的大小，因此优化器状态参数将在数据并行范围内分配"
+msgstr ""
+"When `zero1 <= 0` , the size of the zero1 process group is equal to the "
+"size of the data parallel process group, so the optimizer state "
+"parameters will be split within the data parallel range."
+
+#: ../../../usage.md:435
+msgid "当`zero1 == 1`，则不使用 zero1 ，所有数据并行组保留完整的优化器状态参数"
+msgstr ""
+"When `zero1 == 1`, zero1 is not used, and all data parallel groups retain"
+" the complete optimizer state parameters."
+
+#: ../../../usage.md:436
+msgid "当`zero1 > 1`且`zero1 <= data_parallel_world_size`，则 zero1 进程组是数据并行进程组的子集"
+msgstr ""
+"When `zero1 > 1` and `zero1 <= data_parallel_world_size`, the zero1 "
+"process group is a subset of the data parallel process group."
+
+#: ../../../usage.md:437
+msgid "fsdp: 布尔值，启用/禁用torch的完全分片数据并行，默认为False。"
+msgstr ""
+"fsdp: A boolean value that enables or disables fully sharded data "
+"parallelism in torch, with the default being False."
+
+#: ../../../usage.md:438
+msgid "tensor（字典）："
+msgstr "tensor (dict): "
+
+#: ../../../usage.md:439
+msgid "size: 整数，张量并行的大小。"
+msgstr "size: int, size of tensor parallem"
+
+#: ../../../usage.md:440
+msgid "mode: 字符串，张量并行模式，应该是 ['mtp', 'msp', 'fsp', 'isp'] 中的一个，"
+msgstr ""
+"mode: string, tensor parallel mode, should be one of ['mtp', 'msp', "
+"'fsp', 'isp'] "
+
+#: ../../../usage.md:441
+msgid "默认为 'mtp'，意味着没有序列并行的纯Megatron张量并行。"
+msgstr ""
+"Default is 'mtp', which means there is no sequence parallelism, just pure"
+" tensor parallelism for Megatron."
+
+#: ../../../usage.md:442
+msgid "msp: 带序列并行的Megatron张量并行，序列并行大小 = 张量并行大小。"
+msgstr ""
+"msp: Megatron Tensor Parallelism with Sequence Parallelism, where the "
+"size of sequence parallelism is equal to the size of tensor parallelism."
+
+#: ../../../usage.md:443
+msgid "fsp: 通过flash-attn带序列并行的张量并行，序列并行大小 = 张量并行大小。"
+msgstr ""
+"fsp: Tensor Parallelism with Sequence Parallelism facilitated by flash-"
+"attn, where the size of sequence parallelism is equal to the size of "
+"tensor parallelism."
+
+#: ../../../usage.md:444
+msgid "isp: 定制的内部序列并行，不带张量并行，可以与权重并行一起使用。"
+msgstr ""
+"isp: Custom internal sequence parallelism, without tensor parallelism, "
+"which can be used in conjunction with weight parallelism."
+
+#: ../../../usage.md:445
+msgid "pipeline（字典）："
+msgstr "pipeline: pipeline parallel strategy"
+
+#: ../../../usage.md:446
+msgid "size: 整数，流水线并行的大小。"
+msgstr "size: int, size of pipeline parallel"
+
+#: ../../../usage.md:447
+msgid "interleaved_overlap: 布尔值，启用/禁用在使用交错流水线调度器时的通信重叠，默认为False。"
+msgstr ""
+"interleaved_overlap: A boolean value that enables or disables "
+"communication overlapping when using an interleaved pipeline scheduler, "
+"with the default being False."
+
+#: ../../../usage.md:448
+msgid "weight（字典）："
+msgstr "weight (dict):"
+
+#: ../../../usage.md:449
+msgid "size: 整数，权重并行的大小。"
+msgstr "size: int, size of weight parallel"
+
+#: ../../../usage.md:450
+msgid "overlap: 布尔值，启用/禁用all_gather/reduce_scatter通信重叠，默认为False。"
+msgstr ""
+"overlap: bool, enable/disable all_gather/reduce_scatter communication "
+"overlap, default is False"
+
+#: ../../../usage.md:451
+msgid "memory_pool: 布尔值，启用/禁用内存池，默认为False。"
+msgstr "memory_pool: bool, enable/disable memory pool, default is False"
+
+#: ../../../usage.md:453
+msgid "注意：`数据并行大小 = 总的 GPU 数目 / 流水线并行大小 / 张量并行大小`"
+msgstr ""
+"Note: `Data parallel size = Total number of GPUs / Pipeline parallel size"
+" / Tensor parallel size`"
+
+#: ../../../usage.md:455
+msgid "启动训练"
+msgstr "Start Training"
+
+#: ../../../usage.md:457
+msgid "完成了以上数据集准备和相关训练配置后，可启动 Demo 训练。接下来分别以 slurm 和 torch 环境为例，介绍训练启动方式。"
+msgstr ""
+"After completing the data preparation and relevant training "
+"configurations mentioned above, you can start the demo training. The "
+"following examples demonstrate how to start the training in both slurm "
+"and torch environments."
+
+#: ../../../usage.md:459 ../../../usage.md:496
+msgid "若在 slurm 上启动分布式运行环境，多节点 16 卡的运行命令如下所示："
+msgstr ""
+"If you want to start distributed training on slurm with 16 GPUs across "
+"multiple nodes, use the following command:"
+
+#: ../../../usage.md:464
+msgid "若在 torch 上启动分布式运行环境，单节点 8 卡的运行命令如下所示："
+msgstr ""
+"If you want to start distributed training on torch with 8 GPUs on a "
+"single node, use the following command:"
+
+#: ../../../usage.md:469
+msgid ""
+"其中，train.py文件的内容，请参考： [训练脚本](https://internevo.readthedocs.io/zh-"
+"cn/latest/training.html)"
+msgstr ""
+"The content of train.py, please refer to: [training "
+"script](https://internevo.readthedocs.io/en/latest/training.html) "
+
+#: ../../../usage.md:471
+msgid "运行结果"
+msgstr "Training Results"
+
+#: ../../../usage.md:473
+msgid "以 slurm 上单机 8 卡的 Demo 训练配置为例，训练结果日志展示如下："
+msgstr ""
+"Taking the configuration of the demo training on a single machine with 8 "
+"GPUs on slurm as an example, the training result log is shown below:"
+
+#: ../../../usage.md:494
+msgid "加载训练的checkpoint并生成"
+msgstr "Load the training checkpoint and generate."
+
+#: ../../../usage.md:501
+msgid "在配置文件中添加`generation`配置"
+msgstr "Add generation configuration to the configuration file."
+
+#: ../../../usage.md:519
+msgid "长文本生成"
+msgstr "Long Text Generation"
+
+#: ../../../usage.md:521
+msgid ""
+"在推理阶段，我们可以使用 Dynamic NTK RoPE 来代替原始的 RoPE，从而使得模型能够适应长文本的输入输出，达到 16K "
+"的外推效果。 目前 InternLM 支持在 huggingface 格式和 InternLM 本身格式的模型中使用 Dynamic NTK "
+"RoPE。"
+msgstr ""
+"In the inference phase, we can use Dynamic NTK RoPE instead of the "
+"original RoPE, allowing the model to handle long-text input and output, "
+"achieving extrapolation effects up to 16K. Currently, InternLM supports "
+"the use of Dynamic NTK RoPE in models formatted in both Hugging Face "
+"format and InternLM's native format."
+
+#: ../../../usage.md:524
+msgid ""
+"对于 huggingface 格式的模型，dynamic ntk rope 目前是被默认使用的。如果用户想要关闭该行为，请将 "
+"`config.json` 中的 `rotary.type` 修改为 `origin`；"
+msgstr ""
+"For models in Hugging Face format, Dynamic NTK RoPE is currently enabled "
+"by default. If users wish to disable this behavior, they can modify "
+"`rotary.type` in the `config.json` file to `origin`."
+
+#: ../../../usage.md:525
+msgid ""
+"对于 InternLM "
+"本身格式的模型，在推理时，通过在初始化模型的配置字典中添加`use_dynamic_ntk_rope=True`来开启这一行为。"
+msgstr ""
+"For models in InternLM's native format, during inference, you can enable "
+"this behavior by adding use_dynamic_ntk_rope=True to the configuration "
+"dictionary when initializing the model."
+
+#: ../../../usage.md:527
+msgid ""
+"用户可以直接通过 web_demo 来直观地对比查看 Dynamic NTK RoPE "
+"是如何生效的。例如文件[长文本示例](../../aux_materials/long_text_example.txt)中存放着一个token长度超过2200的文本，如果不使用"
+" Dynamic NTK， 模型是完全无法回答该文本对应的问题。而使用 Dynamic NTK RoPE 后 InternLM Chat 7B "
+"v1.1 模型的回答如下所示："
+msgstr ""
+"Users can visually compare and observe how Dynamic NTK RoPE takes effect "
+"directly through the web_demo. For example, in the file Long Text "
+"Example, there is a text with token length exceeding 2200. Without using "
+"Dynamic NTK, the model is unable to answer questions related to this "
+"text. However, after applying Dynamic NTK RoPE, the response from the "
+"InternLM Chat 7B v1.1 model is as follows:"
+
+#: ../../../usage.md:530
+msgid "![dynamic_ntk_answer](./imgs/dynamic_ntk_answer.png)"
+msgstr ""
+
+#: ../../../usage.md:530
+msgid "dynamic_ntk_answer"
+msgstr ""
+
+#: ../../../usage.md:532
+msgid "关于 Dyanmic NTK 的原理，详细请参考"
+msgstr "Regarding the principle of Dyanmic NTK, please refer to"
+
+#: ../../../usage.md:533
+msgid "[dynamically_scaled_rope_further_increases](https://www.reddit.com/r/LocalLLaMA/comments/14mrgpr/dynamically_scaled_rope_further_increases)"
+msgstr ""
+
+#: ../../../usage.md:534
+msgid "[https://kexue.fm/archives/9675](https://kexue.fm/archives/9675)"
+msgstr ""
+
+#~ msgid "`load_model_only_folder`与`load_ckpt_folder`不能同时设置"
+#~ msgstr ""
+#~ "`load_model_only_folder` and `load_ckpt_folder` "
+#~ "cannot be set at the same time."
+
+#~ msgid "zero1：zero 并行策略，分如下三种情况，默认值为 -1"
+#~ msgstr ""
+#~ "zero1: zero parallel strategy, divided "
+#~ "into the following three cases, default"
+#~ " value is -1"
+
+#~ msgid "tensor：张量并行大小，通常是每个节点的 GPU 数量，默认值为 1"
+#~ msgstr ""
+#~ "tensor: tensor parallel size, usually "
+#~ "the number of GPUs per node, "
+#~ "default is 1"
+
+#~ msgid "size：流水线并行大小，默认值为 1"
+#~ msgstr "size: pipeline parallel size, the default value is 1"
+
+#~ msgid "interleaved_overlap：bool 类型，交错式调度时，开启或关闭通信优化，默认值为关闭"
+#~ msgstr ""
+#~ "interleaved_overlap: bool type, when "
+#~ "interleaved scheduling, enable or disable "
+#~ "communication optimization, the default value"
+#~ " is False"
+
+#~ msgid "sequence_parallel：是否开启序列化并行，默认值为 False"
+#~ msgstr ""
+#~ "sequence_parallel: Whether to enable sequence"
+#~ " parallelism, the default value is "
+#~ "False"
+
+#~ msgid "https://www.reddit.com/r/LocalLLaMA/comments/14mrgpr/dynamically_scaled_rope_further_increases"
+#~ msgstr ""
+
+#~ msgid "https://kexue.fm/archives/9675"
+#~ msgstr ""
+
+#~ msgid "数据准备 （使用huggingface数据集）"
+#~ msgstr ""
+
+#~ msgid "如果使用huggingface数据集进行在线加载并且在线tokenize的话，那么以`roneneldan/TinyStories`这个数据为例，数据准备阶段只需要将配置文件做如下改动："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "同时，也支持huggingface格式的数据集处理。 "
+#~ "train_folder设置为huggingface上可以通过load_dataset直接下载的数据集路径，如：\"roneneldan/TinyStories\""
+#~ " "
+#~ "在data中，需要新增type及tokenizer_path字段，标示数据集是huggingface格式，并指定tokenizer路径，如："
+#~ msgstr ""
+
+#~ msgid "数据准备 （预训练）"
+#~ msgstr "Dataset Preparation (Pre-training)"
+

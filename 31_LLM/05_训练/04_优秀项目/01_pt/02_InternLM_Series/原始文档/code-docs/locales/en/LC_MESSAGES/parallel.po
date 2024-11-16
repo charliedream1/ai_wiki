@@ -1,0 +1,1119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-08 17:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../source/parallel.rst:2
+msgid "并行模式与原理"
+msgstr "Parallel Mode and Principle"
+
+#: ../../source/parallel.rst:6
+msgid ""
+"InternEvo 支持张量并行、流水线并行、序列并行、数据并行和 ZeRO1.5 "
+"等并行化训练策略。在初始化分布式环境时，我们需要指定张量并行大小、流水线并行大小、数据并行大小以及 ZeRO1.5 策略。"
+msgstr ""
+"InternEvo supports tensor parallel, pipeline parallel, sequence parallel,"
+" data parallel, and ZeRO1.5 to parallelize the training pipeline. When "
+"initializing the distributed environment, we need to specify tensor "
+"parallel size, pipeline parallel size, data parallel size, and ZeRO1.5 "
+"strategy."
+
+#: ../../source/parallel.rst:8
+msgid ""
+"InternEvo 的并行设置由配置文件中的 ``parallel`` 字段指定，用户可以通过修改配置文件 `config file "
+"<https://github.com/InternLM/InternEvo/blob/develop/configs/7B_sft.py>`_ "
+"来更改并行配置。以下是一个并行训练配置示例："
+msgstr ""
+"The parallel setting of InternEvo is fully config-driven, and you can "
+"change the parallelism by modifying `config file "
+"<https://github.com/InternLM/InternEvo/blob/develop/configs/7B_sft.py>`_."
+" An exmaple parallel training configuration can be defined as follows:"
+
+#: ../../source/parallel.rst:19
+msgid "zero1：zero 并行策略，分如下三种情况，默认值为 -1"
+msgstr ""
+"zero1: zero parallel strategy, divided into the following three cases, "
+"the default value is -1"
+
+#: ../../source/parallel.rst:21
+msgid "当 ``size <= 0`` ，则 zero1 进程组的大小等于数据并行进程组的大小，因此优化器状态参数将在数据并行范围内分配"
+msgstr ""
+"When ``size <= 0`` , the size of the zero1 process group is equal to the "
+"size of the data parallel process group, so the optimizer state "
+"parameters will be split within the data parallel range."
+
+#: ../../source/parallel.rst:22
+msgid "当 ``size == 1`` ，则不使用 zero1 ，所有数据并行组保留完整的优化器状态参数"
+msgstr ""
+"When ``size == 1`` , zero1 is not used, and all data parallel groups "
+"retain the complete optimizer state parameters."
+
+#: ../../source/parallel.rst:23
+msgid "当 ``size > 1`` 且 ``zero1 <= data_parallel_size`` ，则 zero1 进程组是数据并行进程组的子集"
+msgstr ""
+"When ``size > 1`` and ``size <= data_parallel_size`` , the zero1 process "
+"group is a subset of the data parallel process group."
+
+#: ../../source/parallel.rst:25
+msgid "tensor：张量并行策略"
+msgstr "tensor: tensor parallel strategy"
+
+#: ../../source/parallel.rst:27
+msgid "size：张量并行大小，通常是每个节点的 GPU 数量，默认值为 1"
+msgstr ""
+"size: int, tensor parallel size, usually the number of GPUs per node, the"
+" default value is 1"
+
+#: ../../source/parallel.rst:28
+msgid "mode：张量并行模式，支持['mtp', 'msp', 'fsp', 'isp']，其中，"
+msgstr "mode: the tensor parallel mode, should be in ['mtp', 'msp', 'fsp', 'isp'],"
+
+#: ../../source/parallel.rst:30
+msgid "mtp：表示使用 Megatron-LM 的张量并行实现方案，不包含序列并行，mtp 为默认模式"
+msgstr ""
+"mtp: defaults to 'mtp', means the pure megatron tensor parallel without "
+"sequence parallel"
+
+#: ../../source/parallel.rst:31
+msgid "msp：表示使用 Megatron-LM 的序列化并行实现方案，序列并行大小 = 张量并行大小"
+msgstr ""
+"msp: megatron tensor parallel with sequence parallel, sequence parallel "
+"size = tensor parallel size"
+
+#: ../../source/parallel.rst:32
+msgid "fsp：表示使用 flash-attn 实现模式的张量并行与序列并行，序列并行大小 = 张量并行大小"
+msgstr ""
+"fsp: tensor parallel by flash-attn with sequence parallel, sequence "
+"parallel size = tensor parallel size"
+
+#: ../../source/parallel.rst:33
+msgid "isp：InternEvo 系统自研的序列化并行方案，可以与权重并行结合使用，序列并行大小与权重并行大小互相独立"
+msgstr ""
+"isp: customed intern sequence parallel without tensor parallel, can be "
+"used with weight parallel"
+
+#: ../../source/parallel.rst:35
+msgid "pipeline：流水线并行策略"
+msgstr "pipeline: pipeline parallel strategy"
+
+#: ../../source/parallel.rst:37
+msgid "size：流水线并行大小，默认值为 1"
+msgstr "size: pipeline parallel size, the default value is 1"
+
+#: ../../source/parallel.rst:38
+msgid "interleaved_overlap：bool 类型，交错式调度时，开启或关闭通信优化，默认值为 False"
+msgstr ""
+"interleaved_overlap: bool type, when interleaved scheduling, enable or "
+"disable communication optimization, the default value is False"
+
+#: ../../source/parallel.rst:40
+msgid "weight：权重并行策略，只能与 isp 张量并行模式结合使用"
+msgstr ""
+"weight: weight parallel strategy, only can be used with 'isp' tensor "
+"parallel mode"
+
+#: ../../source/parallel.rst:42
+msgid "size：权重并行大小，默认值为 1"
+msgstr "size: weight parallel size, the default value is 1"
+
+#: ../../source/parallel.rst:43
+msgid "overlap：是否开启计算与通信的 overlap，默认值为 False"
+msgstr ""
+"overlap: bool, enable/disable all_gather/reduce_scatter communication "
+"overlap, defaults to False"
+
+#: ../../source/parallel.rst:44
+msgid "memory_pool：是否开启权重显存池，默认值为 False"
+msgstr "memory_pool: bool, enable/disable memory pool, defaults to False"
+
+#: ../../source/parallel.rst:46
+msgid "注意：数据并行大小 = 总的 GPU 数目 / 流水线并行大小 / 张量并行大小"
+msgstr ""
+"Note: `Data parallel size = Total number of GPUs / Pipeline parallel size"
+" / Tensor parallel size`"
+
+#: ../../source/parallel.rst:51
+msgid "张量并行"
+msgstr "Tensor Parallel"
+
+#: ../../source/parallel.rst:53
+msgid ""
+"InternEvo 系统 ``v0.3.0`` 版本在张量并行策略上有较大更新，目前的张量并行支持四种模式配置['mtp', 'msp', "
+"'fsp', 'isp']，前三种模式为基于 Megatron-LM 的张量并行和序列化并行的策略实现，最后一种模式为 InternEvo "
+"系统自研，可与权重并行（Weight Parallel）结合使用的一种新的序列化并行方式。接下来详细介绍这几种张量并行模式的区别。"
+msgstr ""
+"The InternEvo system version ``v0.3.0`` has significant updates in the "
+"tensor parallelism strategy. The current tensor parallelism supports four"
+" modes: ['mtp', 'msp', 'fsp', 'isp']. The first three modes are based on "
+"the Megatron-LM's tensor parallelism and sequence parallelism strategy. "
+"The last mode is a self-developed strategy by the InternEvo system, which"
+" is a new sequence parallelism method that can be used in conjunction "
+"with weight parallelism. The following provides a detailed explanation of"
+" the differences among these tensor parallelism modes."
+
+#: ../../source/parallel.rst:55
+msgid "MTP"
+msgstr ""
+
+#: ../../source/parallel.rst:57
+msgid ""
+"MTP(Megatron-LM Tensor Parallel)， 为默认的张量并行模型，引用自 `Megatron-LM Tensor "
+"Parallel <https://arxiv.org/abs/2205.05198>`_ 并行方案，如下图所示，带有张量并行的 "
+"``Transformer`` 层："
+msgstr ""
+"MTP (Megatron-LM Tensor Parallel) is the default tensor parallelism "
+"model, inspired by the Megatron-LM Tensor Parallel parallel scheme, as "
+"referenced in the paper `Megatron-LM Tensor Parallel "
+"<https://arxiv.org/abs/2205.05198>`_. The following diagram illustrates "
+"the ``Transformer`` layer with tensor parallelism:"
+
+#: ../../source/parallel.rst:63
+msgid "Transformer layer with tensor parallelism."
+msgstr ""
+
+#: ../../source/parallel.rst:65
+msgid ""
+"MTP 主要对 `attention "
+"<https://github.com/InternLM/InternEvo/blob/develop/internlm/model/multi_head_attention.py>`_"
+" 和 `linear "
+"<https://github.com/InternLM/InternEvo/blob/develop/internlm/model/linear.py>`_"
+" 这两个模块进行张量并行操作。假设张量并行大小为 ``tp`` ，输入数据的序列长度为 ``seqlen`` ，隐藏层大小为 ``hidden "
+"size`` ，则张量并行期间产生的激活值 ``shape`` 为 ``[seqlen, hidden_size/tp]`` 。"
+msgstr ""
+"MTP primarily applies tensor parallelism operations to the attention and "
+"the linear module. Assuming the tensor parallelism size is tp, the "
+"sequence length of input data is seqlen, and the hidden layer size is "
+"hidden size, then the shape of the activation values generated during "
+"tensor parallelism is ``[seqlen, hidden_size/tp]`` ."
+
+#: ../../source/parallel.rst:67
+msgid ""
+"MTP 张量并行引入的通信如上图所示，其中 ``f`` 和 ``f̄`` 是共轭的。在前向传递中 ``f`` 是无操作，而在反向传递中进行 "
+"``all-reduce`` 操作。而 ``f̄`` 在前向传递中进行 ``all-reduce`` 操作，在反向传递中是无操作。"
+msgstr ""
+"The communication introduced by MTP is illustrated in the above diagram, "
+"where ``f`` and ``f̄`` are conjugates. In the forward pass, ``f`` "
+"corresponds to a no-operation, while in the backward pass, it involves an"
+" ``all-reduce`` operation. On the other hand, ``f̄`` performs an ``all-"
+"reduce`` operation in the forward pass and is a no-operation in the "
+"backward pass."
+
+#: ../../source/parallel.rst:69
+msgid "MSP"
+msgstr ""
+
+#: ../../source/parallel.rst:71
+msgid ""
+"MSP(Megatron-LM Sequence Parallel)，引用自 `Megatron-LM Sequence Parallel "
+"<https://arxiv.org/abs/2205.05198>`_ 并行方案，如下图所示，带有张量并行和序列化并行的 "
+"``Transformer`` 层："
+msgstr ""
+"MSP (Megatron-LM Sequence Parallel) is adopted from the Megatron-LM "
+"Sequence Parallel parallel scheme. The following diagram illustrates the "
+"Transformer layer with both tensor parallelism and sequence parallelism:"
+
+#: ../../source/parallel.rst:77
+msgid "Transformer layer with tensor and sequence parallelism."
+msgstr ""
+
+#: ../../source/parallel.rst:79
+msgid ""
+"与 MTP 对比，我们可以发现，MSP 主要针对未进行张量并行的模块，如 ``LayerNorm`` 和 ``Dropout`` "
+"等模型进行序列化并行操作。需要注意的是，序列化并行大小与张量并行大小相等，且共用通信组。假设张量并行大小为 ``tp`` ，输入数据的序列长度为 "
+"``seqlen`` ，隐藏层大小为 ``hidden size`` ，则序列化并行期间产生的激活值形状为 ``[seqlen/tp, "
+"hidden_size]`` ，张量并行期间产生的激活值形状为 ``[seqlen, hidden_size/tp]`` 。"
+msgstr ""
+"Compared to MTP, it is evident that MSP primarily focuses on modules "
+"without tensor parallelism, such as ``LayerNorm`` and ``Dropout`` , and "
+"performs sequence parallelism operations. It is important to note that "
+"the size of sequence parallelism is equal to the size of tensor "
+"parallelism, and they share the same communication group. Assuming the "
+"tensor parallelism size is tp, the input data has a sequence length of "
+"seqlen, and the hidden layer size is hidden size, the shape of activation"
+" values during sequence parallelism is ``[seqlen/tp, hidden_size]`` , "
+"while during tensor parallelism, it is ``[seqlen, hidden_size/tp]`` ."
+
+#: ../../source/parallel.rst:81
+msgid ""
+"MSP与MTP相比，通信原语有所变化，如上图所示 ``g`` 和 ``ḡ`` 是共轭的。在前向传递中 ``g`` 进行 ``all-"
+"gather`` 操作，而在反向传递中进行 ``reduce-scatter`` 操作。而 ``ḡ`` 在前向传递中进行 ``reduce-"
+"scatter`` 操作，在反向传递中进行 ``all-gather`` 操作。"
+msgstr ""
+"In comparison to MTP, there are variations in the communication "
+"primitives in MSP, as illustrated in the diagram above, where ``g`` and "
+"``ḡ`` are conjugates. In the forward pass, ``g`` performs an ``all-"
+"gather`` operation, while in the backward pass, it undergoes a ``reduce-"
+"scatter`` operation. On the other hand, ``ḡ`` conducts a ``reduce-"
+"scatter`` operation in the forward pass and an ``all-gather`` operation "
+"in the backward pass."
+
+#: ../../source/parallel.rst:83
+msgid ""
+"在前向传递中 ``g`` 通信处于序列化并行和张量并行的交接处，进行的是激活值在 ``seqlen`` 维度的 ``all-gather`` "
+"操作，该通信完成后，激活值形状变成完整的 ``[seqlen, hidden_size]`` ，然后进入张量并行模块范围。 ``ḡ`` "
+"通信处于张量并行和序列化并行的交接处，需要把 MTP 中的 ``all-reduce`` 通信操作变成 ``reduce-scatter`` "
+"，才能完成 ``seqlen`` 维度的切分，激活值形状变成 ``[seqlen/tp, hidden_size]`` "
+"，从而正常进入序列化并行的阶段。而反向传递时，则是同样的道理。"
+msgstr ""
+"In the forward pass, the communication of ``g`` occurs at the junction of"
+" sequence parallelism and tensor parallelism, performing an ``all-"
+"gather`` operation along the seqlen dimension of activation values. After"
+" this communication is completed, the shape of the activation values "
+"becomes the full ``[seqlen, hidden_size]`` , and then it enters the scope"
+" of the tensor parallelism module. The communication of ``ḡ`` is situated"
+" at the junction of tensor parallelism and sequence parallelism, "
+"requiring the transformation of the ``all-reduce`` communication "
+"operation from MTP into a ``reduce-scatter`` operation to achieve the "
+"split along the seqlen dimension. This results in the activation values "
+"having a shape of ``[seqlen/tp, hidden_size]`` , enabling a smooth "
+"transition into the sequence parallelism phase. The same principles apply"
+" during the backward pass."
+
+#: ../../source/parallel.rst:85
+msgid "FSP"
+msgstr ""
+
+#: ../../source/parallel.rst:87
+msgid ""
+"FSP(Flash-Attn Sequence Parallel)，引用自 `flash attention "
+"<https://github.com/Dao-AILab/flash-attention>`_ 的序列化并行实现方案。该实现方案与 MSP "
+"的唯一区别在于，在 ``g`` 进行 ``all-gather`` 通信后，MSP 会存储一份完整的输入数据用于 backward 计算，而 "
+"FSP 则只存储 ``seqlen`` 切分后的输入数据，因此在进行 backward 计算时，需要再额外 ``all-gather`` "
+"一次输入。"
+msgstr ""
+"FSP (Flash-Attn Sequence Parallel) is a sequence parallelism "
+"implementation inspired by the flash attention scheme, as referenced in "
+"`flash attention <https://github.com/Dao-AILab/flash-attention>`_. The "
+"only difference between this implementation and MSP is that, after the "
+"``g`` performs ``all-gather`` communication, MSP stores a complete copy "
+"of the input data for backward computation, while FSP only retains the "
+"input data split into seqlen segments. Therefore, during backward "
+"computation, an additional ``all-gather`` operation is needed to retrieve"
+" the complete input data."
+
+#: ../../source/parallel.rst:89
+msgid "因此，FSP 与 MSP 性能对比的话，会有更小的显存占用，但是由于引入额外的 ``all-gather`` 通信，会导致训练速度 TGS 降低。"
+msgstr ""
+"Therefore, in terms of performance comparison between FSP and MSP, FSP "
+"tends to have a smaller memory footprint. However, the introduction of "
+"additional ``all-gather`` communication can lead to a reduction in the "
+"training speed, denoted as TGS."
+
+#: ../../source/parallel.rst:92
+msgid "ISP"
+msgstr ""
+
+#: ../../source/parallel.rst:94
+msgid ""
+"ISP(Intern Sequence Parallel)，InternEvo "
+"系统自研的灵活可扩展序列化并行方案，支持张量并行与序列化并行解耦，通过计算和通信的overlap提高训练性能，并基于显存池管理降低显存碎片化的可能性，提高显存利用率。"
+msgstr ""
+"ISP (Intern Sequence Parallel) is a flexible and scalable sequence "
+"parallelism solution developed in-house by the InternEvo system. It "
+"supports the decoupling of tensor parallelism and sequence parallelism, "
+"enhancing training performance through the overlap of computation and "
+"communication. Additionally, it incorporates memory pool management to "
+"reduce the likelihood of memory fragmentation, thereby improving memory "
+"utilization."
+
+#: ../../source/parallel.rst:96
+msgid ""
+"以 `configs/7B_isp_sft.py "
+"<https://github.com/InternLM/InternEvo/blob/develop/configs/7B_isp_sft.py>`_"
+" 配置文件为例，将 ``tensor.mode`` 字段设置为 ``isp`` ，而 ``tensor.size`` 字段代表的是数据 "
+"``seqlen`` 维度切分大小。ISP 算法可与 ``weight parallel`` 结合使用，其中 ``weight.size`` "
+"字段代表的是模型权重切分大小，将 ``weight.overlap`` 字段设置为 ``True`` 即为开启计算与通信的 ``overlap``"
+" ，可提高训练性能。将 ``weight.memory_pool`` 字段设置为 ``True`` 即为开启显存池管理功能，可一定程度降低 GPU"
+" 显存碎片的可能性，提高显存利用率。"
+msgstr ""
+"Taking the configuration file `configs/7B_isp_sft.py "
+"<https://github.com/InternLM/InternEvo/blob/develop/configs/7B_isp_sft.py>`_"
+" as an example, set the tensor.mode field to isp, where the tensor.size "
+"field represents the size of data split along the seqlen dimension. The "
+"ISP algorithm can be combined with weight parallel, where the weight.size"
+" field represents the model weight split size. Setting weight.overlap to "
+"True enables computation and communication overlap, enhancing training "
+"performance. Setting weight.memory_pool to True activates the memory pool"
+" management feature, which helps to some extent in reducing the "
+"likelihood of GPU memory fragmentation and improving memory utilization."
+
+#: ../../source/parallel.rst:107
+msgid "如下图所示，带有序列化并行和权重并行的 ``Transformer`` 层："
+msgstr ""
+"As illustrated in the diagram below, there is a Transformer layer with "
+"both sequence parallelism and weight parallelism:"
+
+#: ../../source/parallel.rst:113
+msgid ""
+"如图所示，ISP 的序列化并行范围覆盖整个 ``Transformer`` 模型层，模型权重并行主要针对 ``Attention`` 和 "
+"``MLP Block`` 的 ``Linear module`` 。"
+msgstr ""
+"As shown in the figure, the sequence parallelism scope of ISP covers the "
+"entire Transformer model layer, while the weight parallelism primarily "
+"targets the Linear module within the Attention and MLP Block."
+
+#: ../../source/parallel.rst:115
+msgid ""
+"通信原语变化情况为，在前向传递时，每个 ``Linear`` 需要进行模型权重的 ``all-gather`` 通信；在后向传递时，每个 "
+"``Linear`` 在进行后向计算前需要进行模型权重的 ``all-gather`` 通信，在后向计算后，需要进行模型权重的梯度的 "
+"``reduce-scatter`` 通信操作。"
+msgstr ""
+"The changes in communication primitives are as follows: during the "
+"forward pass, each Linear module requires ``all-gather`` communication "
+"for model weight. In the backward pass, before performing the backward "
+"computation, each Linear module requires ``all-gather`` communication for"
+" model weight. After the backward computation, there is a ``reduce-"
+"scatter`` communication operation for the gradients of model weights."
+
+#: ../../source/parallel.rst:117
+msgid ""
+"需要注意的是，与 MSP 和 FSP 相比，在进行 ``attention score`` 计算时，ISP 也有通信原语的一些变化，如 "
+"``Self-Atten`` 前后各增加了一个 ``all-to-all`` 通信操作，用于完成激活值形状的转置，目的是在进行 "
+"``attention score`` 计算时能保持原有的张量并行的模式。"
+msgstr ""
+"It is important to note that, in comparison to MSP and FSP, there are "
+"some changes in communication primitives for attention score calculation "
+"in ISP. For instance, before and after ``Self-Atten``, an additional "
+"``all-to-all`` communication operation is introduced to transpose the "
+"shape of activation values. The purpose is to maintain the original "
+"tensor parallelism pattern during the attention score calculation."
+
+#: ../../source/parallel.rst:119
+msgid ""
+"关于 ISP 算法更多的设计思路和性能评测，请参考论文 `InternEvo: Efficient Long-sequence Large "
+"Language Model Training via Hybrid Parallelism and Redundant Sharding "
+"<https://arxiv.org/abs/2401.09149>`_ 。"
+msgstr ""
+"For more design details and performance evaluation of the ISP algorithm, "
+"please refer to the paper `InternEvo: Efficient Long-sequence Large "
+"Language Model Training via Hybrid Parallelism and Redundant Sharding "
+"<https://arxiv.org/abs/2401.09149>`_."
+
+#: ../../source/parallel.rst:123
+msgid "流水线并行"
+msgstr "Pipeline Parallel"
+
+#: ../../source/parallel.rst:125
+msgid ""
+"InternEvo 在流水线并行中使用 `1F1B <https://arxiv.org/pdf/2104.04473.pdf>`_ "
+"（1F1B，一次前向传递后跟一次反向传递）策略。对于 1F1B 策略，有两种实现方式："
+msgstr ""
+"InternEvo uses `1F1B <https://arxiv.org/pdf/2104.04473.pdf>`_ (one "
+"forward pass followed by one backward pass) for pipeline parallel. For "
+"1F1B strategy, there are two implementations:"
+
+#: ../../source/parallel.rst:127
+msgid "非交错调度器，内存高效。"
+msgstr "non-interleaved scheduler, which is memory-efficient"
+
+#: ../../source/parallel.rst:128
+msgid "交错调度器，内存高效且时间高效（GPU空泡较少）。"
+msgstr "interleaved scheduler, which is both memory-efficient and time-efficient."
+
+#: ../../source/parallel.rst:134
+msgid "1F1B 流水线并行调度器，采用自 `Megatron-LM <https://arxiv.org/pdf/2104.04473.pdf>`_"
+msgstr ""
+"Non-interleaved and interleaved scheduler for 1F1B pipeline parallelism, "
+"adopted from `Megatron-LM <https://arxiv.org/pdf/2104.04473.pdf>`_"
+
+#: ../../source/parallel.rst:137
+msgid "非交错式流水线调度"
+msgstr "scheduler for non-interleaved 1F1B strategy"
+
+#: ../../source/parallel.rst:138
+msgid "如果要使用非交错式调度, 需要设置 ``model.num_chunks = 1`` 。"
+msgstr ""
+"To use non-interleaved pipeline scheduler, users need to set "
+"``model.num_chunks = 1`` in the config file."
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:1 of
+msgid ""
+"A helper schedule class for pipeline parallelism running environment. It "
+"uses non-interleaved 1F1B strategy. Other properties are similar as "
+":class:`NonPipelineSchedule`."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.pre_processing
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.zero_grad of
+msgid "参数"
+msgstr "Parameter"
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:5 of
+msgid "The number of microbatches."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:7 of
+msgid "Type of data. torch.float by default."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:9 of
+msgid ""
+"The post processing function which receives a micro batch of data, and it"
+" will be executed in `load_micro_batch`."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:12 of
+msgid "Specified shape in pipeline communication."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:14 of
+msgid ""
+"If set to `True`, communication will be reduced over pipeline when using "
+"1D tensor parallelization."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler:16 of
+msgid "List of scheduler hooks."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.pre_processing:1
+#: of
+msgid "To perform actions before running the schedule."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.pre_processing:3
+#: of
+msgid "InternLM engine for training and inference."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:1
+#: of
+msgid ""
+"Runs non-interleaved 1F1B schedule, with communication between pipeline "
+"stages. Returns a tuple with losses if the last stage, an empty tuple "
+"otherwise."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:4
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:4
+#: of
+msgid "Colossalai engine for training and inference."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:6
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:6
+#: of
+msgid ""
+"Dataloader as the form of an iterator, obtained by calling "
+"iter(dataloader)."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:8
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:8
+#: of
+msgid ""
+"Whether run forward step only. Default is false. If true, no backward "
+"will be run."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:10
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:10
+#: of
+msgid "Whether returns the loss value. Default is true."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:12
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:12
+#: of
+msgid "If False, the output and label won't be returned."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step of
+msgid "返回"
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:15
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:15
+#: of
+msgid ""
+"A tuple of (output, label, loss, moe_loss), loss and label could be None."
+"     The loss would be returned only in the last stage. And the moe_loss "
+"is accumulated from all stages."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:17
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:17
+#: of
+msgid "A tuple of (output, label, loss, moe_loss), loss and label could be None."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step:18
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step:18
+#: of
+msgid ""
+"The loss would be returned only in the last stage. And the moe_loss is "
+"accumulated from all stages."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler.InterleavedPipelineScheduler.forward_backward_step
+#: internlm.core.scheduler.pipeline_scheduler.PipelineScheduler.forward_backward_step
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step of
+msgid "返回类型"
+msgstr "Return type"
+
+#: internlm.core.scheduler.pipeline_scheduler_1f1b.InterleavedPipelineScheduler.forward_backward_step:19
+#: internlm.core.scheduler.pipeline_scheduler_1f1b.PipelineScheduler.forward_backward_step:19
+#: of
+msgid "Tuple[:class:`torch.Tensor`]"
+msgstr ""
+
+#: ../../source/parallel.rst:144
+msgid "交错式流水线调度"
+msgstr "scheduler for interleaved 1F1B strategy"
+
+#: ../../source/parallel.rst:145
+msgid "如果要使用交错式调度, 需要设置 ``model.num_chunks > 1`` 。"
+msgstr ""
+"To use interleaved pipeline scheduler, users need to set "
+"``model.num_chunks > 1`` in the config file."
+
+#: internlm.core.scheduler.pipeline_scheduler_1f1b.InterleavedPipelineScheduler:1 of
+msgid "Interleaved Pipeline Scheduler."
+msgstr ""
+
+#: internlm.core.scheduler.pipeline_scheduler_1f1b.InterleavedPipelineScheduler.forward_backward_step:1
+#: of
+msgid ""
+"Run interleaved 1F1B schedule (model split into model chunks), with "
+"communication between pipeline stages as needed."
+msgstr ""
+
+#: ../../source/parallel.rst:150
+msgid "值得注意的是，在使用交错式流水线调度器时可启用通信优化功能，即在 1F1B 阶段启用异步通信，以充分利用上行/下行带宽并实现通信与计算重叠。"
+msgstr ""
+"Asynchronous communication will be enabled in 1F1B stage to make full use"
+" of uplink/downlink bandwidth and achieve communication overlap. "
+
+#: ../../source/parallel.rst:152
+msgid ""
+"用户需要在配置文件中设置 ``parallel.pipeline.interleaved_overlap = True`` "
+"。该功能启用后，将调用函数 "
+"``InterleavedPipelineScheduler._run_1f1b_loop_with_overlap`` ，并创建 "
+"``internlm.core.communication.AsynCommunicator`` 以管理异步通信。"
+msgstr ""
+"When ``parallel.pipeline.interleaved_overlap = True`` , function "
+"``InterleavedPipelineScheduler._run_1f1b_loop_with_overlap`` will be "
+"called and ``internlm.core.communication.AsynCommunicator`` will be "
+"created for managing async communication."
+
+#: ../../source/parallel.rst:154
+msgid "``1F1B-without-overlap`` 和 ``1F1B-with-overlap`` 的区别如下所示："
+msgstr ""
+"The difference between 1F1B stage without overlap and 1F1B stage with "
+"overlap is shown as follows:"
+
+#: ../../source/parallel.rst:174
+msgid "数据并行"
+msgstr "Data Parallel"
+
+#: ../../source/parallel.rst:176
+msgid "InternEvo 支持数据并行。数据并行大小为:"
+msgstr "InternEvo supports data parallel. For data parallel:"
+
+#: ../../source/parallel.rst:178
+msgid ""
+"`Data parallel size = Total number of GPUs / Pipeline parallel size / "
+"Tensor parallel size`"
+msgstr ""
+
+#: ../../source/parallel.rst:181
+msgid "ZeRO1.5"
+msgstr ""
+
+#: ../../source/parallel.rst:183
+msgid ""
+"ZeRO1.5 的实现使用了分层分片的概念，通过配置值 ``parallel.zero1`` "
+"启用了本地节点内的分片。这个方法有助于有效管理和分配模型参数和梯度，以减少内存使用并提高训练效率。"
+msgstr ""
+"The implementation of ZeRO1.5 uses the concept of hierarchical sharding "
+"via config value ``parallel.zero1``, which enables sharding within local "
+"nodes."
+
+#: ../../source/parallel.rst:185
+msgid "当 ``parallel.zero1 <= 0`` ，则 zero1 进程组的大小等于数据并行进程组的大小，因此优化器状态参数将在数据并行范围内分配"
+msgstr ""
+"If ``parallel.zero1 <= 0`` , the size of the zero process group is equal "
+"to the size of the dp process group, so parameters will be divided within"
+" the range of dp."
+
+#: ../../source/parallel.rst:186
+msgid "当 ``parallel.zero1 == 1`` ，则不使用 zero1 ，所有数据并行组保留完整的优化器状态参数"
+msgstr ""
+"If ``parallel.zero1 == 1`` , zero is not used, and all dp groups retain "
+"the full amount of model parameters."
+
+#: ../../source/parallel.rst:187
+msgid ""
+"当 ``parallel.zero1 > 1`` 且 ``parallel.zero1 <= data_parallel_world_size``"
+" ，则 zero1 进程组是数据并行进程组的子集"
+msgstr ""
+"If ``parallel.zero1 > 1`` and ``parallel.zero1 <= dp world size`` , the "
+"world size of zero is a subset of dp world size. For smaller models, it "
+"is usually a better choice to split the parameters within nodes with a "
+"setting ``parallel.zero1 <= 8`` ."
+
+#: ../../source/parallel.rst:189
+msgid ""
+"此外，用户可以在配置文件中通过 ``hybrid_zero_optimizer`` "
+"字段启用优化器的通信优化功能，设置桶大小，以及梯度剪裁等参数。这些设置有助于优化训练过程中的通信和计算效率，以及梯度的处理方式。"
+msgstr ""
+"Furthermore, you can enable communication-computation overlap, set bucket"
+" reduce size, gradient clipping parameters in the config file."
+
+#: ../../source/parallel.rst:203
+msgid "这里有两个值得关注的通信优化点："
+msgstr "There are two communication optimizations worth paying attention to here:"
+
+#: ../../source/parallel.rst:205
+msgid ""
+"overlap_sync_grad: 如果设置为 ``True`` ，则将训练的 ``backward pass`` 与梯度的 ``all-"
+"reduce`` 通信重叠"
+msgstr ""
+"overlap_sync_grad: If set True, overlapping training backward pass with "
+"gradients' all-reduce communication."
+
+#: ../../source/parallel.rst:206
+msgid ""
+"overlap_sync_param: 如果设置为 ``True`` ，则将参数的 ``broadcast`` 通信与下一步的 ``forward"
+" pass`` 进行重叠"
+msgstr ""
+"overlap_sync_param: If set True, overlapping parameters' broadcast "
+"communication with next step's forward pass."
+
+#: ../../source/parallel.rst:208
+msgid "这些优化可以加速训练过程，提高训练效率。"
+msgstr ""
+"These optimizations can speed up the training process and improve "
+"training efficiency."
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer:1 of
+msgid "Hybrid Zero Optimizer."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank:1
+#: of
+msgid ""
+"Check whether a parameter is supposed to be updated by the process of the"
+" current rank"
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank:3
+#: of
+msgid "A :class:`torch.Tensor` object"
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.belongs_to_current_rank:6
+#: of
+msgid ""
+"True if the parameter should be updated by the current rank. Otherwise "
+"false."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.zero_grad:1
+#: of
+msgid ""
+"Set parameter gradients to zero. If set_to_none = True, gradient will be "
+"set to None to save memory."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.zero_grad:4
+#: of
+msgid "Whether set the gradient to None. Default value is True."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step:1 of
+msgid "Performs a single optimization step."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step:3 of
+msgid "A closure that reevaluates the model and returns the loss."
+msgstr ""
+
+#: internlm.solver.optimizer.hybrid_zero_optim.HybridZeroOptimizer.step:7 of
+msgid "Whether the gradient is success updated, and the gradient."
+msgstr ""
+
+#: ../../source/parallel.rst:214 ../../source/parallel.rst:228
+msgid "2D-Attention"
+msgstr "2D-Attention"
+
+#: ../../source/parallel.rst:215
+msgid ""
+"2D-Attention是InternEvo系统扩展ISP的序列化并行方案，集成了Ring-Attention和ISP，能够支持更长的序列。 "
+"ISP由于需要在attention前后分别进行All2All通信，在 ``sequence parallel`` 和 ``head "
+"parallel`` 之间进行切换， 因此 ``sp size`` 自然受到 ``head number`` 的限制，无法进行扩展；而Ring-"
+"Attention由于在attention计算过程中需要进行P2P通信，可能会遇到通信低效的问题。"
+msgstr ""
+"2D-Attention is the sequence parallelism within InternEvo, integrating both the Ring-Attention and ISP. "
+" The sequence parallel size in ISP is constrained by the head number, limiting the scalability. "
+" Meanwhile, the Ring-Attention may lead to suboptimal performance due to the inefficient P2P communication."
+
+#: ../../source/parallel.rst:219
+msgid ""
+"2D-Attention将ISP和Ring-Attention相结合，组成一个混合序列并行，能够解除 ``sp size`` 小于等于 "
+"``head number`` 的限制，同时避免P2P低效带宽利用。"
+msgstr ""
+"2D-Attention, by integrating ISP and Ring-Attention, not only overcomes the limitation that the sequence parallel size "
+"must not exceed the head number, but also enhances the P2P communication efficiency."
+
+#: ../../source/parallel.rst:221
+msgid ""
+"在2D-Attention中， ``sp size = hp size * cp size`` 。其中， ``hp size`` 为 ``head"
+" parallel size`` ， ``cp size`` 为 ``context parallel size`` （Ring-"
+"Attention）。 下图展示了 ``hp=2`` ， ``cp=4`` 的例子。"
+msgstr ""
+"In 2D-Attention, ``sp size = hp size * cp size``, where ``hp size`` represents the head parallel size, "
+"``cp size`` denotes the context parallel size. The following figure shows an example where hp=2, cp=4."
+
+#: ../../source/parallel.rst:230
+msgid ""
+"在上图中，不同颜色表示不同的head，在做第一个All2All之前，GPU0~3拥有两个head的前4个token； "
+"GPU4~7拥有两个head的后4个token。在第一个All2All之后，GPU0~3拥有第一个head的所有token，且将第一个head的所有token切成4份"
+"，做Ring-Attention，GPU4~7同理；在第2个All2All之后，所有GPU又回到初始状态。"
+msgstr ""
+"In the above figure, different color represents different head. Before conducting the first All2All, GPU 0~3 process the first 4 tokens for two heads, "
+"while GPU 4~7 hold the last 4 tokens of the same two heads. After the first All2All, GPU 0~3 receive all tokens for the first head "
+"and divide these tokens into 4 segments to perform Ring-Attention. GPU 4~7 follow a similar process. "
+"All GPUs return the initial states after the second All2All."
+
+#: ../../source/parallel.rst:233
+msgid "InternEvo针对2D-Attention做了一些更进一步的优化："
+msgstr ""
+"InternEvo implements several optimizations for 2D-Attention to achieve additional performance enhancements."
+
+#: ../../source/parallel.rst:235
+msgid ""
+"由于因果模型的限制，在Ring-Attention中会导致每个GPU的计算负载不均衡，因此InternEvo参考了 `zigzag "
+"<https://github.com/zhuzilin/ring-flash-attention/issues/2>`_ ，在2D-"
+"Attention中的 ``context parallel`` 使用了zigzag模式"
+msgstr ""
+"In Ring-Attention, the computation load for each GPU is unevenly distributed due to the causal model. "
+"InternEvo addresses this imbalance by implementing zigzag in context parallel as described in `zigzag <https://github.com/zhuzilin/ring-flash-attention/issues/2>`_"
+
+#: ../../source/parallel.rst:236
+msgid ""
+"为了充分利用集群的网卡资源，提高通信效率，2D-Attention在做 ``context parallel`` 的时候，引入了一个 "
+"``window size`` 概念，即为Double-Ring Attention。下图展示了 ``cp=8`` ， "
+"``window_size=4`` 的例子。GPU 0~3和GPU 4~7内部分别做inner Ring "
+"Attention，进行节点内P2P通信。GPU 0和4做Outer Ring "
+"Attention，进行节点间P2P通信，网卡利用示意图如下图所示。"
+msgstr ""
+"2D-Attention introduces the window size concept in context parallel to optimize the use of NIC resources, known as Double-Ring Attention. "
+"The following diagram illustrates an example where ``cp=8``, ``window_size=4``. GPU 0~3 and 4~7 perform the inner Ring Attention respectively, which involves intra-node communication. "
+"GPU 0 and GPU 4 carry out the outer Ring Attention, which involves inter-node communication."
+
+#: ../../source/parallel.rst:242
+msgid "Double-Ring-Attention"
+msgstr "Double-Ring-Attention"
+
+#: ../../source/parallel.rst:244
+msgid ""
+"由于2D-Attention中同时涉及到 ``head parallel`` 和 ``context parallel`` "
+"，因此InternEvo提供了可配置选项，用于控制 ``head parallel`` 和 ``context parallel`` "
+"创建通信组的优先级"
+msgstr ""
+"Since the 2D-Attention involves head parallel and context parallel, InternEvo provides the configuration options to manage"
+"the priority of establishing communication groups for head parallel and context parallel."
+
+#: ../../source/parallel.rst:245
+msgid ""
+"为了充分利用网卡资源，需要特别注意创建 ``context parallel`` 通信组。当 ``head parallel`` 优先创建通信组，"
+" ``context parallel`` 的GPU天然就是interleaved，这时天然能够利用网卡资源；当 ``context "
+"parallel`` 优先创建通信组时，这些 ``context parallel`` "
+"被分配到的GPU往往是连续的，为了提高通信效率，InternEvo提供了interleaved配置选项，可以在 ``window size > "
+"1`` 的情况，重排 ``context parallel`` 的GPU。"
+msgstr ""
+"It should be noted that the establishment of process group for context parallel to take advantage of NIC resources. "
+"When head parallel is given high priority, the GPUs assigned to context parallel are natively interleaved, which is beneficial for utilizing the NIC. "
+"Conversely, when context parallel is prioritized, the arrangement of GPUs for context parallel tends to be sequential. "
+"To improve the communication efficiency, InternEvo provides an interleaved configuration. "
+"This allows for the reorganization of GPUs involved in context parallel when ``window size > 1``."
+
+#: ../../source/parallel.rst:247
+msgid "下图展示了一个Double-Ring-Attention充分利用网卡资源的示例。"
+msgstr "The following figure shows an example of how Double-Ring-Attention optimizes the utilization of NIC resources."
+
+#: ../../source/parallel.rst:253
+msgid "Communication in Double-Ring-Attention"
+msgstr "Communication in Double-Ring-Attention"
+
+#: ../../source/parallel.rst:255
+msgid "InternEvo在parallel config里面添加了sequence_2D用于配置2D-Attention。"
+msgstr "InternEvo introduces the sequence_2D in parallel configuration to set up 2D-Attention."
+
+#: ../../source/parallel.rst:274
+msgid "``sequence_2D.enable`` 字段表示是否启用2D-Attention"
+msgstr "``sequence_2D.enable`` indicates whether to employ 2D-Attention"
+
+#: ../../source/parallel.rst:276
+msgid "``sequence_2D.head_size`` 字段表示head parallel size"
+msgstr "``sequence_2D.head_size`` denotes the head parallel size"
+
+#: ../../source/parallel.rst:278
+msgid "``sequence_2D.context_size`` 字段表示context parallel size"
+msgstr "``sequence_2D.context_size`` represents the context parallel size"
+
+#: ../../source/parallel.rst:280
+msgid "``sequence_2D.window_size`` 字段表示Double-Ring Attention中的window_size"
+msgstr "``sequence_2D.window_size`` indicates the windo_size in Double-Ring Attention"
+
+#: ../../source/parallel.rst:282
+msgid ""
+"``sequence_2D.device_placement_strategy.head_first`` 字段表示是否优先分配head "
+"parallel通信组，若为False，则为context-first"
+msgstr ""
+"``sequence_2D.device_placement_strategy.head_first`` determines whether to prioritize the establishment of the head parallel process group."
+"If set to False, the context parallel is given priority instead."
+
+#: ../../source/parallel.rst:284
+msgid ""
+"``sequence_2D.device_placement_strategy.interleavd`` 字段表示是否对context "
+"parallel的GPU重排，该字段在 "
+"``sequence_2D.device_placement_strategy.head_first=False`` 和 "
+"``sequence_2D.window_size>1`` 时，推荐设置为 ``True``"
+msgstr ""
+"``sequence_2D.device_placement_strategy.interleavd`` determines whether to rearrange the GPUs for context parallel."
+"It is recommend to set it to True when ``sequence_2D.device_placement_strategy.head_first=False`` and ``sequence_2D.window_size>1``."
+
+#: ../../source/parallel.rst:286
+msgid ""
+"关于 2D-Attention更多的设计思路和性能评测，请参考论文 `LoongTrain: Efficient Training of "
+"Long-Sequence LLMs with Head-Context Parallelism "
+"<https://arxiv.org/pdf/2406.18485>`_"
+msgstr ""
+"For more design concepts and performance evaluations of 2D-Attention, please refer to the paper"
+" `LoongTrain: Efficient Training of Long-Sequence LLMs with Head-Context Parallelism <https://arxiv.org/pdf/2406.18485>`_"
+
+#~ msgid "A tuple of (output, label, loss), loss and label could be None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tuple of (output, label, loss), "
+#~ "loss and label could be None.     "
+#~ "The loss would be returned only in"
+#~ " the last stage."
+#~ msgstr ""
+
+#~ msgid "The loss would be returned only in the last stage."
+#~ msgstr ""
+
+#~ msgid "sequence_parallel：是否开启序列化并行，默认值为 False"
+#~ msgstr ""
+#~ "sequence_parallel: whether to enable sequence"
+#~ " parallelism, the default value is "
+#~ "False"
+
+#~ msgid "用户可通过配置文件中的 ``parallel.tensor`` 字段来设置张量并行大小。"
+#~ msgstr ""
+#~ "To use tensor parallel, you need "
+#~ "to set the value of tensor "
+#~ "parallel size ``parallel.tensor`` in the "
+#~ "config file, which is usually the "
+#~ "number of GPUs per node."
+
+#~ msgid "张量并行，采用自 `flash-attention <https://arxiv.org/pdf/2205.14135.pdf>`_"
+#~ msgstr ""
+#~ "Tensor parallel, adopted from `flash-"
+#~ "attention <https://arxiv.org/pdf/2205.14135.pdf>`_"
+
+#~ msgid ""
+#~ "A helper schedule class for pipeline "
+#~ "parallelism running environment. It uses "
+#~ "non-interleaved 1F1B strategy. Other "
+#~ "properties are similar as "
+#~ ":class:`NonPipelineSchedule`."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "The number of microbatches."
+#~ msgstr ""
+
+#~ msgid "Type of data. torch.float by default."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The post processing function which "
+#~ "receives a micro batch of data, "
+#~ "and it will be executed in "
+#~ "`load_micro_batch`."
+#~ msgstr ""
+
+#~ msgid "Specified shape in pipeline communication."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If set to `True`, communication will "
+#~ "be reduced over pipeline when using "
+#~ "1D tensor parallelization."
+#~ msgstr ""
+
+#~ msgid "List of scheduler hooks."
+#~ msgstr ""
+
+#~ msgid "To perform actions before running the schedule."
+#~ msgstr ""
+
+#~ msgid "InternLM engine for training and inference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Runs non-interleaved 1F1B schedule, with"
+#~ " communication between pipeline stages. "
+#~ "Returns a tuple with losses if the"
+#~ " last stage, an empty tuple "
+#~ "otherwise."
+#~ msgstr ""
+
+#~ msgid "Colossalai engine for training and inference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Dataloader as the form of an "
+#~ "iterator, obtained by calling "
+#~ "iter(dataloader)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Whether run forward step only. Default"
+#~ " is false. If true, no backward "
+#~ "will be run."
+#~ msgstr ""
+
+#~ msgid "Whether returns the loss value. Default is true."
+#~ msgstr ""
+
+#~ msgid "If False, the output and label won't be returned."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tuple of (output, label, loss, "
+#~ "moe_loss), loss and label could be "
+#~ "None.     The loss would be returned "
+#~ "only in the last stage. And the"
+#~ " moe_loss is accumulated from all "
+#~ "stages."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tuple of (output, label, loss, "
+#~ "moe_loss), loss and label could be "
+#~ "None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The loss would be returned only in"
+#~ " the last stage. And the moe_loss "
+#~ "is accumulated from all stages."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "Tuple[:class:`torch.Tensor`]"
+#~ msgstr ""
+
+#~ msgid "Interleaved Pipeline Scheduler."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Run interleaved 1F1B schedule (model "
+#~ "split into model chunks), with "
+#~ "communication between pipeline stages as "
+#~ "needed."
+#~ msgstr ""
+
+#~ msgid "序列并行"
+#~ msgstr "Sequence Parallel"
+
+#~ msgid ""
+#~ "序列并行是一种在不引入额外计算、通信和内存开销的情况下，减少层 ``layer_norm`` 和 "
+#~ "``dropout`` 操作中的激活值内存。InternEvo 中的序列并行实现基于 `flash"
+#~ " attention <https://github.com/Dao-AILab/flash-"
+#~ "attention>`_。这个并行策略有助于降低模型的内存消耗，提高了模型在资源受限环境中的可扩展性。"
+#~ msgstr ""
+#~ "Sequence parallel is a technique to "
+#~ "reduce activation memory in layer norm"
+#~ " and dropout without additional "
+#~ "computation, communication or memory overhead."
+#~ " The implementation of sequence parallel"
+#~ " for InternEvo is based on `flash "
+#~ "attention <https://github.com/Dao-AILab/flash-"
+#~ "attention>`_. "
+
+#~ msgid "如果要启用序列并行, 用户需要设置 ``parallel.sequence_parallel = True``。"
+#~ msgstr ""
+#~ "To enable sequence parallel, you need"
+#~ " to set ``parallel.sequence_parallel = "
+#~ "True`` in the config file."
+
+#~ msgid "序列并行, 采用自 flash-attention"
+#~ msgstr "Sequence parallel, adopted from flash-attention"
+
+#~ msgid "Hybrid Zero Optimizer."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check whether a parameter is supposed"
+#~ " to be updated by the process "
+#~ "of the current rank"
+#~ msgstr ""
+
+#~ msgid "A :class:`torch.Tensor` object"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "True if the parameter should be "
+#~ "updated by the current rank. Otherwise"
+#~ " false."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set parameter gradients to zero. If "
+#~ "set_to_none = True, gradient will be "
+#~ "set to None to save memory."
+#~ msgstr ""
+
+#~ msgid "Whether set the gradient to None. Default value is True."
+#~ msgstr ""
+
+#~ msgid "Performs a single optimization step."
+#~ msgstr ""
+
+#~ msgid "A closure that reevaluates the model and returns the loss."
+#~ msgstr ""
+
+#~ msgid "Whether the gradient is success updated, and the gradient."
+#~ msgstr ""
+
+#~ msgid "并行训练"
+#~ msgstr "Parallel Training"
+

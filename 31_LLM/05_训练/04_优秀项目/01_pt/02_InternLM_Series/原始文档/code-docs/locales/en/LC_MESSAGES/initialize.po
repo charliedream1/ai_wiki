@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternLM Team
+# This file is distributed under the same license as the InternLM package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternLM \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-30 15:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../source/initialize.rst:2
+msgid "训练初始化"
+msgstr "Training Initialization"
+
+#: ../../source/initialize.rst:4
+msgid "InternEvo 的训练流程可以归纳为两个步骤："
+msgstr "The training process of InternEvo can be summarized into two steps: "
+
+#: ../../source/initialize.rst:6
+msgid "初始化"
+msgstr "Initialization"
+
+#: ../../source/initialize.rst:8
+msgid "初始化模型、优化器、数据加载器、Trainer，生成不同种类的进程组，为混合并行的迭代训练做准备。"
+msgstr ""
+"Initialize model, optimizer, dataloader, trainer, and create different "
+"types of process groups to prepare for iterative steps of hybrid parallel"
+" training. "
+
+#: ../../source/initialize.rst:9
+msgid "初始化Logger、Checkpoint管理器、Monitor管理器、Profiler，对迭代训练的过程观察、预警、记录。"
+msgstr ""
+"Initialize logger, checkpoint manager, monitor manager, and profiler to "
+"watch, alert, and record the iterative training steps. "
+
+#: ../../source/initialize.rst:11
+msgid "迭代训练"
+msgstr "Iterative training steps"
+
+#: ../../source/initialize.rst:13
+msgid "根据配置文件定义的张量并行、流水线并行、数据并行的大小，加载训练引擎和调度器进行混合并行训练。"
+msgstr ""
+"Load the training engine and scheduler for hybrid parallel training "
+"according to the configuration such as tensor parallel size, pipeline "
+"parallel size, and data parallel size. "
+
+#: ../../source/initialize.rst:14
+msgid "在迭代训练中，调用 Trainer API 进行梯度置零，前向传播计算损失并反向传播，参数更新。"
+msgstr ""
+"In iterative training steps, the Trainer API is called to perform zero "
+"gradients, forward-loss-backward, and parameter update."
+
+#: ../../source/initialize.rst:20
+msgid "InternEvo训练流程图"
+msgstr "InternEvo training process"
+
+#: ../../source/initialize.rst:25
+msgid "命令行参数解析"
+msgstr "Argument Parsing"
+
+#: ../../source/initialize.rst:27
+msgid ""
+"InternEvo 使用 `argparse "
+"<https://docs.python.org/3/library/argparse.html>`_ "
+"库来向InternEvo运行时提供命令行参数配置。"
+msgstr ""
+"InternEvo uses the `argparse "
+"<https://docs.python.org/3/library/argparse.html>`_ library to supply "
+"commandline configuration to the InternEvo runtime. "
+
+#: ../../source/initialize.rst:29
+msgid ""
+"用户可使用 ``internlm.initialize.get_default_parser()`` 来获取 InternEvo "
+"的默认解析器，其中包含一些内置参数，用户可以向此解析器添加自定义参数。"
+msgstr ""
+"Use ``internlm.initialize.get_default_parser()`` to get InternEvo's "
+"default parser with some builtin arguments, users can add custom "
+"parameters to this parser."
+
+#: ../../source/initialize.rst:44
+msgid "模型初始化"
+msgstr "Model Initialization"
+
+#: ../../source/initialize.rst:48
+msgid "InternEvo 在配置文件中使用字段 ``model_type`` 和 ``model`` 来控制模型初始化过程。示例模型初始化配置定义如下："
+msgstr ""
+"InternEvo uses the field ``model_type`` and ``model`` in the config file "
+"to control model initialization process. An example model initialization "
+"configuratio"
+
+#: ../../source/initialize.rst:76
+msgid "字段 ``model_type`` 指明了要初始化的模型类型"
+msgstr ""
+"The field ``model_type`` specifics the model type has been registered and"
+" to be initialized."
+
+#: ../../source/initialize.rst:77
+msgid "字段 ``model`` 中的参数指定了在模型初始化过程中的参数设置"
+msgstr ""
+"The parameters in field ``model`` specific the configuration settings "
+"during model initialization."
+
+#: ../../source/initialize.rst:79
+msgid "值得注意的是，用户可以定义新的模型类型，并通过 ``register_module`` 注册模型的初始化函数，示例如下所示："
+msgstr ""
+"It is worth noting that users can define new model types and register the"
+" model initialization functions via register_module. An example is shown "
+"as follows:"
+
+#: ../../source/initialize.rst:88
+msgid "其中，\"INTERNLM\"为新的模型类型，InternLM1为新模型的入口函数。"
+msgstr ""
+"In this context, \"INTERNLM\" is the new model type, and InternLM1 is the"
+" entry function for the new model."
+
+#: ../../source/initialize.rst:93
+msgid "数据加载器初始化"
+msgstr "Dataloader Initialization"
+
+#: ../../source/initialize.rst:97
+msgid "InternEvo 在配置文件中使用字段 ``data`` 来控制数据加载器初始化过程。示例数据加载器初始化配置定义如下："
+msgstr ""
+"InternEvo uses the field data in the configuration file to control the "
+"initialization process of the data loader. The example configuration for "
+"initializing the data loader is defined as follows:"
+
+#: ../../source/initialize.rst:134
+msgid "这里支持三种数据集的初始化，包括模拟数据集、已分词数据集和流式数据集。"
+msgstr ""
+"This section supports the initialization of three types of datasets, "
+"including dummy datasets, tokenized datasets, and streaming datasets."
+
+#: ../../source/initialize.rst:136
+msgid "模拟数据集"
+msgstr "dummy dataset"
+
+#: ../../source/initialize.rst:138
+msgid "如果设置TRAIN_FOLDER为None，则随机生成模拟数据集，如果设置的随机种子一样，生成的数据集保持一致。"
+msgstr ""
+"If the TRAIN_FOLDER is set to None, a dummy dataset will be randomly "
+"generated, and if the random seed is the same, the generated dataset will"
+" remain consistent."
+
+#: ../../source/initialize.rst:140
+msgid "已分词数据集"
+msgstr "tokenized dataset"
+
+#: ../../source/initialize.rst:142
+msgid "如果设置TRAIN_FOLDER为本地指定路径，路径中保存经过分词之后的.bin和.meta文件，则加载已分词数据集。"
+msgstr ""
+"If the TRAIN_FOLDER is set to a local path where the .bin and .meta files"
+" after tokenization are stored, then a tokenized dataset will be loaded."
+
+#: ../../source/initialize.rst:144
+msgid "流式数据集"
+msgstr "streaming dataset"
+
+#: ../../source/initialize.rst:146
+msgid "如果设置TRAIN_FOLDER为本地指定路径，路径中保存从huggingface下载的数据集，同时在data配置中，新增如下type和tokenizer_path字段，则加载流式数据集。"
+msgstr ""
+"If the TRAIN_FOLDER is set to a specified local path that contains the "
+"dataset downloaded from HuggingFace, and new fields type and "
+"tokenizer_path are added in the data configuration, then a streaming "
+"dataset will be loaded."
+
+#: ../../source/initialize.rst:153
+msgid ""
+"已分词数据集和流式数据集格式的详细说明，参见 `使用教程 "
+"<https://github.com/InternLM/InternEvo/blob/develop/doc/usage.md>`_"
+msgstr ""
+"For detailed instructions on the formats for tokenized datasets and "
+"streaming datasets, please refer to the `User Guide "
+"<https://github.com/InternLM/InternEvo/blob/develop/doc/en/usage.md>`_"
+
+#: ../../source/initialize.rst:158
+msgid "并行通信初始化"
+msgstr "Parallel Communication Initialization"
+
+#: ../../source/initialize.rst:162
+msgid "通过 ``initialize_parallel_communicator`` 函数，初始化不同模式并行下的通信状态。"
+msgstr "Initialize the communication status under different parallel modes using the ``initialize_parallel_communicator`` function."
+
+#: ../../source/initialize.rst:164
+msgid ""
+"在 ``ISP`` 并行模式下，处理overlap优化，以及注册linear层的All_Gather通信。 在 ``MTP`` "
+"并行模式下，分别注册被行切以及列切的权重的通信函数。 在 ``MSP`` 以及 ``FSP`` 并行模式下，注册序列并行的通信函数。 在 "
+"``MoE`` 模型中，注册MoE序列化并行通信函数。"
+msgstr ""
+"In the ``ISP`` parallel mode, handle overlap optimization and register the All_Gather communication for linear layers."
+" In the ``MTP`` parallel mode, register communication functions for weights that are row-wise and column-wise partitioned."
+" In ``MSP`` and ``FSP`` parallel modes, register communication functions for sequence parallelism."
+" In the ``MoE`` model, register the MoE serialized parallel communication function."
+
+#: ../../source/initialize.rst:172
+msgid "优化器初始化"
+msgstr "Optimizer Initialization"
+
+#: ../../source/initialize.rst:176
+msgid ""
+"InternEvo 在配置文件中使用字段 ``grad_scaler`` 、 ``hybrid_zero_optimizer`` 、 "
+"``adam`` 、 ``lr_scheduler`` 和 ``beta2_scheduler`` "
+"来控制优化器初始化过程。示例优化器初始化配置定义如下："
+msgstr ""
+"InternEvo utilizes the fields grad_scaler, hybrid_zero_optimizer, adam, "
+"lr_scheduler, and beta2_scheduler in the configuration file to control "
+"the initialization process of the optimizer. An example configuration for"
+" initializing the optimizer is defined as follows:"
+
+#: ../../source/initialize.rst:237
+msgid ""
+"用户通过 ``initialize_optimizer`` 函数初始化优化器，并传入 ``isp_communicator`` 参数，以便处理 "
+"ISP 并行模式下的通信。"
+msgstr ""
+"Users initialize the optimizer through the function initialize_optimizer "
+"and pass in the isp_communicator parameter to handle communication in the"
+" ISP parallel mode."
+
+#: ../../source/initialize.rst:242
+msgid "Trainer 初始化"
+msgstr "Trainer Initialization"
+
+#: ../../source/initialize.rst:246
+msgid "通过initialize_trainer函数，初始化训练过程，需要输入创建好的模型、初始化的优化器以及调度器等参数。"
+msgstr ""
+"The initialize_trainer function is used to initiate the training process,"
+" requiring parameters such as the created model, initialized optimizer, "
+"scheduler, and other related parameters."
+
+#~ msgid "Initialize model with Automatic Mixed Precision."
+#~ msgstr ""
+
+#~ msgid "The neural network model to be trained or evaluated."
+#~ msgstr ""
+
+#~ msgid "Initialize optimizer."
+#~ msgstr ""
+
+#~ msgid "Your model instance to be trained or evaluated."
+#~ msgstr ""
+
+#~ msgid "A tuple of (optimizer, beta2_scheduler, lr_scheduler)."
+#~ msgstr ""
+
+#~ msgid "Generate and return the training data loader."
+#~ msgstr ""
+
+#~ msgid "number of subprocesses used for dataloader."
+#~ msgstr ""
+
+#~ msgid "generate function for dataset."
+#~ msgstr ""
+
+#~ msgid "dataset sampler for training dataloader."
+#~ msgstr ""
+
+#~ msgid "collate function for training dataloader."
+#~ msgstr ""
+
+#~ msgid "A tuple of (train_dl, dataset_types)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Reads user command line and uses "
+#~ "an argument parser to parse the "
+#~ "input arguments. Input arguments include "
+#~ "configuration, host, port, world size, "
+#~ "local rank, backend for torch.distributed."
+#~ msgstr ""
+
+#~ msgid "返回"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns the parser with the default "
+#~ "arguments, the user may add customized"
+#~ " arguments into this parser."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "值得注意的是，用户可以定义新的模型类型，并使用装饰器 "
+#~ "``@MODEL_INITIALIZER.register_module`` 注册模型的初始化函数，其中 "
+#~ "``MODEL_INITIALIZER`` 是类 "
+#~ "``internlm.util.registry.Registry`` 的一个实例化对象，示例如下所示："
+#~ msgstr ""
+#~ "It is worth noting that, users can"
+#~ " define new model type, and register"
+#~ " model's initialization function by "
+#~ "decorater ``@MODEL_INITIALIZER.register_module``, which"
+#~ " ``MODEL_INITIALIZER`` is an instantiated "
+#~ "object of class ``internlm.util.registry.Registry``,"
+#~ " the example is shown as follows."
+
+#~ msgid ""
+#~ "Core function to wrap the essential "
+#~ "training components with our functionality "
+#~ "based on the config which is "
+#~ "loaded into gpc.config."
+#~ msgstr ""
+
+#~ msgid "参数"
+#~ msgstr ""
+
+#~ msgid "Your model instance or a function to build the model."
+#~ msgstr ""
+
+#~ msgid "Your optimizer for training."
+#~ msgstr ""
+
+#~ msgid "Your criterion instance."
+#~ msgstr ""
+
+#~ msgid "Dataloader for training."
+#~ msgstr ""
+
+#~ msgid "Dataloader for testing."
+#~ msgstr ""
+
+#~ msgid "Your lr scheduler instance, optional."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A tuple of ``(trainer, train_dataloader, "
+#~ "test_dataloader, lr_scheduler)`` where only "
+#~ "``trainer`` could not be None."
+#~ msgstr ""
+
+#~ msgid "训练构建"
+#~ msgstr "Training Setup"
+

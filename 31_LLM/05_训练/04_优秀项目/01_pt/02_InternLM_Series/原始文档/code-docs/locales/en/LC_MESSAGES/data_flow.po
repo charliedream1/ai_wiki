@@ -1,0 +1,745 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, InternEvo Team
+# This file is distributed under the same license as the InternEvo package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InternEvo \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-30 15:51+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.15.0\n"
+
+#: ../../source/data_flow.rst:2
+msgid "数据加载与流程"
+msgstr "Data Load and Procedure"
+
+#: ../../source/data_flow.rst:7
+msgid "Dataloader加载数据"
+msgstr "Daterloader Loading Data"
+
+#: ../../source/data_flow.rst:9
+msgid ""
+"数据的准备过程参考 `使用教程 "
+"<https://github.com/InternLM/InternEvo/blob/develop/doc/usage.md>`_"
+msgstr ""
+"Refer to the `usage tutorial "
+"<https://github.com/InternLM/InternEvo/blob/develop/doc/en/usage.md>`_ "
+"for data preparation process"
+
+#: ../../source/data_flow.rst:11
+msgid "这里详细介绍一下在Dataloader中对数据进行pack的过程。"
+msgstr ""
+"Here is a detailed introduction to the process of packing data in the "
+"Dataloader."
+
+#: ../../source/data_flow.rst:13
+msgid ""
+"当 ``config.py`` 中设置 ``use_packed_dataset`` 为 ``True`` 时，通过 ``build_pack``"
+" 函数构建pack data，构建逻辑举例如下："
+msgstr ""
+"When the ``use_packed_dataset`` is set to ``True`` in the ``config.py`` ,"
+" the packed data is constructed through the ``build_pack`` function. The "
+"construction logic is exemplified as follows:"
+
+#: ../../source/data_flow.rst:15 ../../source/data_flow.rst:40
+#: ../../source/data_flow.rst:206
+msgid "假设 ``micro_bsz`` 为2， ``SEQ_LEN`` 为8，输入数据格式如下："
+msgstr ""
+"Assuming ``micro_bsz`` is set to 2 and ``SEQ_LEN`` is set to 8, the input"
+" data format is as follows:"
+
+#: ../../source/data_flow.rst:24
+msgid ""
+"``packed_length`` 的值为 ``micro_bsz * SEQ_LEN`` "
+"，即16，对于上述输入数据，将每一条输入pack为长度为16的数据，其中，单个子句拼接超出 ``packed_length`` "
+"的部分，截断处理，后半部分作为下一条输入的开始。全部文本pack完成之后，对于最后不足 ``packed_length`` 的部分，用 ``0``"
+" 填充。pack之后的数据格式如下："
+msgstr ""
+"The value of ``packed_length`` is ``micro_bsz * SEQ_LEN``, which is 16. "
+"For the aforementioned input data, each input is packed into a data "
+"segment of length 16. If a single sentence exceeds the ``packed_length`` "
+"when concatenated, the excess part is truncated, and the remaining part "
+"is treated as the beginning of the next input. After all the text is "
+"packed, any part that is less than ``packed_length`` is padded with ``0``"
+" . The format of the packed data is as follows:"
+
+#: ../../source/data_flow.rst:31
+msgid ""
+"``label`` 的值取data每条输入的第二个值到最后一个值，并在最后一位填充 ``-100`` 。上述数据pack之后，对应的 "
+"``label`` 值如下："
+msgstr ""
+"The value of ``label`` is taken from the second value to the last value "
+"of each input in the data, and ``-100`` is padded at the last position. "
+"After the aforementioned data is packed, the corresponding ``label`` "
+"values are as follows:"
+
+#: ../../source/data_flow.rst:38
+msgid ""
+"当 ``config.py`` 中设置 ``use_packed_dataset`` 为 ``False`` 时，通过 "
+"``build_unpack`` 函数构建pack data，构建逻辑举例如下："
+msgstr ""
+"When the ``use_packed_dataset`` is set to ``False`` in the ``config.py`` "
+", the packed data is constructed through the ``build_unpack`` function. "
+"The construction logic is exemplified as follows:"
+
+#: ../../source/data_flow.rst:51
+msgid "这里pack的过程遵循三个条件："
+msgstr "Here, the packing process follows three conditions:"
+
+#: ../../source/data_flow.rst:53
+msgid ""
+"pack子句的个数不能超过 ``micro_bsz`` ，即便pack之后的总长度小于 ``micro_bsz * SEQ_LEN`` "
+"，也不能将下一个子句的内容进行pack，长度不够的部分补 ``0`` 。"
+msgstr ""
+"The number of sub-sentences in a pack must not exceed ``micro_bsz`` . "
+"Even if the total length after packing is less than the product of "
+"``micro_bsz * SEQ_LEN`` , the content of the subsequent sub-sentence "
+"should not be included in the pack. Any shortfall in length is to be "
+"padded with 0."
+
+#: ../../source/data_flow.rst:54
+msgid "单条子句的长度不能超过 ``SEQ_LEN`` ，超过部分直接截断丢弃，之后再与下一个子句进行pack。"
+msgstr ""
+"The length of a single sub-sentence must not exceed ``SEQ_LEN`` . Any "
+"part that exceeds is to be directly truncated and discarded, and then it "
+"is packed with the next sub-sentence."
+
+#: ../../source/data_flow.rst:55
+msgid "如果子句pack之后的长度超过了 ``micro_bsz * SEQ_LEN`` ，超过部分截断丢弃。"
+msgstr ""
+"If the length of the sub-sentence after packing exceeds ``micro_bsz * "
+"SEQ_LEN`` , the excess is truncated and discarded."
+
+#: ../../source/data_flow.rst:57
+msgid "按照上述规则，pack之后的数据格式如下："
+msgstr ""
+"Following the aforementioned rules, the format of the data after packing "
+"is as follows:"
+
+#: ../../source/data_flow.rst:65 ../../source/data_flow.rst:219
+msgid "``label`` 的值如下："
+msgstr "the value of ``label`` is as follows:"
+
+#: ../../source/data_flow.rst:73
+msgid ""
+"注： ``use_packed_dataset`` 不设置时，默认为 ``True`` 。一般使用 ``use_packed_dataset`` "
+"为 ``True`` 的模式训练，以提升训练效率和精度。"
+msgstr ""
+"Note: If ``use_packed_dataset`` is not set, it defaults to ``True`` . "
+"Generally, training is performed with ``use_packed_dataset`` set to "
+"``True`` to enhance training efficiency and accuracy."
+
+#: ../../source/data_flow.rst:77
+msgid "获取Dataloader数据"
+msgstr "Achieve Data From Dataloader"
+
+#: ../../source/data_flow.rst:79
+msgid "通过上述方法，在Dataloader中将数据构建完成之后，在每次forward过程中，会依次从dataloader中取出数据，下面详细介绍一下数据的获取以及处理过程。"
+msgstr ""
+"After constructing the data in the Dataloader using the methods described"
+" above, during each forward pass, data will be fetched sequentially from "
+"the dataloader. Below is a detailed introduction to the process of data "
+"acquisition and handling."
+
+#: ../../source/data_flow.rst:82
+msgid "从Dataloader中取出数据"
+msgstr "Data Fetching"
+
+#: ../../source/data_flow.rst:87
+msgid ""
+"这里 ``batch_data`` 的类型为 ``list`` ，其中包含两个元素，第一个元素为 ``dict`` 类型的数据 ``data`` "
+"，第二个元素为 ``torch.Tensor`` 类型的标签 ``label`` 。"
+msgstr ""
+"Here, the ``batch_data`` is of type ``list`` , which contains two "
+"elements. The first element is a ``dict`` type of data named ``data`` , "
+"and the second element is a ``torch.Tensor`` type of label named "
+"``label`` ."
+
+#: ../../source/data_flow.rst:89
+msgid ""
+"其中，第一个元素 ``data`` 包含 ``input_ids`` 、 ``cu_seqlens`` 、 ``indexes`` "
+"三个字段，其类型及形状分别为："
+msgstr ""
+"In the batch_data list, the first element ``data`` is a dictionary that "
+"contains three fields: ``input_ids`` , ``cu_seqlens`` , and ``indexes`` ."
+" The types and shapes of these fields are as follows:"
+
+#: ../../source/data_flow.rst:97
+msgid "第二个元素 ``label`` 的形状为："
+msgstr "The shape of the second element ``label`` is:"
+
+#: ../../source/data_flow.rst:103
+msgid ""
+"``micro_num`` 在 ``config.py`` 配置文件中设置，为梯度累计的大小，即经过 ``micro_num`` 次 "
+"``forward`` + ``backward`` 之后，进行梯度更新。 ``micro_bsz * SEQ_LEN`` 为 ``pack "
+"data`` 的长度，即将多条输入拼接为 ``micro_bsz * SEQ_LEN`` 长度的单条输入，以提高训练效率。"
+msgstr ""
+"The ``micro_num`` is configured in the ``config.py`` file and represents "
+"the size of the gradient accumulation, that is, after ``micro_num`` "
+"consecutive ``forward`` and ``backward`` passes, an update to the "
+"gradients is carried out. The pack data length, which is ``micro_bsz * "
+"SEQ_LEN``, is achieved by combining multiple inputs into a single input "
+"of length ``micro_bsz * SEQ_LEN`` , thereby enhancing the training "
+"efficiency."
+
+#: ../../source/data_flow.rst:106
+msgid "举例： 假设 ``micro_num`` 为2， ``micro_bsz`` 为2， ``SEQ_LEN`` 为8"
+msgstr ""
+"For example, assuming micro_num is set to 2, micro_bsz is 2, and SEQ_LEN "
+"is 8"
+
+#: ../../source/data_flow.rst:115
+msgid "其中第一个batch由长度分别为4,7,5的子句拼接而成，第二个batch由长度分别为3,5的子句拼接而成，则："
+msgstr ""
+"In the example, the first batch is composed of sub-sentences with lengths"
+" of 4, 7, and 5, respectively, and the second batch is composed of sub-"
+"sentences with lengths of 3 and 5, respectively. Then:"
+
+#: ../../source/data_flow.rst:123
+msgid "其中，每相邻两个数字的差值，为当前子句的长度。"
+msgstr ""
+"In this case, the difference between each pair of adjacent numbers "
+"represents the length of the current sub-sentence."
+
+#: ../../source/data_flow.rst:131
+msgid "其中，每一个数字表示了token在当前子句中的位置。如果最后一句存在padding，则indexes依然按照从0递增的方式直至padding结束。"
+msgstr ""
+"In this context, each number represents the position of a token within "
+"the current sub-sentence. If there is padding at the end of the last "
+"sentence, the indexes still increment from 0 up to and including the end "
+"of the padding."
+
+#: ../../source/data_flow.rst:139
+msgid "这里为对应的label的数值。"
+msgstr "Here are the corresponding values for the label."
+
+#: ../../source/data_flow.rst:143
+msgid "处理数据"
+msgstr "Data Processing"
+
+#: ../../source/data_flow.rst:148
+msgid ""
+"首先，通过 ``_load_micro_batch`` 函数，将 ``data`` 和 ``label`` 中数据的第一个维度 "
+"``micro_num`` 转化为1，并通过更新 ``offset`` 的值，依次获取每个微批次的数据。"
+msgstr ""
+"Firstly, the ``_load_micro_batch`` function is used to transform the "
+"first dimension of ``data`` and ``label`` , which is ``micro_num`` , into"
+" 1. By updating the value of offset, data for each micro-batch is "
+"retrieved sequentially."
+
+#: ../../source/data_flow.rst:150
+msgid "其次，通过注册 ``data_process_func`` 对数据做进一步处理。"
+msgstr ""
+"Secondly, further processing of the data is carried out by registering a "
+"``data_process_func`` ."
+
+#: ../../source/data_flow.rst:152
+msgid ""
+"当 ``config.py`` 中设置 ``use_packed_dataset`` 为 ``True`` 时， "
+"``data_process_func`` 中的流程如下:"
+msgstr ""
+"When ``use_packed_dataset`` is set to True in the config.py, the process "
+"within the ``data_process_func`` is as follows:"
+
+#: ../../source/data_flow.rst:154
+msgid ""
+"通过 ``packed_data_normalizer`` 函数，对 ``data['indexes']`` 和 "
+"``data['cu_seqlens']`` 做降维处理，去掉size为1的第一维，并通过 ``data['cu_seqlens']`` "
+"中的值，计算出单个字句的最大长度，记录在 ``data['max_seqlen']`` 中。"
+msgstr ""
+"Using the ``packed_data_normalizer`` function, dimensionality reduction "
+"is performed on data['indexes'] and data['cu_seqlens'], removing the "
+"first dimension with a size of 1. Additionally, the maximum length of "
+"individual sub-sentences is calculated using the values in "
+"data['cu_seqlens'], and this value is recorded in data['max_seqlen']."
+
+#: ../../source/data_flow.rst:156
+msgid "按照上述举例，假设加载第一个批次的数据，经过 ``_load_accum_batch`` 处理后的 ``data`` 和 ``label`` 如下："
+msgstr ""
+"Following the example provided, assuming the first batch of data is "
+"loaded, the data and label after processing by ``_load_accum_batch`` "
+"would be as follows:"
+
+#: ../../source/data_flow.rst:172
+msgid ""
+"如果张量并行模式为 ``isp`` ，且tp size（即序列化并行大小）大于1，则会在 ``data_process_func`` 中注册 "
+"``split_data_sequence_parallel`` 函数，对数据的 ``sequence`` 维度进行切分。"
+msgstr ""
+"If the tp parallel mode is set to \"isp\", and the tp size (i.e., the "
+"sequence parallel size) is greater than 1, then the "
+"``split_data_sequence_parallel`` function will be registered within the "
+"``data_process_func`` to split the data along the sequence dimension."
+
+#: ../../source/data_flow.rst:174
+msgid ""
+"假设tp size为2，则对上述数据 ``data['input_ids']`` 、 ``data['indexes']`` 和 "
+"``label`` 切分之后的结果如下："
+msgstr ""
+"Assuming the tp size is 2, the result of splitting the aforementioned "
+"data data['input_ids'], data['indexes'], and label using the "
+"``split_data_sequence_parallel`` function would be as follows:"
+
+#: ../../source/data_flow.rst:176 ../../source/data_flow.rst:241
+msgid "tp rank0 中的数据："
+msgstr "Data in tp rank0"
+
+#: ../../source/data_flow.rst:187 ../../source/data_flow.rst:253
+msgid "tp rank1 中的数据："
+msgstr "Data in tp rank1"
+
+#: ../../source/data_flow.rst:198
+msgid ""
+"当 ``config.py`` 中设置 ``use_packed_dataset`` 为 ``False`` 时， "
+"``data_process_func`` 中的流程如下:"
+msgstr ""
+"When ``use_packed_dataset`` is set to False in the config.py, the process"
+" within the ``data_process_func`` is as follows:"
+
+#: ../../source/data_flow.rst:200
+msgid ""
+"通过 ``unpack_data`` 函数对数据做unpack处理，将 ``data[\"input_ids\"]`` 和 ``label`` "
+"的数据恢复到unpack的格式，并从data中去除掉\"cu_seqlens\"和\"indexes\"字段。"
+msgstr ""
+"Using the ``unpack_data`` function, the data is processed to unpack it, "
+"restoring the format of data[\"input_ids\"] and label to the unpacked "
+"format, and removing the \"cu_seqlens\" and \"indexes\" fields from the "
+"data."
+
+#: ../../source/data_flow.rst:202
+msgid ""
+"unpack之后 ``data[\"input_ids\"]`` 和 ``label`` 的形状为 "
+"``torch.Size([micro_bsz, SEQ_LEN])`` 。"
+msgstr ""
+"After unpacking, the shapes of data[\"input_ids\"] and label are "
+"torch.Size([micro_bsz, SEQ_LEN])."
+
+#: ../../source/data_flow.rst:204
+msgid "按照上述数据举例："
+msgstr "Following the example of the data provided:"
+
+#: ../../source/data_flow.rst:213
+msgid "pack之后的数据格式如下："
+msgstr "The packed data format is as follows:"
+
+#: ../../source/data_flow.rst:225
+msgid "经过 ``unpack_data`` 处理之后， ``data[\"input_ids\"]`` 和 ``label`` 分别如下："
+msgstr ""
+"After processing with unpack_data, data[\"input_ids\"] and label are as "
+"follows:"
+
+#: ../../source/data_flow.rst:237
+msgid ""
+"如果 ``tp`` 并行模式为 ``isp`` ，且tp size（即序列化并行大小）大于1，则会在 ``data_process_func`` "
+"中注册 ``split_data_sequence_parallel`` 函数，对数据的 ``sequence`` 维度进行切分。"
+msgstr ""
+"If the tp parallel mode is set to \"isp\", and the tp size (i.e., the "
+"sequence parallel size) is greater than 1, then the "
+"``split_data_sequence_parallel`` function will be registered within the "
+"``data_process_func`` to split the data along the sequence dimension."
+
+#: ../../source/data_flow.rst:239
+msgid "假设tp size为2，则对上述数据 ``data['input_ids']`` 和 ``label`` 切分之后的结果如下："
+msgstr ""
+"Assuming the tp size is 2, the result of splitting the aforementioned "
+"data data['input_ids'] and label would be as follows:"
+
+#: ../../source/data_flow.rst:267
+msgid "Forward过程数据格式"
+msgstr "During the Forward process, the data format is:"
+
+#: ../../source/data_flow.rst:269
+msgid "以internlm2模型为例，详细介绍一下整个模型在不同并行模式下的权重情况，以及在运行过程中数据的流动过程。"
+msgstr ""
+"Using the internlm2 model as an example, I will detail the weight "
+"situation of the entire model under different parallelism modes and the "
+"flow of data during operation."
+
+#: ../../source/data_flow.rst:271
+msgid "首先，介绍模型在不同并行模式下，权重切分的过程。"
+msgstr ""
+"Firstly, the process of weight partitioning in the model under different "
+"parallel modes is introduced."
+
+#: ../../source/data_flow.rst:274
+msgid "ISP并行模式下权重切分"
+msgstr "weight partitioning in ISP parallel mode"
+
+#: ../../source/data_flow.rst:275
+msgid ""
+"ISP并行的具体原理请参见： `并行训练 <https://internevo.readthedocs.io/zh-"
+"cn/latest/parallel.html#internlm-tensor-parallel>`_"
+msgstr ""
+"For the specific principles of ISP parallelism, please refer "
+"to:<https://internevo.readthedocs.io/en"
+"/latest/parallel.html#internlm-tensor-parallel>`_"
+
+#: ../../source/data_flow.rst:277
+msgid "internlm2模型中，涉及weight切分的参数为：\"wqkv\"、\"wo\"、\"w1\"、\"w2\"、\"w3\"、\"output\"，通过new_linear函数进行切分。"
+msgstr ""
+"In the internlm2 model, the parameters that involve weight partitioning "
+"are: \"wqkv\", \"wo\", \"w1\", \"w2\", \"w3\", \"output\". These are "
+"partitioned using the new_linear function."
+
+#: ../../source/data_flow.rst:279
+msgid "假设配置文件中设置的weight并行大小为 ``wp_size`` ，初始化之后的模型结构及权重如下："
+msgstr ""
+"Assuming the configuration file sets the weight parallelism size to "
+"wp_size, the model structure and weights after initialization are as "
+"follows:"
+
+#: ../../source/data_flow.rst:318
+msgid "MTP/MSP/FSP并行模式下权重切分"
+msgstr "weight partitioning in MTP/MSP/FSP parallel mode"
+
+#: ../../source/data_flow.rst:319
+msgid ""
+"``MTP/MSP/FSP`` 并行的具体原理请参见： `并行训练 <https://internevo.readthedocs.io/zh-"
+"cn/latest/parallel.html#internlm-tensor-parallel>`_"
+msgstr ""
+"For the specific principles of MTP/MSP/FSP parallelism, please refer "
+"to:<https://internevo.readthedocs.io/en"
+"/latest/parallel.html#internlm-tensor-parallel>`_"
+
+#: ../../source/data_flow.rst:321
+msgid ""
+"与 ``ISP`` 并行模式相比， ``MSP`` 并行切分权重的参数是一样的，但是切分的方式不同，在 ``ISP`` "
+"并行模式中，所有切分参数采用列切方式，而 ``MSP`` 并行模式中，\"wo\"和\"w2\"参数采用行切方式进行切分。"
+msgstr ""
+"Compared to the ISP parallel mode, the MSP parallel mode partitions the "
+"weights of the same parameters, but the partitioning method is different."
+" In the ISP parallel mode, all partitioned parameters use column-wise "
+"partitioning, while in the MSP parallel mode, the \"wo\" and \"w2\" "
+"parameters are partitioned using row-wise partitioning."
+
+#: ../../source/data_flow.rst:323
+msgid ""
+"假设配置文件中设置的tensor并行大小为 ``tp_size`` ，初始化之后的模型结构及权重与ISP中列出的权重结果基本一致，ISP模式中的 "
+"``wp_size`` 对应MSP模式下的 ``tp_size`` ，有差异的\"wo\"和\"w2\"参数如下："
+msgstr ""
+"Assuming the configuration file sets the tensor parallelism size to "
+"tp_size, the initialized model structure and weights are essentially "
+"consistent with the weight results listed in ISP. The wp_size in ISP mode"
+" corresponds to tp_size in MSP mode. The parameters \"wo\" and \"w2\" "
+"that differ are as follows:"
+
+#: ../../source/data_flow.rst:354
+msgid "Forward整体流程"
+msgstr "Forward Procedure"
+
+#: ../../source/data_flow.rst:355
+msgid "internlm2模型中，forward整体流程如下图所示："
+msgstr ""
+"In the internlm2 model, the overall forward process is shown in the "
+"figure below:"
+
+#: ../../source/data_flow.rst:361
+msgid "下面介绍不同并行模式下，数据在上图forward流程过程中的变化过程。"
+msgstr ""
+"Below is an introduction to the changes in data during the forward "
+"process in the diagram above, under different parallel modes."
+
+#: ../../source/data_flow.rst:364
+msgid "ISP并行模式下数据流程"
+msgstr "Data Procedure in ISP parallelism"
+
+#: ../../source/data_flow.rst:365
+msgid "假设配置文件中设置的tensor并行大小为 ``sp_size`` （在ISP模式下，张量并行大小即为序列化并行大小）"
+msgstr ""
+"Assuming the configuration file sets the tensor parallelism size to "
+"sp_size (in ISP mode, the tensor parallelism size is the same as the "
+"sequence parallelism size)."
+
+#: ../../source/data_flow.rst:367
+msgid "展开介绍每一步计算过程中，数据维度的变化情况。"
+msgstr ""
+"Expanding on the introduction, here is a description of the changes in "
+"data dimensions at each step of the computation process:"
+
+#: ../../source/data_flow.rst:371 ../../source/data_flow.rst:511
+msgid "tok_embeddings计算过程"
+msgstr "tok_embeddings Calculation Procedure"
+
+#: ../../source/data_flow.rst:372
+msgid "在embedding的计算过程中，对数据的seq_len维度做了切分。"
+msgstr ""
+"During the embedding computation process, the seq_len dimension of the "
+"data is partitioned."
+
+#: ../../source/data_flow.rst:374
+msgid "输入参数及权重："
+msgstr "input parameters and weight:"
+
+#: ../../source/data_flow.rst:384
+msgid "输出结果："
+msgstr "output result:"
+
+#: ../../source/data_flow.rst:393 ../../source/data_flow.rst:538
+msgid "attention计算过程"
+msgstr "attention Calculation Procedure"
+
+#: ../../source/data_flow.rst:395 ../../source/data_flow.rst:544
+msgid "qkv准备"
+msgstr "qkv preparation"
+
+#: ../../source/data_flow.rst:400
+msgid ""
+"这里计算过程，会通过 ``weight_hook`` 对之前被权重并行切分的权重做 ``All-Gather`` 操作，最终输出结果 "
+"``qkv`` 的最后一个维度为 ``self.wqkv`` 中 ``out_features`` 经过 ``All-Gather`` "
+"之后的维度。"
+msgstr ""
+"In this computation process, a weight_hook is used to perform an All-"
+"Gather operation on the weights that were previously partitioned by "
+"weight parallelism. The final output result qkv will have its last "
+"dimension as the out_features dimension from self.wqkv after the All-"
+"Gather operation."
+
+#: ../../source/data_flow.rst:402
+msgid ""
+"注：后续所有通过new_linear函数创建的被切分过weight的权重，在forward过程中计算都会通过 ``weight_hook`` 做 "
+"``All-Gather`` 操作。"
+msgstr ""
+"Note: All weights that have been partitioned by the new_linear function "
+"and used in subsequent computations will undergo an All-Gather operation "
+"via weight_hook during the forward process."
+
+#: ../../source/data_flow.rst:409
+msgid ""
+"之后将qkv拆分为 ``[batch_size, seq_len, num_head, group_size, head_dim]`` "
+"维度，并分别计算q、k、v的值："
+msgstr ""
+"Subsequently, the qkv is split into dimensions of [batch_size, seq_len, "
+"num_head, group_size, head_dim], and the values for q (query), k (key), "
+"and v (value) are calculated respectively:"
+
+#: ../../source/data_flow.rst:422 ../../source/data_flow.rst:569
+msgid "之后，将kv的值组合在一起，以便进行后续的attention计算："
+msgstr ""
+"Afterward, the values of k and v are combined for subsequent attention "
+"computation."
+
+#: ../../source/data_flow.rst:430 ../../source/data_flow.rst:577
+msgid "计算attention"
+msgstr "calculate attention"
+
+#: ../../source/data_flow.rst:431 ../../source/data_flow.rst:578
+msgid "attention计算的过程如下："
+msgstr "The process of attention calculation is as follows:"
+
+#: ../../source/data_flow.rst:437
+msgid "这里通过dispatch的形式，根据q、k、v是分离还是组合在一起的状态，找到对应的forward函数进行attention计算。"
+msgstr ""
+"Here, the dispatch mechanism is used to determine whether the q, k, and v"
+" are separate or combined, and then the corresponding forward function is"
+" called to perform the attention calculation."
+
+#: ../../source/data_flow.rst:439
+msgid ""
+"在计算attention之前，通过 ``AllToAll`` 通信，对q和kv的 ``num_head`` 维度做 ``scatter`` ， "
+"``seq_len`` 维度做 ``gather`` 。"
+msgstr ""
+"Before calculating the attention, an AllToAll communication is used to "
+"scatter the num_head dimension of q and kv, and to gather the seq_len "
+"dimension."
+
+#: ../../source/data_flow.rst:448
+msgid "调用 ``context = self.local_attn(q, kv)`` 函数进行attention计算，计算结果的维度为："
+msgstr ""
+"The function context = self.local_attn(q, kv) is called to perform the "
+"attention computation. The resulting dimension of the computation is:"
+
+#: ../../source/data_flow.rst:455
+msgid ""
+"在计算attention之后，再通过 ``AllToAll`` 通信，对q和kv的 ``num_head`` 维度做 ``gather`` ， "
+"``seq_len`` 维度做 ``scatter`` 。"
+msgstr ""
+"After the attention computation, an AllToAll communication is used again "
+"to gather the num_head dimension of q and kv, and to scatter the seq_len "
+"dimension."
+
+#: ../../source/data_flow.rst:463 ../../source/data_flow.rst:594
+msgid "输出变换"
+msgstr "Output transformation"
+
+#: ../../source/data_flow.rst:464
+msgid "通过调用 \"wo\" 对attention计算的输出结果做变换，输出结果的维度如下："
+msgstr ""
+"The output of the attention computation is transformed by calling \"wo\","
+" and the dimensions of the output result are as follows:"
+
+#: ../../source/data_flow.rst:471 ../../source/data_flow.rst:610
+msgid "feed_forward计算过程"
+msgstr "feed_forward Calculation Procedure"
+
+#: ../../source/data_flow.rst:472
+msgid "在feed_forward前馈网络层，通过\"w1\"、\"w2\"、\"w3\"对输出结果做线性变换。变换之后的结果如下："
+msgstr ""
+"In the feed-forward network layer, linear transformations are applied to "
+"the output results using \"w1\", \"w2\", and \"w3\". The results after "
+"the transformation are as follows:"
+
+#: ../../source/data_flow.rst:488 ../../source/data_flow.rst:642
+msgid "norm计算过程"
+msgstr "norm Calculation Procedure"
+
+#: ../../source/data_flow.rst:489
+msgid "经过norm层计算之后的结果维度保持不变，为："
+msgstr ""
+"The result dimensions remain unchanged after the computation through the "
+"normalization layer, and are as follows:"
+
+#: ../../source/data_flow.rst:497 ../../source/data_flow.rst:660
+msgid "output计算过程"
+msgstr "output Calculation Procedure"
+
+#: ../../source/data_flow.rst:498 ../../source/data_flow.rst:661
+msgid "最后，经过output层将模型的最后一层输出转换为适合最终任务的格式，结果如下："
+msgstr ""
+"Finally, the last layer of the model is transformed into a format "
+"suitable for the final task through the output layer, with the results as"
+" follows:"
+
+#: ../../source/data_flow.rst:507
+msgid "MTP/MSP/FSP并行模式下数据流程"
+msgstr "Data Procedure in MTP/MSP/FSP parallelism"
+
+#: ../../source/data_flow.rst:508
+msgid ""
+"在 ``MTP`` 并行模式中，只有张量并行对模型权重进行切分，不涉及对数据的seq_len维度进行切分。而 ``MSP`` 和 ``FSP`` "
+"并行模式中，均会涉及对数据进行序列化并行切分，且序列化并行与张量并行大小相同，两者共用通信组。"
+msgstr ""
+"In the MTP parallel mode, only tensor parallelism is used to partition "
+"the model weights, without involving the splitting of the data's seq_len "
+"dimension. In contrast, both MSP and FSP parallel modes involve the "
+"serialization parallelism of data, and the size of the serialization "
+"parallelism is the same as that of tensor parallelism; both share the "
+"same communication group."
+
+#: ../../source/data_flow.rst:512
+msgid "在embedding的计算过程中，embedding的权重会进行切分："
+msgstr ""
+"During the computation process of the embedding, the embedding weights "
+"will be partitioned:"
+
+#: ../../source/data_flow.rst:519
+msgid "``MTP`` 张量并行模式的输入输出结果如下："
+msgstr "The input and output results of the MTP mode are as follows:"
+
+#: ../../source/data_flow.rst:528
+msgid "``MSP/FSP`` 的输入输出结果如下："
+msgstr "The input and output results for MSP and FSP are as follows:"
+
+#: ../../source/data_flow.rst:539
+msgid ""
+"在进入attention计算之前，如果是 ``MSP/FSP`` 并行模式，会通过 ``All-Gather`` "
+"通信，将经过序列化并行切分后的数据聚集起来。因此，整个attention计算过程中， ``MTP/MSP/FSP`` 三种并行模式的参数维度一致。"
+msgstr ""
+"Before entering the attention computation, if it is the MSP/FSP parallel "
+"mode, an All-Gather communication will be used to gather the data that "
+"has been split by serialized parallelism. Therefore, during the entire "
+"attention computation process, the parameter dimensions of the "
+"MTP/MSP/FSP three parallel modes are consistent."
+
+#: ../../source/data_flow.rst:541
+msgid ""
+"在attention计算完成之后， ``wo`` 层中做线性变换时，如果是 ``MSP/FSP`` 并行模式，会通过 ``Reduce-"
+"Scatter`` 通信，将linear变换行切的结果整合，同时做序列化并行操作。"
+msgstr ""
+"After the attention computation is completed, in the wo layer for linear "
+"transformation, if it is the MSP/FSP parallel mode, a Reduce-Scatter "
+"communication will be used to integrate the results of the row-wise "
+"linear transformation, while also performing serialized parallel "
+"operations."
+
+#: ../../source/data_flow.rst:549
+msgid "计算后的qkv维度如下："
+msgstr "The dimensions of the computed qkv are as follows:"
+
+#: ../../source/data_flow.rst:556
+msgid ""
+"之后将qkv拆分为 ``[batch_size, seq_len, num_head, group_size, head_dim]`` "
+"维度，并分别计算q、k、v的值，这里会对 ``num_head`` 维度做张量并行切分："
+msgstr ""
+"Subsequently, the qkv is split into dimensions of [batch_size, seq_len, "
+"num_head, group_size, head_dim] and calculates the values for q, k, and v"
+" respectively, where tensor parallelism partitioning is performed on the "
+"num_head dimension."
+
+#: ../../source/data_flow.rst:584
+msgid "这里直接进行attention计算，不需要像 ``ISP`` 模式中做 ``AllToAll`` 通信。"
+msgstr ""
+"Here, the attention calculation is performed directly, without the need "
+"for AllToAll communication as required in the \"ISP\" mode."
+
+#: ../../source/data_flow.rst:586
+msgid "计算结果的维度为："
+msgstr "The dimensions of the computation result are:"
+
+#: ../../source/data_flow.rst:595
+msgid "通过调用 \"wo\" 对attention计算的输出结果做变换"
+msgstr ""
+"The \"wo\" is called to transform the output results of the attention "
+"computation."
+
+#: ../../source/data_flow.rst:597 ../../source/data_flow.rst:625
+#: ../../source/data_flow.rst:645
+msgid "``MTP`` 并行模式，输出结果的维度如下："
+msgstr ""
+"In the MTP parallel mode, the dimensions of the output results are as "
+"follows:"
+
+#: ../../source/data_flow.rst:603 ../../source/data_flow.rst:633
+#: ../../source/data_flow.rst:652
+msgid "``MSP/FSP`` 并行模式，输出结果的维度如下："
+msgstr ""
+"In the MSP/FSP parallel modes, the dimensions of the output results are "
+"as follows:"
+
+#: ../../source/data_flow.rst:611
+msgid "在feed_forward前馈网络层，通过\"w1\"、\"w2\"、\"w3\"对输出结果做线性变换。"
+msgstr ""
+"In the feed-forward network layer, linear transformations are applied to "
+"the output results using \"w1\", \"w2\", and \"w3\"."
+
+#: ../../source/data_flow.rst:613
+msgid ""
+"``MSP/FSP`` 并行模式下，在 ``w1`` 和 ``w3`` 线性变换层之前，需要进行 ``All-Gather`` 通信。因此， "
+"``MTP/MSP/FSP`` :w 并行模式下的输出维度相同："
+msgstr ""
+"In the MSP/FSP parallel modes, an All-Gather communication is required "
+"before the linear transformation layers of w1 and w3. Therefore, the "
+"output dimensions are the same across the MTP/MSP/FSP parallel modes."
+
+#: ../../source/data_flow.rst:623
+msgid "在经过\"w2\"层做线性变换之后，如果是 ``MSP/FSP`` 并行模式，需要进行 ``Reduce-Scatter`` 通信。"
+msgstr ""
+"After the linear transformation through the \"w2\" layer, in the MSP/FSP "
+"parallel modes, a Reduce-Scatter communication is necessary."
+
+#: ../../source/data_flow.rst:643
+msgid "经过norm层计算之后的结果维度保持不变。"
+msgstr ""
+"The result dimensions remain unchanged after the computation through the "
+"norm layer."
+
+#~ msgid "数据格式"
+#~ msgstr "Data Format"
+
+#~ msgid ""
+#~ "ISP并行的具体原理请参见： `并行训练 "
+#~ "<https://github.com/InternLM/InternEvo/blob/develop/doc/code-"
+#~ "docs/source/parallel.rst>`_"
+#~ msgstr ""
+#~ "For the specific principles of ISP "
+#~ "parallelism, please refer "
+#~ "to:<https://github.com/InternLM/InternEvo/blob/develop/doc/code-"
+#~ "docs/source/parallel.rst>`_"
+
