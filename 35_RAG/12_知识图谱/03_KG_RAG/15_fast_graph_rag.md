@@ -1,0 +1,1 @@
+Github (1.8k stars): https://github.com/circlemind-ai/fast-graphrag
