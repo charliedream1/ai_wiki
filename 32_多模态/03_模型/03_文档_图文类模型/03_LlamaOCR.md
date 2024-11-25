@@ -1,0 +1,1 @@
+Llama OCR 是一个基于 Llama 3.2 视觉模型的 OCR 库，能够将文档转换为 Markdown 格式。该项目利用 Together AI 的免费端点解析图像，并提供付费端点以提高性能和速率限制。用户可以通过简单的 API 调用实现图像到 Markdown 的转换。
