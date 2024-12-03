@@ -151,6 +151,25 @@
      秦始皇活了多久 50岁我确定 为什么 为什么确定秦始皇活了50岁
      ```
 
+## 1.9 类openai-o1数据集
+
+1. HKAIR-Lab/HK-O1aw-SFT-16K
+   - https://huggingface.co/datasets/HKAIR-Lab/HK-O1aw-SFT-16K
+   - 法律方向
+
+2. O1-OPEN/OpenO1-SFT
+   - 问答类
+   - 中英文混合
+   - https://huggingface.co/datasets/O1-OPEN/OpenO1-SFT
+   - 和base的Qwen2.5-7B-Instruct看着除了BBH，整体性能反而变差了
+   - 541MB
+
+3. llamafactory/OpenO1-SFT
+   - https://huggingface.co/datasets/llamafactory/OpenO1-SFT?row=0
+   - 数据量：125,894
+   - 541MB
+   - 怀疑和上面集子是一个
+   
 ***
 
 # 2. 英文
@@ -166,6 +185,10 @@
 
 3. WildChat：
    - https://www.modelscope.cn/datasets/thomas/WildChat
+
+4. PKU-Alignment/Align-Anything-Instruction-100K
+   - 多模态训练框架（SFT及RLHF）：https://github.com/PKU-Alignment/align-anything
+   - https://huggingface.co/datasets/PKU-Alignment/Align-Anything-Instruction-100K
 
 ## 2.2 特定类别
 ### 2.2.1 复杂指令
@@ -193,6 +216,12 @@
 
 4. long-llm 
    - https://huggingface.co/datasets/namespace-Pt/projects/resolve/main/long-llm.tar.gz
+
+## 2.4 类openai-o1数据集
+
+1. GAIR/o1-journey
+   - 上交大o1复现之旅
+   - https://huggingface.co/datasets/GAIR/o1-journey
 
 # 参考
 
