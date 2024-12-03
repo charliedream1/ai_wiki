@@ -37,6 +37,7 @@
 
 6. LLMs-from-scratch
    - https://github.com/rasbt/LLMs-from-scratch.git
+   - 中文：https://github.com/datawhalechina/llms-from-scratch-cn
    - 书Build a Large Language Model (From Scratch)配到代码仓
    
 # 参考
