@@ -1,0 +1,1 @@
+meta信息中不能存list, 只能存str, int, float or bool，不能有空值
