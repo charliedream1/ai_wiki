@@ -23,20 +23,21 @@
 
 ---
 
-## **知识星球**
-
-欢迎加入我的知识星球，获取更多知识和服务！
-
-<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
-
-## **微信公众号**
-
-<img src=".README_images/公众号链接.png" width = "430" height = "150" alt="微信公众号" align=center />
-
 ## **本仓库关联项目**
 
 - 《AI股票量化交易》：https://github.com/charliedream1/ai_quant_trade
   - 所有你要的AI量化交易知识都在这里
+
+---
+
+## 目录   
+* [简介](#1._简介)
+* [打赏我](#打赏我)  
+* [关注我](#关注我)   
+* [讨论](#讨论)  
+* [技术支持](#技术支持)  
+* [常见问题](#常见问题)  
+* [引用](#引用)  
 
 ---
 
@@ -132,6 +133,20 @@
 
 ---
 
+## 关注我
+- [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
+- [聚宽](https://www.joinquant.com/user/d7aafd0b8b767b735bfb6f3639c81a6c)
+
+**知识星球**
+
+欢迎加入我的知识星球，获取更多知识和服务！
+
+<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
+
+**微信公众号**
+
+<img src=".README_images/公众号链接.png" width = "430" height = "150" alt="微信公众号" align=center />
+
 ## 打赏我 
 
 您的支持是我前进的动力，即便“1毛钱”我也很开心啊，感谢您的打赏和支持 \(^o^)/
@@ -139,19 +154,14 @@
 <img src=".README_images/支付宝收款码_alma_new.jpg" width = "300" height = "390" alt="图片名称1" align=center />
 <img src=".README_images/微信收款码_alma_new.jpg" width = "300" height = "390" alt="图片名称2" align=center />
 
-## 关注我
-- [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
-- [聚宽](https://www.joinquant.com/user/d7aafd0b8b767b735bfb6f3639c81a6c)
-
-
 ## 讨论
 欢迎在 [Github Discussions](https://github.com/charliedream1/ai_wiki/discussions) 中发起讨论。
 
 
 ## 技术支持
 
-欢迎在 [Github Issues](https://github.com/charliedream1/ai_wiki/issues) 中提交问题。
-
+- 欢迎在 [Github Issues](https://github.com/charliedream1/ai_wiki/issues) 中提交问题。
+- 加入知识星球，获取更多技术支持。
 
 ## 常见问题
 
