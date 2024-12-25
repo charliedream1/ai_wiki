@@ -1,0 +1,2 @@
+- Github (761 stars): https://github.com/mittagessen/kraken
+- 文档：https://kraken.re/main/index.html
