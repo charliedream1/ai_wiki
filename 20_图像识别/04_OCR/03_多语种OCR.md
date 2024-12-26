@@ -1,0 +1,1 @@
+阿拉伯语：https://www.abbyy.cn/flexicapture-sdk/
