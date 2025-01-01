@@ -23,18 +23,20 @@
 
 ---
 
-## 国内镜像
+## 代码仓
 
-✨AI驯龙笔记：https://gitee.com/charlie1/ai_wiki.git
+✨AI驯龙笔记：
+- Github: https://github.com/charliedream1/ai_wiki
+- Gitee（国内镜像）：https://gitee.com/charlie1/ai_wiki.git
 
 ---
 
 ## **本仓库关联项目**
 
-《AI股票量化交易》：
-- https://github.com/charliedream1/ai_quant_trade
-- （国内镜像）https://gitee.com/charlie1/ai_quant_trade.git 
-  - 站式平台。包含股票知识、策略实例、因子挖掘、传统策略、机器学习、深度学习、强化学习、图网络、高频交易、C++部署和聚宽实例代码等，可以方便学习、模拟及实盘交易
+✨AI股票操盘手: 
+- Github: https://github.com/charliedream1/ai_quant_trade
+- Gitee（国内镜像）: https://gitee.com/charlie1/ai_quant_trade.git 
+- 简介：站式平台。包含股票知识、策略实例、因子挖掘、传统策略、机器学习、深度学习、强化学习、图网络、高频交易、C++部署和聚宽实例代码等，可以方便学习、模拟及实盘交易
 
 ---
 
