@@ -23,6 +23,18 @@
 
 ---
 
+**知识星球**
+
+欢迎加入我的知识星球，获取更多知识和服务！
+
+<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
+
+**微信公众号**
+
+<img src=".README_images/公众号链接.png" width = "380" height = "150" alt="微信公众号" align=center />
+
+---
+
 ## 代码仓
 
 ✨AI驯龙笔记：
@@ -146,16 +158,6 @@
 ## 关注我
 - [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
 - [聚宽](https://www.joinquant.com/user/d7aafd0b8b767b735bfb6f3639c81a6c)
-
-**知识星球**
-
-欢迎加入我的知识星球，获取更多知识和服务！
-
-<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
-
-**微信公众号**
-
-<img src=".README_images/公众号链接.png" width = "430" height = "150" alt="微信公众号" align=center />
 
 ## 打赏我 
 
