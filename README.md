@@ -23,10 +23,32 @@
 
 ---
 
+**知识星球**
+
+欢迎加入我的知识星球，获取更多知识和服务！
+
+<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
+
+**微信公众号**
+
+<img src=".README_images/公众号链接.png" width = "380" height = "150" alt="微信公众号" align=center />
+
+---
+
+## 代码仓
+
+✨AI驯龙笔记：
+- Github: https://github.com/charliedream1/ai_wiki
+- Gitee（国内镜像）：https://gitee.com/charlie1/ai_wiki.git
+
+---
+
 ## **本仓库关联项目**
 
-- 《AI股票量化交易》：https://github.com/charliedream1/ai_quant_trade
-  - 所有你要的AI量化交易知识都在这里
+✨AI股票操盘手: 
+- Github: https://github.com/charliedream1/ai_quant_trade
+- Gitee（国内镜像）: https://gitee.com/charlie1/ai_quant_trade.git 
+- 简介：站式平台。包含股票知识、策略实例、因子挖掘、传统策略、机器学习、深度学习、强化学习、图网络、高频交易、C++部署和聚宽实例代码等，可以方便学习、模拟及实盘交易
 
 ---
 
@@ -136,16 +158,6 @@
 ## 关注我
 - [知乎](https://www.zhihu.com/people/yi-dui-ji-mu-zai-kuang-xiang)
 - [聚宽](https://www.joinquant.com/user/d7aafd0b8b767b735bfb6f3639c81a6c)
-
-**知识星球**
-
-欢迎加入我的知识星球，获取更多知识和服务！
-
-<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
-
-**微信公众号**
-
-<img src=".README_images/公众号链接.png" width = "430" height = "150" alt="微信公众号" align=center />
 
 ## 打赏我 
 
