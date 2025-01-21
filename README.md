@@ -1,11 +1,11 @@
-# AI-驯龙笔记
+# 大模型避坑指南
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 <img src="https://github.blog/wp-content/uploads/2020/09/github-stars-logo_Color.png" alt="drawing" width="25"/>**如果喜欢本项目，或希望随时关注动态，请给我点个赞吧 (页面右上角的小星星)，欢迎分享到社区!**
 
-<div align="center"> <img src=".README_images/LOGO.png" width = 320 height = 300 /> </div>
+<div align="center"> <img src=".README_images/LOGO_NEW.png" width = 320 height = 300 /> </div>
 
 > **探索 AI 工程实践，快速掌握全栈技术知识**
 
@@ -25,9 +25,11 @@
 
 **知识星球**
 
-欢迎加入我的知识星球，获取更多知识和服务！
+🔥低至每日1毛|独家速成课|无痛学课|📺视频教程|   
+开源避坑指南|3分钟视频论文速度|图书馆|    
+全网最低价量化类星球之一|3天不满意免费退款
 
-<img src=".README_images/知识星球链接.jpg" width = "350" height = "180" alt="知识星球" align=center />
+<img src=".README_images/知识星球宣传.jpg" width = "260" height = "350" alt="知识星球" align=center />
 
 **微信公众号**
 
