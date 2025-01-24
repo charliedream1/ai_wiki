@@ -1,8 +1,12 @@
 # 0. 资源
 
-- LightRAG 论文：https://arxiv.org/abs/2410.05779
-- github：https://github.com/HKUDS/LightRAG
-
+- 代码
+  - Github (11.3k stars): https://github.com/HKUDS/LightRAG
+  - 配套GUI (streamlit开发): https://github.com/aiproductguy/LightRAG-gui.git 
+- 论文:
+  - https://arxiv.org/abs/2410.05779
+  - LightRAG: Simple and Fast Retrieval-Augmented Generation
+  
 ![](.13_light_RAG_images/摘要.png)
 
 基于Claude生成的论文摘要卡片
