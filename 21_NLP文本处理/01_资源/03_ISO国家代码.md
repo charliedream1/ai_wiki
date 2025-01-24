@@ -1,0 +1,1 @@
+https://www.hcner.com/wiki/iso-3166-1
