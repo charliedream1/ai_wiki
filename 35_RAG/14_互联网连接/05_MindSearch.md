@@ -5,6 +5,9 @@ https://mindsearch.netlify.app/
 
 An LLM-based Multi-agent Framework of Web Search Engine (like Perplexity.ai Pro and SearchGPT)
 
+实测：
+- 只有internLM系列模型可以使用，其它模型输出无法正确解析（即便qwen2.5-72B也不行）
+- InternLM-7B效果会差些，至少internLM-20B效果还行
 
 # 2. 原理
 
