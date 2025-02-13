@@ -1,0 +1,2 @@
+- meta只支持str, int, float or bool类型，其它类型存储会报错
+- 空值也会导致错误
