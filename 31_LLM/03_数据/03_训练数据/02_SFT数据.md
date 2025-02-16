@@ -169,7 +169,15 @@
    - 数据量：125,894
    - 541MB
    - 怀疑和上面集子是一个
-   
+
+4. OpenR1-Math-Raw
+   - Deepseek r1蒸馏得到
+   - https://huggingface.co/datasets/open-r1/OpenR1-Math-Raw
+
+5. OpenThoughts-114k
+   - deepseek r1复现：R1复现进展，open-thoughts团队基于Qwen2.5-32B-Instruct 蒸馏出了一个新模型 OpenThinker-32B
+   - OpenThoughts-114k：https://huggingface.co/open-thoughts/OpenThinker-32B
+
 ***
 
 # 2. 英文
