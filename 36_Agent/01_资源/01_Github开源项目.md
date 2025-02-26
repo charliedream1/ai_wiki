@@ -123,10 +123,25 @@ https://github.com/openai/swarm
 
 Swarm：用于构建、协调和部署多智能体（multi-agent）系统的框架，由OpenAI Solutions团队管理。Swarm是一个符合工效（ergonomic）、轻量级的多智能体协调框架。
 
+# 10. Agno
 
+Github (18.9k stars): https://github.com/agno-agi/agno
+- 快得离谱：创建智能体只要2微秒（0.000002秒），比LangGraph快10000倍
+- 百变金刚：支持文本/图片/音频/视频全模态处理
+- 自由组合：不用绑定特定AI模型，想用GPT-4还是Claude随你换
+- 团队作战：能同时指挥多个智能体协作，像复仇者联盟一样分工配合
+
+# 11. Smolagents
+
+Github (11.6k stars): https://github.com/huggingface/smolagents
+
+huggingface.co/docs/smolagents
+
+huggingface出品
 
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
 [2] 5个顶级开源Agent框架，你必须知道！，https://mp.weixin.qq.com/s/zf_BSlcmTgNKLbVu8Tq8Qg
 [3] 授权调用: 介绍 Transformers 智能体 2.0, https://mp.weixin.qq.com/s/C2Yd3tBUTdSPEOcdhcr0TQ
+[4] 18.9K 星推荐！这个 Python 库让开发 AI 智能体像搭积木一样简单, https://mp.weixin.qq.com/s/Vk238RASp9ULnDDYMerRew
