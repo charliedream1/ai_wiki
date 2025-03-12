@@ -139,6 +139,16 @@ huggingface.co/docs/smolagents
 
 huggingface出品
 
+# 12. Owl
+
+Github (9.3 stars): https://github.com/camel-ai/owl
+
+OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-World Task Automation
+
+🏆 OWL achieves 58.18 average score on GAIA benchmark and ranks 🏅️ #1 among open-source frameworks! 🏆
+
+![](.01_Github开源项目_images/owl架构图.png)
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
