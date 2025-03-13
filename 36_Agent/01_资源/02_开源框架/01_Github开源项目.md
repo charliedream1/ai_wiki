@@ -149,6 +149,23 @@ OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-Wor
 
 ![](.01_Github开源项目_images/owl架构图.png)
 
+# 13. OpenAI Agent框架
+
+发布事件：2025-03-13
+
+- Agents Blog: https://openai.com/index/new-tools-for-building-agents
+- Built-in tools: https://platform.openai.com/docs/guides/tools?api-mode=responses
+- Responses API: https://platform.openai.com/docs/api-reference/responses
+- Agents SDK项目：https://github.com/openai/openai-agents-python
+- Computer Using Agent项目：https://github.com/openai/openai-cua-sample-app
+
+- 内置工具（Built-in tools）：包括网页搜索、文件搜索以及电脑使用（Computer Use）
+- Responses API ：新的响应API，将 Chat Completions API 的简单性与 Assistants API 的工具使用功能相结合，用于构建Agents
+- Agents SDK：协调Single-Agent和Multi-Agent工作流程
+- 监控工具：集成可观察性工具跟踪和检查Agent工作流程的执行情况
+
+其中：Agents SDK是开源的，并且还开源了一个Computer Using Agent项目
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
