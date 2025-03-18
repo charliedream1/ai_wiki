@@ -39,7 +39,12 @@
    - https://github.com/rasbt/LLMs-from-scratch.git
    - 中文：https://github.com/datawhalechina/llms-from-scratch-cn
    - 书Build a Large Language Model (From Scratch)配到代码仓
-   
+
+7. UltraScale Playbook
+   - 《超大规模AI实战手册》是一本全面介绍超规模AI技术的实用指南，涵盖了从基础理论到实际应用的各个方面。无论您是AI领域的初学者还是有经验的专业人士，本书都能为您提供宝贵的见解和实用技巧。
+   - 英文原版：https://huggingface.co/spaces/nanotron/ultrascale-playbook
+   - 翻译源码 （5 stars）：https://github.com/pprp/ultrascale-playbook-zh
+
 # 参考
 
 [1] 刷屏了，吴恩达又一AI大模型力作！（附PDF），https://mp.weixin.qq.com/s/ScpunNCFWfM3-hidv_8huw
