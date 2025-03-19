@@ -104,6 +104,78 @@ Docker 沙箱运行时
 
 OpenHands 致力于通过 AI 技术革新软件开发流程，让开发者专注于更重要的任务，同时确保开发环境的安全性和可扩展性。
 
+# 7. LangManus
+
+项目地址：
+
+https://github.com/langmanus/langmanus
+
+https://github.com/langmanus/langmanus-web
+
+LangManus介绍
+
+LangManus 是一个社区驱动的 AI 自动化框架，它基于开源社区的杰出工作成果构建而成。我们的目标是将语言模型与网络搜索、爬虫、Python 代码执行等专用工具相结合，
+
+核心特点
+
+LangManus实现了一个分层多代理系统，其中一个主管协调专业代理来完成复杂任务：
+
+1. 核心能力
+
+- 🤖 LLM集成：支持Qwen等开源模型
+
+- 与OpenAI兼容的API接口
+
+- 多层次LLM系统，适应不同复杂度的任务
+
+
+
+2. 工具与集成
+
+- 🔍 搜索和检索：通过Tavily API进行网络搜索
+
+- 使用Jina进行神经搜索
+
+- 高级内容提取功能
+
+
+
+3. 开发功能
+
+- 🐍 Python集成：内置Python REPL
+
+- 代码执行环境
+
+- 使用uv进行包管理
+
+
+
+4. 工作流管理
+
+- 📊 可视化和控制：工作流图形可视化
+
+- 多代理协调
+
+- 任务委派和监控
+
+![](.03_Manus开源工具_images/架构图.png)
+
+LangManus的系统由以下代理协同工作组成：
+
+1. 协调者(Coordinator) - 处理初始交互并路由任务的入口点
+
+2. 规划者(Planner) - 分析任务并创建执行策略
+
+3. 主管(Supervisor) - 监督和管理其他代理的执行
+
+4. 研究员(Researcher) - 收集和分析信息
+
+5. 编码员(Coder) - 处理代码生成和修改
+
+6. 浏览器(Browser) - 执行网页浏览和信息检索
+
+7. 报告员(Reporter) - 生成工作流结果的报告和摘要
+
 # 参考
 
 [1] 5大开源 Manus 复刻项目全景解析, https://mp.weixin.qq.com/s/2XCqGvtq5K9qR8927tdveA
