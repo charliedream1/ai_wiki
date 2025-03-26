@@ -1,4 +1,4 @@
-# 1. 资源
+# 1. Fay
 
 Fay是一个完整的开源项目，包含Fay控制器及数字人模型，可灵活组合出不同的应用场景：虚拟主播、现场推销货、商品导购、语音助理、远程语音助理、数字人互动、数字人面试官及心理测评、贾维斯、Her。开源项目，非产品试用！！！
 
@@ -21,6 +21,49 @@ http://www.gitpp.com/pythonking/Fay
 数据安全与隐私保护：数字人在处理用户信息时需要保证数据的安全性和隐私性。这需要采取有效的加密技术、访问控制等手段，防止用户信息被泄露和滥用。
 
 综上所述，数字人技术的核心难点涵盖了人工智能算法、语音交互技术、虚拟现实技术、情感识别与表达、多模态交互技术以及数据安全与隐私保护等多个方面。这些技术难题的解决将推动数字人技术的进一步发展和应用。
+
+# 2. marketing_creator_pro
+
+简介
+
+高颜值AI数字人克隆、声音克隆、短视频生成、直播（待发布）、AI配音、AI字幕，包括Windows安装版，Web版，H5版，小程序版，副业必备。
+
+功能列表
+
+• 数字人训练
+• 声音克隆
+• 口播视频生成（支持自定义文案、人物、音色、字幕等）
+
+Windows安装版、Web版-开源地址：
+https://github.com/libn-net/marketing_creator_pro_max_pc
+
+H5、小程序版-开源地址：
+https://github.com/libn-net/marketing_creator_pro_max_uni
+
+后端API-开源地址：
+https://github.com/libn-net/marketing_creator_pro_max_backend
+
+# 3. NarratoAI
+
+项目地址：https://github.com/linyqh/NarratoAI
+
+简介
+
+NarratoAI 是一个自动化影视解说工具，基于LLM实现文案撰写、自动化视频剪辑、配音和字幕生成的一站式流程，助力高效内容创作。
+
+功能
+• 支持 DeepSeek R1 和 DeepSeek V3 模型进行短剧混剪
+• 支持阿里 Qwen2-VL 模型理解视频；支持短剧混剪
+
+配置要求 📦
+
+- 建议最低 CPU 4核或以上，内存 8G 或以上，显卡非必须
+- Windows 10 或 MacOS 11.0 以上系统
+- Python 3.10+
+
+# 4. 阿里轻量级数字人，可在CPU上运行
+
+https://github.com/HumanAIGC/lite-avatar
 
 # 参考
 
