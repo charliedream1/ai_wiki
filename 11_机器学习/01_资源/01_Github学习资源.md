@@ -1,5 +1,12 @@
-1. 吴恩达机器学习课程
-   - Github (29.9k Stars): https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes
+# 1. 吴恩达机器学习课程
+
+- Github (29.9k Stars): https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes
+
+# 2. 微软课程
+
+- Github (71.6k stars): https://github.com/microsoft/ML-For-Beginners?WT.mc_id=academic-105485-koreyst
+- 主页： microsoft.github.io/ML-For-Beginners/
+- 12周 26节课 52练习题，包含视频教程
 
 # 参考
 
