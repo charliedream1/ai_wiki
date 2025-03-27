@@ -1,6 +1,0 @@
-来源：
-- 两只老虎：https://www.2qupu.com/shaoer/20160928/5924.html
-- 生日快乐：
-  - 中文：https://www.cangqiang.com.cn/changping.html?id=660
-  - 彩色背景：https://www.bing.com/images/search?view=detailV2&ccid=9cOYmx0I&id=4B2D888286C0907FF5F114C475746D366B695414&thid=OIP.9cOYmx0ILuOnj79BKvy2xwHaJW&mediaurl=https%3a%2f%2fdapula.oss-cn-hongkong.aliyuncs.com%2f2022102912060056561029.png&exph=640&expw=507&q=%e7%94%9f%e6%97%a5%e5%bf%ab%e4%b9%90%e7%ae%80%e8%b0%b1%e5%bd%a9%e5%8d%b0%e7%89%88&simid=608046891963669915&FORM=IRPRST&ck=DC763381441045D127668535FD7375F2&selectedIndex=8&itb=0
-  - 中英对照：https://www.bing.com/images/search?view=detailV2&ccid=rARcGYiJ&id=85920636B87F6A0439CF729C078D651DBE6B43E8&thid=OIP.rARcGYiJLoNGtj7jXCFukAHaDf&mediaurl=https%3a%2f%2fgss0.baidu.com%2f-vo3dSag_xI4khGko9WTAnF6hhy%2fzhidao%2fpic%2fitem%2fa9d3fd1f4134970a7d5342e094cad1c8a6865dd8.jpg&exph=422&expw=894&q=%e7%94%9f%e6%97%a5%e5%bf%ab%e4%b9%90%e7%ae%80%e8%b0%b1%e5%bd%a9%e5%8d%b0%e7%89%88&simid=608005501355501643&FORM=IRPRST&ck=841CBD14F5B42B3F75F3697905BFD769&selectedIndex=4&itb=0
