@@ -8,6 +8,10 @@
 - 主页： microsoft.github.io/ML-For-Beginners/
 - 12周 26节课 52练习题，包含视频教程
 
+# 3. 100天机器学习 
+
+- Github (46.8k stars): https://github.com/Avik-Jain/100-Days-Of-ML-Code
+
 # 参考
 
 [1] 重磅发布！吴恩达 AI 完整课程资源超级大汇总！，https://zhuanlan.zhihu.com/p/108243142
