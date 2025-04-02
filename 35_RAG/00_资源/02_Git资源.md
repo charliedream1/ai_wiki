@@ -1,3 +1,4 @@
+# 1. MasteringRAG
 Github (273 stars): https://github.com/Steven-Luo/MasteringRAG
 
 ```text
@@ -41,3 +42,7 @@ Langchain中使用千问官方API进行Function Call实现天气查询、网络�
 使用Ollama提供的Llama3 8B搭建自己的斯坦福多智能体AI小镇
 使用Ollama提供的Qwen2 7B搭建自己的中文版斯坦福多智能体AI小镇
 ```
+
+# 2. all-rag-techniques
+
+Github (1.3k stars): https://github.com/FareedKhan-dev/all-rag-techniques
