@@ -32,3 +32,5 @@ source ~/miniconda3/bin/activate
 ```bash
 conda init --all
 ```
+
+注意：windows下若始终无法开启conda环境，可以从按照的开始菜单的程序conda里的Anaconda Powershell启动
