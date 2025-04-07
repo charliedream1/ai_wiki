@@ -65,6 +65,35 @@ NarratoAI 是一个自动化影视解说工具，基于LLM实现文案撰写、�
 
 https://github.com/HumanAIGC/lite-avatar
 
+# 5. HeyGem
+HeyGem 重塑了内容生成逻辑：零训练、秒级生成，一张照片一段语音，几十秒生成 4K 数字人；
+
+https://github.com/GuijiAI/HeyGem.ai
+
+HeyGem是一款专为Windows系统设计的完全离线视频合成工具，能够精确克隆外貌和声音，实现形象的数字化。可以通过文本和语音驱动虚拟形象来创建视频。无需联网，既保护了您的隐私，又能让您享受便捷高效的数字体验。
+
+![img.png](.01_github项目/heygem推荐配置.png)
+
+# 6. DUIX
+
+https://github.com/GuijiAI/duix.ai
+
+DUIX 则瞄准人机交互这个核心接口，主打三行代码接入、低算力运行、强实时互动，正在成为企业与开发者争相集成的数字人基础设施。
+
+一句话概括：DUIX是一个能“听你说话、懂你情绪、及时回应”的AI交互数字人引擎。
+
+只需短短几行调用，就能快速接入一个具备语音识别、语言生成、多模态感知的数字人交互框架。更重要的是，它的模型经过极致压缩，可在手机、网页、车机等端侧轻松部署，50帧高帧率自然运行，不依赖重型云渲染，不卡、不延迟、还能随时定制。
+
+一句话说透它：DUIX 就是“数字人行业的 Webpack”——一个跨平台、即插即用、灵活调用的开发基建。
+
+PC入口：https://app.guiji.cn/openPlatform
+
+# 7. AigcPanel
+
+AigcPanel是一个简单易用的一站式AI数字人系统，小白也可使用。支持视频合成、声音合成、声音克隆，简化本地模型管理、一键导入和使用AI模型。
+
+🔗https://github.com/modstart-lib/aigcpanel
+
 # 参考
 
 [1] 完整的数字人开源项目，包含控制器及数字人模型，https://mp.weixin.qq.com/s/xv3XegxixyNHQf8uAyKBXg
