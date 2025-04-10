@@ -94,6 +94,16 @@ AigcPanel是一个简单易用的一站式AI数字人系统，小白也可使用
 
 🔗https://github.com/modstart-lib/aigcpanel
 
+# 8. SecondMe
+
+- Github (8.5k stars): https://github.com/mindverse/Second-Me
+
+一个开源原型，您可以在其中打造自己的 AI 自我 — 一种新的 AI 物种，可以保护您、提供您的背景并捍卫您的利益。
+
+它在本地训练和托管 — 您的数据、您的控制权 — 但在全球范围内连接，从而在 AI 网络中扩展您的智能。除此之外，它还是您的 AI 身份接口 — 一个将您的 AI 与世界连接起来的大胆标准，激发 AI 自我之间的协作，并构建未来真正的原生 AI 应用程序。
+
+技术爱好者、AI 专业人士、领域专家，加入我们！Second Me 是您将思维扩展到数字视野的跳板。
+
 # 参考
 
 [1] 完整的数字人开源项目，包含控制器及数字人模型，https://mp.weixin.qq.com/s/xv3XegxixyNHQf8uAyKBXg
