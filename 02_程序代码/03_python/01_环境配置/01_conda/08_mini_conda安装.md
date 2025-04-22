@@ -22,13 +22,13 @@ Start-Process -FilePath ".\miniconda.exe" -ArgumentList "/S" -Wait
 del .\miniconda.exe
 ```
 
-安装完后，需要重启终端，然后就可以使用conda命令了。
+安装完后，需要重启终端，然后就可以使用conda命令了。(注意，下面的路径在windows下可能是condabin)
 
 ```bash
 source ~/miniconda3/bin/activate
 ```
 
-在所有终端初始化conda
+在所有终端初始化conda（如果无法执行，可以打开Anaconda Prompt命令窗口或者git bash命令窗口操作）
 ```bash
 conda init --all
 ```
