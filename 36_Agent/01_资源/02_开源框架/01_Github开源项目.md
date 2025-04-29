@@ -166,6 +166,19 @@ OWL: Optimized Workforce Learning for General Multi-Agent Assistance in Real-Wor
 
 其中：Agents SDK是开源的，并且还开源了一个Computer Using Agent项目
 
+# 14. Rowboat
+
+Github (1.4k stars): https://github.com/rowboatlabs/rowboat.git
+
+🔥 Rowboat 三大核心优势
+1. 🚀 AI Copilot 自动生成工作流
+• 只需输入需求（如“搭建一个外卖公司客服助手，处理订单状态和缺货问题”），Rowboat 自动生成多智能体协作逻辑，省去手动编排时间。
+2. 🧩 模块化工具集成（MCP 协议）
+• 支持连接 MCP 服务器，轻松导入外部工具（如天气查询、数据库操作），让智能体具备真实业务能力。
+3. ⚡ 一键部署，无缝集成
+• 提供 HTTP API 和 Python SDK，5 行代码即可嵌入现有系统，支持企业级高并发调用。
+
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ

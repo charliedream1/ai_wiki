@@ -1,0 +1,2 @@
+- Github (197 stars): https://github.com/Terry-Xu-666/NodeRAG
+- Blog: https://terry-xu-666.github.io/NodeRAG_web/blog/2025/03/16/incremetal-update/

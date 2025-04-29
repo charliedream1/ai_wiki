@@ -104,6 +104,36 @@ AigcPanel是一个简单易用的一站式AI数字人系统，小白也可使用
 
 技术爱好者、AI 专业人士、领域专家，加入我们！Second Me 是您将思维扩展到数字视野的跳板。
 
+# 9. OmniTalker
+
+阿里的通义实验提出了 OmniTalker，一个从文本联合生成语音和说话视频的统一框架，它减轻了现有方法中冗余计算、错误积累和视听风格不匹配的痛苦。支持零样本上下文多模态生成、情感表达生成、长视频一致性生成以及交互式演示。
+
+- 论文：https://arxiv.org/pdf/2504.02433v1
+- 代码：https://github.com/HumanAIGC/omnitalker
+- 主页：https://humanaigc.github.io/omnitalker/
+
+# 10. sonic
+
+https://github.com/jixiaozhong/Sonic.git
+
+腾讯与浙大研究者最近开源一款Sonic数字人模型，一种专注于全局音频感知的音频驱动的肖像动画生成极其逼真的数字人动画视频方法。通过上下文增强的音频学习、运动解耦控制器和时间感知的位移融合，Sonic显著提高了视频质量、运动多样性、自然性和时间一致性。在github社区 star量达1k!
+
+# 11. HeyGem-Linux-Python-Hack
+
+- Github (175 stars): https://github.com/Holasyb918/HeyGem-Linux-Python-Hack
+
+是一个基于 Python 的数字人项目，它从 HeyGem.ai 中提取出来，它能够直接在 Linux 系统上运行，摆脱了对 Docker 和 Windows 系统的依赖。目标是提供一个更易于部署和使用的数字人解决方案。
+
+主要特性
+
+- 无需 Docker: 直接在 Linux 系统上运行，简化部署流程。
+- 无需 Windows: 完全基于 Linux 开发和测试。
+- Python 驱动: 使用 Python 语言开发，易于理解和扩展。
+- 开发者友好: 易于使用和扩展。
+- 完全离线。
+
 # 参考
 
 [1] 完整的数字人开源项目，包含控制器及数字人模型，https://mp.weixin.qq.com/s/xv3XegxixyNHQf8uAyKBXg
+[2] 数字人技术再突破！阿里通义提出OmniTalker，从文本联合生成语音和说话视频，支持多种生成方式！https://mp.weixin.qq.com/s/l61-22uQsddc08S6rBN_OQ
+[3] 一键包：图片到数字人，效果还是很惊艳的，完全本地部署, https://mp.weixin.qq.com/s/B9ZsJzp15oFSgMeLzPTk8Q
