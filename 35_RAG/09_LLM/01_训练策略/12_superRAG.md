@@ -2,7 +2,10 @@
 
 六小虎-百川 开源 ReSearch，一个 RL 框架，从零开始教 LLMs 使用搜索进行推理。
 
+- Github (811 stars): https://github.com/Agent-RL/ReCall
+  - 目前项目已更改到这个地址，改为更通用的工具推理框架
 - 项目地址:https://github.com/Agent-RL/ReSearch
+  - 已放置分支，停止更新
 - 论文地址：https://arxiv.org/abs/2503.19470
 - 模型：https://huggingface.co/collections/agentrl/research-67e506a0311bea06dc54878b
 - 强化学习框架（6.1k stars）：https://github.com/volcengine/verl

@@ -1,6 +1,6 @@
 # 1. 资源
 
-- Github (244 stars): https://github.com/SsmallSong/R1-Searcher
+- Github (495 stars): https://github.com/RUCAIBox/R1-Searcher
   - 包含完整的数据准备、训练、评估代码
 - 数据 (从hotpotQA挑选训练数据)：https://huggingface.co/datasets/XXsongLALA/RAG-RL-Hotpotqa-with-2wiki
 - 论文：
