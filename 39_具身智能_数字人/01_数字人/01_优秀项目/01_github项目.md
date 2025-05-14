@@ -1,3 +1,5 @@
+# 包含视觉
+
 # 1. Fay
 
 Fay是一个完整的开源项目，包含Fay控制器及数字人模型，可灵活组合出不同的应用场景：虚拟主播、现场推销货、商品导购、语音助理、远程语音助理、数字人互动、数字人面试官及心理测评、贾维斯、Her。开源项目，非产品试用！！！
@@ -132,8 +134,47 @@ https://github.com/jixiaozhong/Sonic.git
 - 开发者友好: 易于使用和扩展。
 - 完全离线。
 
+# 12. MuseTalk 1.5
+
+- 技术报告：https://arxiv.org/pdf/2410.10122
+- github地址：https://github.com/TMElyralab/MuseTalk
+- 模型下载：https://huggingface.co/TMElyralab/MuseTalk
+
+![](.01_github项目_images/MuseTalk1.5架构图.png)
+
+MuseTalk 是一个开源模型，发布在 GitHub 和 Hugging Face ，支持与 MuseV 结合，形成完整的虚拟人类生成解决方案。它在 NVIDIA Tesla V100 上实现 30fps+ 的实时推理，处理多种语言音频（如中文、英文、日语），并通过 UNet 架构和 HDTF 数据集训练 。
+
+- 性能提升
+  - 损失函数集成：MuseTalk 1.5 集成了感知损失（perceptual loss）、生成对抗网络损失（GAN loss）和同步损失（sync loss），显著提升了模型的整体性能 。 感知损失提升视觉质量，确保生成的视频在细节上更清晰。
+  - GAN 损失增强生成图像的真实感，减少伪影。
+  - 同步损失优化唇部与音频的匹配精度，减少时间延迟。
+  - 效果：这些改进确保了更高的清晰度、身份一致性和精确的唇部-语音同步 。
+- 训练策略优化
+  - 两阶段训练策略：MuseTalk 1.5 采用了两阶段训练策略，可能包括先预训练再微调的流程 。
+  - 第一阶段可能专注于基础特征提取，第二阶段优化唇部同步细节，提升模型的稳定性和泛化能力。
+  - 时空数据采样方法：引入了时空数据采样（spatio-temporal data sampling），在训练期间选择与目标帧头部姿势相似的参考图像 。
+  - 此方法帮助模型专注于精确的唇部运动，过滤冗余信息，平衡视觉质量和唇部同步精度。
+
+![](.01_github项目_images/MuseTalk1.5性能对比.png)
+
+![](.01_github项目_images/musetalk1.5性能.png)
+
+---
+
+# 无视觉部分
+
+# 1. WeClone
+
+- Github (7k stars): https://github.com/xming521/WeClone
+- 从聊天记录创造数字分身的一站式解决方案💡 使用聊天记录微调大语言模型，让大模型有“那味儿”，并绑定到聊天机器人，实现自己的数字分身。 数字克隆/数字分身/数字永生/LLM/聊天机器人/LoRA
+  - 💫 涵盖打造数字分身的全链路方案，包括聊天数据导出、预处理、模型训练、部署
+  - 💬 使用微信聊天记录微调LLM，让大模型有"那味儿"
+  - 🔗 绑定到微信、QQ、Telegram、企微、飞书机器人，实现自己的数字分身
+  - 🛡️ 隐私信息过滤，本地化微调部署，数据安全可控
+
 # 参考
 
 [1] 完整的数字人开源项目，包含控制器及数字人模型，https://mp.weixin.qq.com/s/xv3XegxixyNHQf8uAyKBXg
 [2] 数字人技术再突破！阿里通义提出OmniTalker，从文本联合生成语音和说话视频，支持多种生成方式！https://mp.weixin.qq.com/s/l61-22uQsddc08S6rBN_OQ
 [3] 一键包：图片到数字人，效果还是很惊艳的，完全本地部署, https://mp.weixin.qq.com/s/B9ZsJzp15oFSgMeLzPTk8Q
+[4] 腾讯发布数字人框架MuseTalk 1.5，开放训练逻辑，生成效果进一步优化～，https://mp.weixin.qq.com/s/BD7rLwo8pNrOw30s78293Q
