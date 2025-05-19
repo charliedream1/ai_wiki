@@ -1,6 +1,7 @@
 # 1. 资源
 
 - Github (956 stars): https://github.com/willccbb/verifiers
+- 基于TRL库编写
 
 验证者：在可验证环境中使用 LLM 进行强化学习
 

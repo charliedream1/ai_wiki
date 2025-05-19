@@ -1,6 +1,7 @@
 # 1. 资源
 
 - Github (618 stars): https://github.com/dCaples/AutoDidact/
+- 基于Unsloth修改
 
 # 2. 简介
 
