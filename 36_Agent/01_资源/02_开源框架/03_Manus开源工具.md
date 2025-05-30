@@ -176,6 +176,10 @@ LangManus的系统由以下代理协同工作组成：
 
 7. 报告员(Reporter) - 生成工作流结果的报告和摘要
 
+# 8. agenticSeek
+
+- Github (7.2k stars): https://github.com/Fosowl/agenticSeek
+
 # 参考
 
 [1] 5大开源 Manus 复刻项目全景解析, https://mp.weixin.qq.com/s/2XCqGvtq5K9qR8927tdveA
