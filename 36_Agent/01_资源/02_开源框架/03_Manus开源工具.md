@@ -180,6 +180,24 @@ LangManus的系统由以下代理协同工作组成：
 
 - Github (7.2k stars): https://github.com/Fosowl/agenticSeek
 
+# 9. AgenticSeek
+
+- Github (16.6k stars): https://github.com/Fosowl/agenticSeek
+
+为什么选择 AgenticSeek？
+
+🔒 完全本地和私有 - 一切都在您的机器上运行 - 没有云，没有数据共享。您的文件、对话和搜索将保持私密。
+
+🌐 智能网页浏览 - AgenticSeek 可以自行浏览互联网 - 搜索、阅读、提取信息、填写网页表格 - 所有这些都是免提的。
+
+💻 Autonomous Coding Assistant - 需要代码？它可以用 Python、C、Go、Java 等语言编写、调试和运行程序 — 所有这些都无需监督。
+
+🧠 智能代理选择 - 您询问，它会自动找出最适合该工作的代理。就像有一个随时准备提供帮助的专家团队。
+
+📋 计划并执行复杂的任务 - 从旅行计划到复杂的项目 - 它可以将大任务分成步骤，并使用多个AI代理完成工作。
+
+🎙️ 支持语音 - 干净、快速、未来主义的语音和语音到文本，让您可以像科幻电影中的个人 AI 一样与它交谈
+
 # 参考
 
 [1] 5大开源 Manus 复刻项目全景解析, https://mp.weixin.qq.com/s/2XCqGvtq5K9qR8927tdveA
