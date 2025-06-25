@@ -139,6 +139,28 @@ huggingface.co/docs/smolagents
 
 huggingface出品
 
+轻量级设计
+
+整个核心逻辑才1000行代码，却并不影响功能的完整性。
+
+轻松接入OpenAI、Anthropic等其他任何LLM。
+
+配合HuggingFace Hub的工具生态，有无限扩展能力。
+
+Code Agent机制
+
+不同于传统的工具调用方式，它让AI直接通过代码来执行动作。
+
+这种方式能减少30%的模型调用，性能还更好。
+
+考虑到代码执行的安全问题，还提供了安全解释器和沙盒环境。
+
+帮助处理琐碎但重要的底层工作
+
+比如代码格式的统一性、解析器的配置等
+
+可以用全套框架，也可以只取需要的部分来用
+
 # 12. Owl
 
 Github (9.3 stars): https://github.com/camel-ai/owl
@@ -178,6 +200,44 @@ Github (1.4k stars): https://github.com/rowboatlabs/rowboat.git
 3. ⚡ 一键部署，无缝集成
 • 提供 HTTP API 和 Python SDK，5 行代码即可嵌入现有系统，支持企业级高并发调用。
 
+# 15. AutoAgent
+
+登顶GAIA全球评测，成本直降50%碾压商业巨头
+
+AutoAgent是将智能体开发过程从传统的编程模式转变为一种自然语言驱动的自动化过程。
+- 通过模拟现代计算机操作系统的工作方式，将复杂的智能体开发任务分解为多个模块化的组件
+- 通过自然语言接口实现这些组件之间的交互和协调。
+
+https://arxiv.org/pdf/2502.05957
+
+https://github.com/HKUDS/AutoAgent
+
+# 16. RDAgent
+
+https://arxiv.org/pdf/2404.11276
+
+https://arxiv.org/pdf/2407.18690
+
+https://github.com/microsoft/RD-Agent
+
+https://rdagent.readthedocs.io/en/latest/introduction.html
+
+推出RDAgent的目的在于：打造一个工业研发过程的自动化助手，专注于数据驱动场景，通过提出新想法和实施它们来简化模型和数据的开发。
+
+RDAgent由两个关键部分组成：
+
+- （R）esearch代表通过提出新想法积极探索，
+- （D）evelopment代表实现这些想法。
+
+
+在数据挖掘过程中，可以将数据驱动分解成以下动作：
+
+- 首先，提出一个idea假设。例如，像RNN这样的模型结构可以捕获时间序列数据中的模式
+- 然后，将idea变成可操作的实验。例如：挖掘金融数据包含时间序列模型
+- 第三，搜索与实验相关的数据，将实验实现为代码。例如：pytorch代码
+- 最后，执行代码以获得数据反馈。例如：指标、损失曲线等
+
+通过上述步骤，数据挖掘专家能从反馈中学习，并在下一次迭代中改进
 
 # 参考
 
@@ -185,3 +245,5 @@ Github (1.4k stars): https://github.com/rowboatlabs/rowboat.git
 [2] 5个顶级开源Agent框架，你必须知道！，https://mp.weixin.qq.com/s/zf_BSlcmTgNKLbVu8Tq8Qg
 [3] 授权调用: 介绍 Transformers 智能体 2.0, https://mp.weixin.qq.com/s/C2Yd3tBUTdSPEOcdhcr0TQ
 [4] 18.9K 星推荐！这个 Python 库让开发 AI 智能体像搭积木一样简单, https://mp.weixin.qq.com/s/Vk238RASp9ULnDDYMerRew
+[5] 3.4K Star 港大开源AutoAgent登顶GAIA全球评测，成本直降50%碾压商业巨头, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247485549&idx=1&sn=ff87c3ba29b538a37b73d3fa9848acac&scene=21#wechat_redirect
+[6] 微软发布：工业级Agent落地方案RDAgent, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247484346&idx=1&sn=c55cab4835761d9f6589f2b067c0284a&scene=21#wechat_redirect
