@@ -1,0 +1,1 @@
+根据OpenAI团队成员Isa Fulford 和 Josh Tobin在红杉资本的播客《OpenAI's Deep Research on Training AI Agents End-to-End》中的分享，Deep Research 并非通过手动将模型和工具拼成 workflow，而是用端到端强化学习在浏览+推理任务上训练模型，让其自主规划、回退、调整策略，Deep Research使用了类似的端到端强化学习进行训练，由于Deep Research处理的任务往往没有标准可验证的答案来提供奖励信号，分析表明他们可能使用了LLM as Judge（大型语言模型作为评判者）来实施强化学习。
