@@ -23,6 +23,7 @@
 基础模型：
 - DeepSeek-Coder-Base-v1.5 7B
 - 发现coder比general模型好
+- 4K长度
 
 # 训练
 
@@ -32,7 +33,14 @@
   - COT训练
   - program-of-thought
   - tool-integrated reasoning
+  - 776k
 - GRPO提出
+
+![](.02_DeepSeek_Math_images/GRPO.png)
+
+![](.02_DeepSeek_Math_images/GRPO流程.png)
+
+![](.02_DeepSeek_Math_images/训练流程.png)
 
 # 测试
 
