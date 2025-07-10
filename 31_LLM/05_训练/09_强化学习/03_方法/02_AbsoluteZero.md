@@ -1,0 +1,3 @@
+- Absolute Zero: Reinforced Self-play Reasoning with Zero Data
+- https://arxiv.org/pdf/2505.03335
+- 2025.6.13
