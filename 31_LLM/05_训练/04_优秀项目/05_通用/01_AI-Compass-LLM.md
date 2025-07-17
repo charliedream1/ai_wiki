@@ -1,5 +1,8 @@
 
+AI-Compass 致力于构建最全面、最实用、最前沿的AI技术学习和实践生态，通过六大核心模块的系统化组织，为不同层次的学习者和开发者提供从完整学习路径。
 
+• github地址：AI-Compass👈：https://github.com/tingaicompass/AI-Compass
+• gitee地址：AI-Compass👈：https://gitee.com/tingaicompass/ai-compass
 
 # 参考
 
