@@ -1,5 +1,13 @@
 强化学习框架（6.1k stars）：https://github.com/volcengine/verl
 
+PPT：主要讲解内部代码原理
+- Introduction to verl
+  - verl: Flexible and Efficient RL for LLMs
+  - PPT: https://tongyx361.github.io/blogs/posts/verl-intro/#/title-slide
+- verl Code Walkthrough
+  - PPT: https://tongyx361.github.io/blogs/posts/verl-tutorial/#/title-slide
+  - 视频：https://appodzjvyp51702.xet.citv.cn/v3/course/alive/l_6821f9cee4b0694c5ad2531b?app_id=appodzjvyp51702&alive_mode=0&pro_id=&type=2
+
 Verl 是一个灵活、高效且可用于生产用途的 RL 训练库，适用于大型语言模型 （LLM）。
 
 verl 是 HybridFlow： A Flexible and Efficient RLHF Framework 论文的开源版本。
