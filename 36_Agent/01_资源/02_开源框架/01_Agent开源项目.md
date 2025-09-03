@@ -351,6 +351,33 @@ LangGraph 是一个用于使用LLM构建有状态、多Agent应用程序的开�
 - 精确控制 ：开发者可以对Agent的行为和工作流程进行精细的调整和定制，满足特定的应用需求。
 - 无缝集成 ：LangGraph 与 LangChain 和 LangSmith 无缝协作，为开发者提供了更强大的工具、监控和优化功能，提升了开发效率和应用性能。
 
+# 23. Youtu-agent
+
+- Github(1.5k stars): https://github.com/Tencent/Youtu-agent
+
+![](.01_Agent开源项目_images/yout_agent效果.png)
+
+AIGC开源项目推荐-腾讯智能体框架Youtu-agent Youtu-agent 是一个灵活、高性能的框架，用于构建、运行和评估自主智能体。除了在基准测试中名列前茅，该框架还提供了强大的智能体能力，例如数据分析、文件处理和深度研究
+
+核心概念
+
+智能体（Agent）：一个配置了提示词、工具和环境的大语言模型。
+工具包（Toolkit）：智能体可以使用的封装工具集。
+环境（Environment）：智能体操作的世界（例如，浏览器、shell）。
+上下文管理器（ContextManager）：一个可配置模块，用于管理智能体的上下文窗口。
+基准（Benchmark）：一个针对特定数据集的封装工作流，包括预处理、执行和判断逻辑。
+
+核心功能
+
+基于openai-agents构建：利用 openai-agents SDK 作为基础，我们的框架继承了 streaming、tracing 和 agent-loop 能力，确保了与 responses 和 chat.completions API 的兼容性，无缝适应 gpt-oss 等多样化模型。
+完全异步：这实现了高性能和高效执行，尤其有利于高效的评估。
+追踪与分析系统：除了 OTEL，我们的 DBTracingProcessor 系统提供了对工具调用和智能体轨迹的深入分析。
+
+自动智能体生成
+
+Youtu-agent的突出优势在于其自动化生成智能体及其配置的能力。在其他框架中，定义特定任务的智能体通常需要编写代码或是精心设计提示词，而Youtu-agent采用基于 YAML 的简洁配置方案，实现了高效自动化：内置的“元智能体”与用户对话并捕获需求，然后自动生成并保存配置。
+
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
