@@ -433,6 +433,12 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 
 但同时它这种模式或许也将会是模型下一次迭代的牺牲品，不论如何，想要在现阶段落地严肃场景的开发者们尝试尝试。
 
+# 25. Xagent
+
+- Github (8.5k stars): https://github.com/OpenBMB/XAgent
+
+![](.01_Agent开源项目_images/xagent.png)
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
