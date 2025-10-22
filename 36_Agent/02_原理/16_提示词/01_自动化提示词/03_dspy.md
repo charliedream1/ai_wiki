@@ -1,0 +1,1 @@
+- Github (29.4k stars): https://github.com/stanfordnlp/dspy
