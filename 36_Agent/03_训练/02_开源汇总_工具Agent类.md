@@ -72,3 +72,16 @@ RL-Factory 将环境与 RL 后训练解耦，只需使用工具配置和奖励�
 现在，每个人都可以使用 Qwen3（作为基本模型）和 MCP 工具轻松快速地训练代理！
 
 ![](.02_开源汇总_工具Agent类_images/RL_Factory架构.png)
+
+# 5. ToolRL
+
+https://github.com/qiancheng0/ToolRL
+
+![](.02_开源汇总_工具Agent类_images/TOOLrl.png)
+
+这篇文章主要在Tool use这样对Agent很重要的场景下做了很多RL的实验，主要的结论有下面几个：
+
+LLM进行推理的时候，并不是轨迹越长效果就越好，而且过长的奖励可能会降低性能。
+更细粒度的奖励分解可实现更稳定、更有效的学习，让过程更加可控
+类似课程学习，比较动态奖励尺度有助于模型从学习简单行为平稳过渡到学习复杂行为。
+这篇文章的奖励分为两个部分，一个是格式奖励，例如检查输出中是否包含 <|think|>、<|tool_call|>、<|response|> 等特殊 token，并且它们的顺序是否正确。另外一个就是正确性奖励，目的是检查模型在具体工具调用上的「语义／参数／值」层面的准确性。包括三个子方面：每个工具名称匹配（tool name matching）、工具里面参数名称匹配（parameter name matching）、参数值匹配（parameter content/value matching）。这篇文章的奖励和Search R1直接反过来了，几乎完全舍弃了最终答案奖励，只用格式 + 工具正确性奖励 来驱动整个 RL 训练。
