@@ -439,6 +439,13 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 
 ![](.01_Agent开源项目_images/xagent.png)
 
+# 26. agent-zero
+
+项目仓库：https://github.com/agent0ai/agent-zero
+
+这个架构的精妙之处在于：层次化任务分解：复杂任务可以被分解给多个子Agent，每个Agent专注于自己的子任务资源共享：所有Agent共享同一套工具、记忆和知识库动态扩展：可以随时添加新的工具、扩展或知识，无需修改核心代码
+
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
@@ -448,3 +455,4 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 [5] 3.4K Star 港大开源AutoAgent登顶GAIA全球评测，成本直降50%碾压商业巨头, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247485549&idx=1&sn=ff87c3ba29b538a37b73d3fa9848acac&scene=21#wechat_redirect
 [6] 微软发布：工业级Agent落地方案RDAgent, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247484346&idx=1&sn=c55cab4835761d9f6589f2b067c0284a&scene=21#wechat_redirect
 [7] 技术前沿之Graph+Agent：Chat2Graph如何重构GraphRAG范式？https://mp.weixin.qq.com/s/TKev6oPft5I1VOlXqHwONQ
+[8] Agent Zero：重新定义AI Agent的有机生长框架——从"预设工具"到"自我进化"的范式革命, https://mp.weixin.qq.com/s/BqqNyCuD9uyaGfSMFhPXWg
