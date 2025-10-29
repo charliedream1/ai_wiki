@@ -2,6 +2,21 @@
 
 完整生成的PPT文件下载 Claude-Code-Agent-Skills-介绍.pptx(https://github.com/xiehust/strands_demos/blob/main/strands_skills_demo/assets/Claude-Code-Agent-Skills-%E4%BB%8B%E7%BB%8D.pptx)
 
+用一句话总结
+
+- Skills = 让 Claude 按规范做事；
+- MCP = 让 Claude 能用外部工具；
+- Sub-Agent = 让 Claude 分身协作做更多事。
+
+官网github地址：https://github.com/anthropics/skills
+
+1. Anthropic 技术博客：用 Agent Skills 为现实世界装备代理
+https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
+深入解析 Skills 的技术架构和设计哲学
+2. Claude 官方文档：Agent Skills 完整指南
+https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
+从入门到精通的官方教程
+
 # 1.引言
 最近Anthropic正式发布了Claude Code Skills功能，这是继MCP之后，Anthropic在Agent工具化领域的又一重要创新。不同于传统的硬编码工具调用（Tool Calling），Agent Skills通过文件和文件夹的组织方式，让Agent能够动态发现和加载技能文件，就像为新员工准备一份完整的入职操作手册。
 
@@ -397,9 +412,13 @@ Strands Agents SDK实现Skills具有以下优势：
 
 - ✅ 企业级特性：本地，云上(无服务/有服务器)多种部署方式, 原生集成OTEL可观测性等
 
+![](.01_agent_skills_images/d6ea5fec.png)
+
 # 参考
 
 [1] Agent Skills 逆向工程解密，用Strands Agents SDK完美实现Agent Skills, https://mp.weixin.qq.com/s?__biz=MzkyMTYzNjk3OA==&mid=2247484090&idx=1&sn=ca5b5c837fbe1b31856441f69bb9fbb1&chksm=c181dba7f6f652b10860b14fbb56fd02746d85323c66ce9cbd2c4e99c4fcc6d07b38cb4b6211&exptype=unsubscribed_card_recommend_article_u2i_mainprocess_coarse_sort_pcfeeds&ranksessionid=1761461355_1&req_id=1761461355644781&scene=1#rd
+[2] https://mp.weixin.qq.com/s/tjgDVzcZcp6Eni9N8yHbdw
+
 Anthropic Engineering Blog. Equipping agents for the real world with Agent Skills. https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 
 Claude Documentation. Agent Skills. https://docs.claude.com/en/docs/claude-code/skills
