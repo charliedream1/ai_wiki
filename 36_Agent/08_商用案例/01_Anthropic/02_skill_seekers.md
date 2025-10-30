@@ -1,4 +1,5 @@
 项目地址在 GitHub：yusufkaraaslan/Skill_Seekers
+- https://github.com/yusufkaraaslan/Skill_Seekers
 
 既然 Claude 推出了 Skills 功能，那能不能有个工具，直接把官方文档自动转成 Claude 能理解的技能包？
 

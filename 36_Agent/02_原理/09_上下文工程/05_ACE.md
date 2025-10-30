@@ -1,6 +1,7 @@
 # 1. 资源
 
-论文链接：https://arxiv.org/pdf/2510.04618
+- 论文链接：https://arxiv.org/pdf/2510.04618
+- Github (425 stars): https://github.com/kayba-ai/agentic-context-engine
 
 # 2. 问题
 

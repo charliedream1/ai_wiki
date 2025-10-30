@@ -445,6 +445,11 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 
 这个架构的精妙之处在于：层次化任务分解：复杂任务可以被分解给多个子Agent，每个Agent专注于自己的子任务资源共享：所有Agent共享同一套工具、记忆和知识库动态扩展：可以随时添加新的工具、扩展或知识，无需修改核心代码
 
+# 27. DeepAgents
+
+- Github (4.8k stars): https://github.com/langchain-ai/deepagents
+langchain开源
+
 
 # 参考
 
