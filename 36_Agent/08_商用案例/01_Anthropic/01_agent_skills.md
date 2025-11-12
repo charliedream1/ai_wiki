@@ -2,6 +2,14 @@
 
 完整生成的PPT文件下载 Claude-Code-Agent-Skills-介绍.pptx(https://github.com/xiehust/strands_demos/blob/main/strands_skills_demo/assets/Claude-Code-Agent-Skills-%E4%BB%8B%E7%BB%8D.pptx)
 
+Anthropic Agent Skills官方文档：
+
+https://docs.claude.com/en/docs/agents-and-tools/agent-skills
+
+Anthropic Skills GitHub仓库： 
+
+https://github.com/anthropics/skills
+
 用一句话总结
 
 - Skills = 让 Claude 按规范做事；
