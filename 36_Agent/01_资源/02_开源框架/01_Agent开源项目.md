@@ -459,6 +459,23 @@ agentUniverse 是一个基于大型语言模型的多代理框架。它为构建
 
 ![](.01_Agent开源项目_images/ca73b68b.png)
 
+# 29. Eigent
+
+- Github (2.5k stars):  https://github.com/eigent-ai/eigent
+
+Eigent 是全球首个多代理 Workforce 桌面应用，赋能您构建、管理和部署定制的 AI 劳动力队伍，将最复杂的工作流程转化为自动化任务。
+
+我们的系统基于CAMEL-AI备受赞誉的开源项目，引入了多代理劳动力，通过并行执行、定制和隐私保护提升生产力。
+
+⭐ 100% 开源 - 🥇 本地部署 - 🏆 MCP 集成
+✅ 零设置——无需技术配置
+✅ 多代理协调——处理复杂的多代理工作流程
+✅ 企业功能 - 单点登录/访问控制
+✅ 本地部署人员
+✅ 开源
+✅ 自定义模型支持
+✅ MCP集成
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
