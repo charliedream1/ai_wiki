@@ -162,6 +162,21 @@ WebResummer-30B（ReSum-GRPO 训练后）仅用 1K 训练样本，在 BrowseComp
 
 ![](.26_tongyi_deep_research系列_images/webweaver2.png)
 
+---
+
+# webfro+ntier
+
+可扩展数据合成引擎
+为解决训练数据稀缺问题，WebFrontier采用三阶段工作流生成高质量数据：
+
+种子生成：从多学科文档库中生成需要多源信息综合的初始问答对。
+
+复杂性升级：通过工具增强的代理（配备搜索、学术查询、浏览器和Python工具）迭代提升任务的认知复杂度，包括知识扩展、概念抽象、事实验证和计算 formulation。
+
+质量控制：通过基线代理和工具增强代理的验证，筛选出高复杂度且事实正确的任务，确保数据质量。
+
+![](.26_tongyi_deep_research系列_images/webfrontier11.png)
+
 # 参考
 
 [1] Agent深度研究的狂欢：通义-Agent实验室论文六连发，一起看看, https://mp.weixin.qq.com/s/B-l57oNVXClyeDHBEEzO6g

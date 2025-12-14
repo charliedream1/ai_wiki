@@ -1,0 +1,28 @@
+项目地址在 GitHub：yusufkaraaslan/Skill_Seekers
+- https://github.com/yusufkaraaslan/Skill_Seekers
+
+既然 Claude 推出了 Skills 功能，那能不能有个工具，直接把官方文档自动转成 Claude 能理解的技能包？
+
+Skill Seekers：解放双手的神器
+
+Skill Seekers 是一个开源项目，它的核心功能非常简单粗暴：
+
+给它一个文档网站的链接，它就能自动生成一个 Claude 技能包。
+
+对，就这么简单。
+
+你只需要运行一条命令，剩下的事情全部交给它：
+
+它会自动爬取整个文档网站
+
+智能识别哪些内容是重要的
+
+用 AI 提取代码示例和最佳实践
+
+最后打包成一个 .zip 文件
+
+整个过程大概 10-20 分钟，你都不用管，让它自己跑就行。
+
+等它跑完了，你把生成的 .zip 文件上传到 Claude，就完事了。
+
+从此以后，Claude 就对这个框架了如指掌。

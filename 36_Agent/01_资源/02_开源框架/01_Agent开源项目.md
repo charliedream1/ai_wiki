@@ -439,6 +439,84 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 
 ![](.01_Agent开源项目_images/xagent.png)
 
+# 26. agent-zero
+
+项目仓库：https://github.com/agent0ai/agent-zero
+
+这个架构的精妙之处在于：层次化任务分解：复杂任务可以被分解给多个子Agent，每个Agent专注于自己的子任务资源共享：所有Agent共享同一套工具、记忆和知识库动态扩展：可以随时添加新的工具、扩展或知识，无需修改核心代码
+
+# 27. DeepAgents
+
+- Github (4.8k stars): https://github.com/langchain-ai/deepagents
+langchain开源
+
+Deep Agents是LangChain生态下的新成员，专为更自主、长期运行的智能体设计。与传统智能体不同，它能处理耗时数周的任务（比如写10万行代码），且能灵活调用工具（平均一次任务调用50+种工具）。简单说，它是智能体的“强化版”，目标是取代人类完成深度工作。
+
+🔧 它有哪些“超能力”？
+文件系统自由访问
+智能体可以直接读写你的电脑文件，不用把所有信息塞进提示词里。比如让它整理项目文档，它会自动创建文件夹、保存草稿，再也不怕“上下文窗口爆满”。
+
+子代理（Subagents） delegation
+遇到复杂任务时，主智能体会“派个小助手”去专门处理。比如让你写论文，它可以分出一个“文献综述智能体”和“实验分析智能体”，各自独立工作后再汇总结果，完全不干扰主思路。
+
+内置规划工具（Planning Tool）
+像人类一样先列计划再执行！比如让它开发一个APP，它会先拆解成“需求分析→UI设计→后端开发→测试”等步骤，再一步步推进，而非想到哪做到哪。
+
+开箱即用的工具集
+自带文件操作、Shell命令执行等原子工具，配合详细提示词，能实现无限可能——从自动运维服务器到生成研究报告，一切皆有可能。
+
+# 28. 蚂蚁-agentUniverse
+
+- Github (1.9k stars): https://github.com/agentuniverse-ai/agentUniverse
+- 蚂蚁出品
+
+agentUniverse 是一个基于大型语言模型的多代理框架。它为构建单个代理提供了灵活且易于扩展的功能。agentUniverse 的核心是一套丰富的多智能体协同模式组件（作为协同模式工厂），让智能体在解决不同领域的问题时，能够履行各自的职责，最大限度地发挥自己的能力;同时，agentUniverse 专注于领域体验的整合，帮助您将领域体验顺利融入智能体的工作中。 🎉🎉🎉
+
+![](.01_Agent开源项目_images/ca73b68b.png)
+
+# 29. Eigent
+
+- Github (2.5k stars):  https://github.com/eigent-ai/eigent
+
+Eigent 是全球首个多代理 Workforce 桌面应用，赋能您构建、管理和部署定制的 AI 劳动力队伍，将最复杂的工作流程转化为自动化任务。
+
+我们的系统基于CAMEL-AI备受赞誉的开源项目，引入了多代理劳动力，通过并行执行、定制和隐私保护提升生产力。
+
+⭐ 100% 开源 - 🥇 本地部署 - 🏆 MCP 集成
+✅ 零设置——无需技术配置
+✅ 多代理协调——处理复杂的多代理工作流程
+✅ 企业功能 - 单点登录/访问控制
+✅ 本地部署人员
+✅ 开源
+✅ 自定义模型支持
+✅ MCP集成
+
+# 30. OxyGent
+
+- Github (1.7k stars):  https://github.com/jd-opensource/OxyGent
+- 京东
+
+1. 项目概述
+OxyGent 是一个开源框架，将工具、模型和代理整合成模块化的 Oxy。OxyGent 赋予开发者透明的端到端流水线，使多智能体系统的构建、运行和演进变得无缝且无限可扩展。
+
+2. 核心特征
+🏎️ 高效开发
+
+OxyGent 是一个模块化多智能体框架，让你能够以前所未有的效率构建、部署和发展 AI 团队。其标准化的Oxy组件像乐高积木一样可快速组装代理，同时支持热插拔和跨场景重用——所有这些都通过干净的Python接口实现，无需繁琐的配置。
+🤝 智能协作
+
+该框架通过动态规划范式增强协作，智能体能够智能拆解任务、协商解决方案并实时适应变化。与僵化的工作流程系统不同，OxyGent的代理能够自然应对突发挑战，同时保持对每项决策的全面审计性。
+🕸️ 弹性架构
+
+在底层，弹性架构支持任何代理拓扑——从简单的ReAction到复杂的混合规划模式。自动化依赖映射和可视化调试工具使得优化分布式系统性能变得容易。
+🔁 持续演变
+
+每一次互动都成为学习的机会——这要归功于内置的评估引擎，自动生成训练数据。您的经纪人通过知识反馈循环不断提升，同时保持完全透明。
+📈 可扩展性
+
+扩展遵循梅特卡夫定律——OxyGent的分布式调度器实现线性成本增长，同时实现协作智能的指数级提升。该系统能够轻松处理任何规模的领域优化和实时决策。
+最新版本的OxyGent（2025年7月15日）在GAIA中获得59.14分，当前顶级开源系统OWL获得60.8分。
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ
@@ -448,3 +526,4 @@ Parlant走上了与其它框架不一样的路，与其期待大模型的指令�
 [5] 3.4K Star 港大开源AutoAgent登顶GAIA全球评测，成本直降50%碾压商业巨头, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247485549&idx=1&sn=ff87c3ba29b538a37b73d3fa9848acac&scene=21#wechat_redirect
 [6] 微软发布：工业级Agent落地方案RDAgent, https://mp.weixin.qq.com/s?__biz=MzkzNjgwNzMwNQ==&mid=2247484346&idx=1&sn=c55cab4835761d9f6589f2b067c0284a&scene=21#wechat_redirect
 [7] 技术前沿之Graph+Agent：Chat2Graph如何重构GraphRAG范式？https://mp.weixin.qq.com/s/TKev6oPft5I1VOlXqHwONQ
+[8] Agent Zero：重新定义AI Agent的有机生长框架——从"预设工具"到"自我进化"的范式革命, https://mp.weixin.qq.com/s/BqqNyCuD9uyaGfSMFhPXWg
