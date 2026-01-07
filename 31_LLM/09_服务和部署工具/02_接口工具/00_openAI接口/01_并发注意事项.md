@@ -1,0 +1,1 @@
+若你要在项目里使用 async 功能，请安装 httpx：pip install httpx。若不安装，异步会回退为 asyncio.to_thread（仍然可用，但不是纯异步 HTTP）。
