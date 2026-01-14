@@ -198,6 +198,12 @@ LangManus的系统由以下代理协同工作组成：
 
 🎙️ 支持语音 - 干净、快速、未来主义的语音和语音到文本，让您可以像科幻电影中的个人 AI 一样与它交谈
 
+# 10. OpenHands
+
+https://github.com/OpenHands/software-agent-sdk.git
+
+OpenHands是一个专注于 AI 驱动开发的开源项目与社区，提供了从 SDK、CLI 到本地 GUI、云端服务及企业版的全场景工具链，核心围绕智能开发代理技术构建。其核心组成包括可组合的 Python 语言 SDK、易于上手的 CLI 工具、本地 GUI 应用。
+
 # 参考
 
 [1] 5大开源 Manus 复刻项目全景解析, https://mp.weixin.qq.com/s/2XCqGvtq5K9qR8927tdveA
