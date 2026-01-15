@@ -1,6 +1,7 @@
 该项目地址：
 https://atomgit.com/GitHub_Trending/deepc/DeepCode
-https://github.com/HKUDS/DeepCode
+
+Github (13.9k stars): https://github.com/HKUDS/DeepCode
 该项目隶属于HKUDS，应该是香港大学Data Intelligence Lab
 
 此项目没有官网，但是有个疑似实验室负责人的个人页面链接：
