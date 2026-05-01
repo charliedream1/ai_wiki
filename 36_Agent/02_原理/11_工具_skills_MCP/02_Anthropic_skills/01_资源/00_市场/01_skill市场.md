@@ -1,0 +1,1 @@
+- 技能库网址：http://www.fudankw.cn:18000/search-skills.html
