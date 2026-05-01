@@ -103,7 +103,7 @@ skills/
 
 通过分析Anthropic的官方文档和实现，我们可以提炼出Skills的完整工作流程：
 
-![](.01_agent_skills_images/工作机制.png)
+![](../.01_agent_skills_images/工作机制.png)
 
 SKILL.md的标准格式
 
@@ -141,7 +141,7 @@ with pdfplumber.open("doc.pdf") as pdf:
 
 通过分析Claude Code的行为模式和官方文档，我们可以推断出Skills的核心技术架构：
 
-![](.01_agent_skills_images/实现2.png)
+![](../.01_agent_skills_images/实现2.png)
 
 实现架构设计
 在Strands Agents SDK中实现Agent Skills需要解决三个技术点：
@@ -154,7 +154,7 @@ with pdfplumber.open("doc.pdf") as pdf:
 
 我们的实现方案采用了动态工具生成 + Hook拦截器的架构：
 
-![](.01_agent_skills_images/实现3.png)
+![](../.01_agent_skills_images/实现3.png)
 
 关键技术点
 动态Tool生成
@@ -400,7 +400,7 @@ research about Claude Code Agent Skills
 
 实际效果如下图，几乎完美的复刻了原有html格式的ppt，并生成了一个完全可编辑的pptx。
 
-![](.01_agent_skills_images/效果.png)
+![](../.01_agent_skills_images/效果.png)
 
 6. 总结
 
@@ -420,7 +420,7 @@ Strands Agents SDK实现Skills具有以下优势：
 
 - ✅ 企业级特性：本地，云上(无服务/有服务器)多种部署方式, 原生集成OTEL可观测性等
 
-![](.01_agent_skills_images/d6ea5fec.png)
+![](../.01_agent_skills_images/d6ea5fec.png)
 
 # 参考
 
