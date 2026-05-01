@@ -1,0 +1,1 @@
+- Github (171k stars): https://github.com/affaan-m/everything-claude-code/tree/main

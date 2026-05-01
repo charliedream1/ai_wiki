@@ -1,3 +1,0 @@
-- Github (270 stars): https://github.com/joyehuang/Learn-Open-Harness
-- 🤖 OpenHarness 官方互动教程——从零到英雄 12 章 |学习OpenHarness，比如Claude代码：代理循环、工具、内存、多代理 |面向零基础的 AI Agent 交互式教程
-- https://learn-open-harness.vercel.app/
