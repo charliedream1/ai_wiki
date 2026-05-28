@@ -517,6 +517,10 @@ OxyGent 是一个模块化多智能体框架，让你能够以前所未有的效
 扩展遵循梅特卡夫定律——OxyGent的分布式调度器实现线性成本增长，同时实现协作智能的指数级提升。该系统能够轻松处理任何规模的领域优化和实时决策。
 最新版本的OxyGent（2025年7月15日）在GAIA中获得59.14分，当前顶级开源系统OWL获得60.8分。
 
+# 31. openai-agents-python
+
+https://github.com/openai/openai-agents-python
+
 # 参考
 
 [1] Multi-Agent-GPT: 一款基于RAG和agent构建的多模态专家助手GPT，https://mp.weixin.qq.com/s/C3ZnnxzmGqF8lXir9B9-BQ

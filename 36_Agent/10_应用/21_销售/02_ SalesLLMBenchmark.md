@@ -1,0 +1,5 @@
+- Sell More, Play Less: Benchmarking LLM Realistic Selling Skill
+- https://arxiv.org/pdf/2604.07054
+- 2026.4.9
+- Github (4 stars):　https://github.com/Bairong-Xdynamics/Benchmarking-LLM-Realistic-Selling-Skill
+- 数据：https://drive.google.com/file/d/1S7yKYaWeE7Bc7x-87GAE9-u8RbLaov24/view?pli=1

@@ -1,0 +1,4 @@
+- [Submitted on 15 Nov 2025]
+- AI-Salesman: Towards Reliable Large Language Model Driven Telemarketing
+- https://arxiv.org/abs/2511.12133
+- 数据：https://huggingface.co/datasets/ICIP/TeleSalesCorpus/tree/main
