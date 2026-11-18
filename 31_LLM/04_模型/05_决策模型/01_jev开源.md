@@ -15,3 +15,6 @@
 # 二、 开源项目
 
 ![](.01_jev开源_images/dd765105.png)
+
+- Github (1.5k stars): https://github.com/nokia-applied-research/AnyJev
+- Turn any LLM into a Jev-style decision model: typed decisions, real probabilities, no training. (continue updating, welcome any issue and PR request)

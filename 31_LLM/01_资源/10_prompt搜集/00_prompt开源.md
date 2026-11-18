@@ -1,0 +1,3 @@
+- Github (79.1k stars): https://github.com/dair-ai/Prompt-Engineering-Guide
+- 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.
+- 官网：www.promptingguide.ai/

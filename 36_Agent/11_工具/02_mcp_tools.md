@@ -1,0 +1,2 @@
+- Github (395k stars): https://github.com/morluto/rea
+- Reverse engineer anything with agents, from app behavior down to native binaries.
